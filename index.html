@@ -4,112 +4,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>CORAZÓN</title>
 
     <style>
+        :root {
+            --azul-fondo: #c7d3df;
+            --azul-suave: #a8b9c9;
+            --azul-medio: #8fa5b7;
+            --azul-oscuro: #4f6480;
+
+            --crema: #f3eadc;
+            --beige: #e9ddcf;
+
+            --rosa: #d8a4aa;
+            --rosa-suave: #edd1d2;
+
+            --verde: #8e9d78;
+
+            --texto: #2d3440;
+            --blanco: #fcfaf7;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
 
         body {
             margin: 0;
-            background: #dfe8f5;
+            color: var(--texto);
             font-family: "Times New Roman", Times, serif;
-            color: #111;
+
+            background-color: var(--beige);
+            background-image:
+                radial-gradient(rgba(255, 255, 255, 0.25) 1px, transparent 1px),
+                radial-gradient(rgba(79, 100, 128, 0.06) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.18));
+            background-size: 18px 18px, 18px 18px, auto;
+            background-position: 0 0, 9px 9px, 0 0;
         }
 
         .pagina {
             width: 95%;
             max-width: 1200px;
-            margin: 20px auto;
-            background: white;
-            border: 1px solid #aeb8c7;
-            min-height: 700px;
+            margin: 24px auto;
+            background: rgba(252, 250, 247, 0.86);
+            border: 1px solid var(--azul-medio);
+            box-shadow: 0 2px 10px rgba(79, 100, 128, 0.12);
+            overflow: hidden;
         }
 
         .estructura {
             display: grid;
-
             grid-template-columns: 220px 1fr;
             grid-template-rows: 430px 270px;
-
             min-height: 700px;
         }
-
 
         /* COLUMNA IZQUIERDA */
 
         .sidebar {
             grid-row: 1 / 3;
-
-            border-right: 4px solid black;
-
-            padding: 30px 20px;
-
-            box-sizing: border-box;
+            padding: 28px 20px;
+            background:
+                linear-gradient(to bottom, rgba(168, 185, 201, 0.18), rgba(243, 234, 220, 0.35));
+            border-right: 4px solid var(--azul-oscuro);
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 34px;
             font-weight: bold;
-
-            margin-bottom: 40px;
+            letter-spacing: 2px;
+            margin-bottom: 26px;
+            color: var(--azul-oscuro);
         }
 
-        .sidebar p {
+        .subtitulo {
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .lugar {
+            font-size: 16px;
+            color: #5b6673;
+            margin-bottom: 28px;
+        }
+
+        .texto-info {
             font-size: 16px;
             line-height: 1.5;
+            margin-bottom: 24px;
         }
 
         .menu {
-            margin-top: 30px;
+            margin-top: 10px;
         }
 
         .menu a {
             display: block;
-
-            color: blue;
-            text-decoration: underline;
-
+            width: fit-content;
             margin-bottom: 10px;
+            color: var(--azul-oscuro);
+            text-decoration: underline;
+            font-size: 17px;
         }
 
+        .actualizacion {
+            margin-top: 35px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(79, 100, 128, 0.25);
+            font-size: 13px;
+            color: #5c6470;
+        }
 
-        /* ZONA DE FOTOS */
+        /* SECCIÓN DE FOTOS */
 
         .fotos {
             position: relative;
-
-            border-bottom: 4px solid black;
-
-            overflow: visible;
+            overflow: hidden;
+            background:
+                linear-gradient(to bottom, rgba(168, 185, 201, 0.12), rgba(243, 234, 220, 0.16));
+            border-bottom: 4px solid var(--azul-oscuro);
         }
 
         .titulo-fotos {
             position: absolute;
-            top: 20px;
-            left: 30px;
-
-            font-size: 18px;
+            top: 18px;
+            left: 24px;
+            font-size: 19px;
+            letter-spacing: 1px;
+            color: var(--azul-oscuro);
         }
-
-
-        /* FOTOS DE EJEMPLO */
 
         .foto {
             position: absolute;
-
             width: 120px;
-
-            border: 4px solid black;
-
-            background: white;
-
+            background: var(--blanco);
+            border: 3px solid var(--azul-oscuro);
             padding: 4px;
-
-            box-sizing: border-box;
-
-            transition: transform 0.2s ease;
-
+            transition: transform 0.22s ease;
             cursor: pointer;
+            box-shadow: 0 2px 6px rgba(79, 100, 128, 0.15);
         }
 
         .foto img {
@@ -119,111 +153,106 @@
 
         .foto:hover {
             transform: scale(1.6);
-            z-index: 100;
+            z-index: 20;
         }
 
+        .foto.vacia {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 86px;
+            font-size: 17px;
+            color: var(--azul-oscuro);
+            background:
+                linear-gradient(to bottom, rgba(237, 209, 210, 0.28), rgba(199, 211, 223, 0.24));
+        }
 
         /* POSICIONES DE EJEMPLO */
 
         .foto1 {
-            top: 25px;
-            left: 140px;
+            top: 40px;
+            left: 120px;
         }
 
         .foto2 {
-            top: 40px;
-            left: 270px;
+            top: 25px;
+            left: 255px;
         }
 
         .foto3 {
-            top: 160px;
-            left: 190px;
+            top: 125px;
+            left: 145px;
         }
 
         .foto4 {
-            top: 220px;
-            left: 420px;
+            top: 210px;
+            left: 270px;
         }
 
         .foto5 {
-            top: 100px;
-            left: 600px;
+            top: 135px;
+            left: 430px;
         }
 
+        .foto6 {
+            top: 70px;
+            left: 590px;
+        }
 
-        /* PARTE INFERIOR */
+        /* PARTE DE ABAJO */
 
         .abajo {
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             height: 100%;
         }
 
-
-        /* MUSICA */
-
-        .musica {
-            border-right: 4px solid black;
-
-            padding: 40px;
-
-            box-sizing: border-box;
+        .musica,
+        .guestbook {
+            padding: 34px;
+            background: rgba(243, 234, 220, 0.3);
         }
 
-        .musica h2 {
-            font-size: 18px;
+        .musica {
+            border-right: 4px solid var(--azul-oscuro);
+        }
 
-            margin-top: 0;
+        .musica h2,
+        .guestbook h2 {
+            margin: 0 0 20px 0;
+            font-size: 19px;
+            font-weight: normal;
+            letter-spacing: 1px;
+            color: var(--azul-oscuro);
+        }
+
+        .reproductor,
+        .mensajes {
+            min-height: 130px;
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.45);
+            border: 2px solid var(--azul-medio);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+            font-size: 17px;
+            line-height: 1.5;
         }
 
         .reproductor {
-            margin-top: 30px;
-
-            border: 1px solid #777;
-
-            background: #eee;
-
-            padding: 20px;
-
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-        }
-
-
-        /* GUESTBOOK */
-
-        .guestbook {
-            padding: 40px;
-
-            box-sizing: border-box;
-        }
-
-        .guestbook h2 {
-            font-size: 18px;
-
-            margin-top: 0;
+            background:
+                linear-gradient(to bottom, rgba(168, 185, 201, 0.18), rgba(243, 234, 220, 0.2));
         }
 
         .mensajes {
-            margin-top: 30px;
-
-            border: 1px dashed #777;
-
-            padding: 20px;
-
-            min-height: 100px;
+            background:
+                linear-gradient(to bottom, rgba(237, 209, 210, 0.15), rgba(243, 234, 220, 0.18));
         }
-
 
         /* CELULAR */
 
         @media (max-width: 700px) {
-
             .pagina {
                 width: 96%;
-                margin: 10px auto;
+                margin: 12px auto;
             }
 
             .estructura {
@@ -232,15 +261,11 @@
 
             .sidebar {
                 border-right: none;
-                border-bottom: 4px solid black;
-
-                padding: 20px;
+                border-bottom: 4px solid var(--azul-oscuro);
             }
 
             .fotos {
-                min-height: 500px;
-
-                border-bottom: 4px solid black;
+                min-height: 530px;
             }
 
             .abajo {
@@ -249,143 +274,79 @@
 
             .musica {
                 border-right: none;
-                border-bottom: 4px solid black;
+                border-bottom: 4px solid var(--azul-oscuro);
             }
 
             .foto:hover {
                 transform: scale(1.2);
             }
-
         }
-
     </style>
 </head>
-
 
 <body>
 
     <div class="pagina">
-
         <div class="estructura">
 
-
             <!-- COLUMNA IZQUIERDA -->
-
             <aside class="sidebar">
+                <div class="logo">CORAZÓN</div>
 
-                <div class="logo">
-                    CORAZÓN
+                <div class="subtitulo">banda de dream-pop</div>
+                <div class="lugar">villa maría, argentina</div>
+
+                <div class="texto-info">
+                    esta columna puede llevar información de la banda, links, novedades,
+                    fechas o una pequeña bio.
                 </div>
-
-                <p>
-                    banda de dream-pop
-                </p>
-
-                <p>
-                    villa maría, argentina
-                </p>
 
                 <div class="menu">
-
                     <a href="#">inicio</a>
-
                     <a href="#">fotos</a>
-
                     <a href="#">música</a>
-
                     <a href="#">guestbook</a>
-
                     <a href="#">contacto</a>
-
                 </div>
 
-                <p style="margin-top:40px; font-size:13px;">
+                <div class="actualizacion">
                     última actualización:<br>
                     16.09.2026
-                </p>
-
+                </div>
             </aside>
 
-
-
-            <!-- ZONA DE FOTOS -->
-
+            <!-- FOTOS -->
             <section class="fotos">
+                <div class="titulo-fotos">fotos</div>
 
-                <div class="titulo-fotos">
-                    fotos
-                </div>
-
-
-                <div class="foto foto1">
-                    foto
-                </div>
-
-                <div class="foto foto2">
-                    foto
-                </div>
-
-                <div class="foto foto3">
-                    foto
-                </div>
-
-                <div class="foto foto4">
-                    foto
-                </div>
-
-                <div class="foto foto5">
-                    foto
-                </div>
-
+                <div class="foto vacia foto1">foto</div>
+                <div class="foto vacia foto2">foto</div>
+                <div class="foto vacia foto3">foto</div>
+                <div class="foto vacia foto4">foto</div>
+                <div class="foto vacia foto5">foto</div>
+                <div class="foto vacia foto6">foto</div>
             </section>
 
-
-
-            <!-- PARTE INFERIOR -->
-
+            <!-- ABAJO -->
             <section class="abajo">
 
-
-                <!-- MUSICA -->
-
                 <div class="musica">
-
-                    <h2>
-                        música
-                    </h2>
-
+                    <h2>música</h2>
                     <div class="reproductor">
-
-                        reproductor de SoundCloud / Spotify próximamente
-
+                        acá puede ir el reproductor de SoundCloud o Spotify.
                     </div>
-
                 </div>
-
-
-
-                <!-- GUESTBOOK -->
 
                 <div class="guestbook">
-
-                    <h2>
-                        guestbook
-                    </h2>
-
+                    <h2>guestbook</h2>
                     <div class="mensajes">
-
-                        próximamente vas a poder dejar mensajes acá...
-
+                        acá después pueden ir los mensajes.
                     </div>
-
                 </div>
-
 
             </section>
 
-
         </div>
-
     </div>
 
 </body>
