@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Corazón</title>
+    <title>CORAZÓN</title>
 
     <style>
 
@@ -32,6 +32,7 @@
         .nombre {
             font-size: 32px;
             font-weight: bold;
+            letter-spacing: 1px;
         }
 
         .pagina {
@@ -79,6 +80,127 @@
             margin-bottom: 20px;
         }
 
+
+        /* GALERÍA DE FOTOS */
+
+        .galeria {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            position: relative;
+        }
+
+        .foto {
+            width: 180px;
+            position: relative;
+        }
+
+        .foto img {
+            width: 100%;
+            height: auto;
+
+            display: block;
+
+            border: 1px solid #777;
+
+            cursor: pointer;
+
+            transition: transform 0.2s ease;
+        }
+
+        .foto:hover {
+            z-index: 100;
+        }
+
+        .foto:hover img {
+            transform: scale(1.7);
+        }
+
+
+        /* SECCIÓN MÚSICA */
+
+        .musica {
+            margin-top: 20px;
+
+            background: white;
+            border: 1px solid #b7c4d6;
+
+            padding: 20px;
+        }
+
+        .reproductor {
+            background: #eeeeee;
+            border: 1px solid #aaa;
+
+            padding: 20px;
+
+            font-size: 14px;
+            color: #555;
+        }
+
+
+        /* GUESTBOOK */
+
+        .guestbook {
+            margin-top: 20px;
+
+            background: white;
+            border: 1px solid #b7c4d6;
+
+            padding: 20px;
+        }
+
+        .muro {
+            background: #f5f5f5;
+            border: 1px dashed #999;
+
+            padding: 20px;
+
+            font-size: 14px;
+            color: #555;
+        }
+
+
+        /* CELULAR */
+
+        @media (max-width: 600px) {
+
+            .barra {
+                height: 60px;
+                padding-left: 15px;
+            }
+
+            .nombre {
+                font-size: 26px;
+            }
+
+            .pagina {
+                width: 94%;
+                margin: 15px auto;
+            }
+
+            .perfil,
+            .contenido,
+            .musica,
+            .guestbook {
+                padding: 15px;
+            }
+
+            .galeria {
+                gap: 8px;
+            }
+
+            .foto {
+                width: calc(50% - 4px);
+            }
+
+            .foto:hover img {
+                transform: scale(1.2);
+            }
+
+        }
+
     </style>
 </head>
 
@@ -86,20 +208,32 @@
 <body>
 
     <div class="barra">
-        <div class="nombre">corazón</div>
+
+        <div class="nombre">
+            CORAZÓN
+        </div>
+
     </div>
 
 
     <div class="pagina">
 
+
+        <!-- PERFIL -->
+
         <div class="perfil">
 
-            <h1>corazón</h1>
+            <h1>CORAZÓN</h1>
 
-            <p>banda de dream-pop</p>
+            <p>
+                banda de dream-pop
+            </p>
 
         </div>
 
+
+
+        <!-- FOTOS -->
 
         <div class="contenido">
 
@@ -107,11 +241,57 @@
                 fotos
             </div>
 
-            <p>
-                próximamente...
-            </p>
+            <div class="galeria">
+
+                <div class="foto">
+
+                    <img
+                        src="fotos/P8180460.JPG"
+                        alt="Corazón"
+                    >
+
+                </div>
+
+            </div>
 
         </div>
+
+
+
+        <!-- MÚSICA -->
+
+        <div class="musica">
+
+            <div class="titulo">
+                música
+            </div>
+
+            <div class="reproductor">
+
+                reproductor de SoundCloud próximamente...
+
+            </div>
+
+        </div>
+
+
+
+        <!-- GUESTBOOK -->
+
+        <div class="guestbook">
+
+            <div class="titulo">
+                guestbook
+            </div>
+
+            <div class="muro">
+
+                próximamente vas a poder dejar un mensaje...
+
+            </div>
+
+        </div>
+
 
     </div>
 
