@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>corazón</title>
+
+    <title>CORAZÓN</title>
 
     <style>
         :root {
@@ -21,6 +22,7 @@
             --rosa-suave: #edd4d7;
 
             --verde: #8d9a78;
+
             --texto: #2e3440;
         }
 
@@ -30,366 +32,640 @@
 
         body {
             margin: 0;
+
             color: var(--texto);
+
             font-family: "Times New Roman", Times, serif;
+
             background-color: var(--beige);
+
             background-image:
-                radial-gradient(rgba(255, 255, 255, 0.28) 1px, transparent 1px),
-                radial-gradient(rgba(75, 96, 125, 0.06) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.14));
-            background-size: 18px 18px, 18px 18px, auto;
-            background-position: 0 0, 9px 9px, 0 0;
+                radial-gradient(
+                    rgba(255,255,255,0.28) 1px,
+                    transparent 1px
+                ),
+                radial-gradient(
+                    rgba(75,96,125,0.06) 1px,
+                    transparent 1px
+                );
+
+            background-size: 18px 18px;
+
+            background-position:
+                0 0,
+                9px 9px;
         }
 
         .pagina {
             width: 95%;
             max-width: 1200px;
+
             margin: 24px auto;
-            background: rgba(252, 250, 246, 0.9);
+
+            background: rgba(252,250,246,0.92);
+
             border: 1px solid var(--azul-medio);
-            box-shadow: 0 3px 12px rgba(75, 96, 125, 0.12);
+
+            box-shadow:
+                0 3px 12px rgba(75,96,125,0.15);
+
             position: relative;
+
             overflow: hidden;
         }
 
         .pagina::before {
             content: "";
+
             position: absolute;
+
             inset: 10px;
-            border: 2px solid rgba(75, 96, 125, 0.22);
+
+            border:
+                2px solid rgba(75,96,125,0.20);
+
             pointer-events: none;
         }
 
         .pagina::after {
             content: "";
+
             position: absolute;
+
             inset: 18px;
-            border: 1px solid rgba(216, 161, 169, 0.22);
+
+            border:
+                1px solid rgba(216,161,169,0.22);
+
             pointer-events: none;
         }
 
+
+        /* ESTRUCTURA PRINCIPAL */
+
         .estructura {
             display: grid;
-            grid-template-columns: 240px 1fr;
-            grid-template-rows: 440px 280px;
-            min-height: 720px;
+
+            grid-template-columns:
+                240px 1fr;
+
+            grid-template-rows:
+                850px 280px;
+
+            min-height: 1130px;
+
             position: relative;
+
             z-index: 1;
         }
+
 
         /* COLUMNA IZQUIERDA */
 
         .sidebar {
             grid-row: 1 / 3;
-            padding: 30px 22px;
+
+            padding:
+                30px 22px;
+
             background:
-                linear-gradient(to bottom, rgba(166, 183, 199, 0.18), rgba(245, 237, 222, 0.42));
-            border-right: 4px solid var(--azul-oscuro);
+                linear-gradient(
+                    to bottom,
+                    rgba(166,183,199,0.18),
+                    rgba(245,237,222,0.42)
+                );
+
+            border-right:
+                4px solid var(--azul-oscuro);
+
             position: relative;
         }
 
         .sidebar::after {
             content: "";
+
             position: absolute;
+
             top: 18px;
             right: 10px;
             bottom: 18px;
+
             width: 1px;
+
             background:
-                repeating-linear-gradient(to bottom,
-                    rgba(216, 161, 169, 0.45) 0 6px,
-                    transparent 6px 12px);
+                repeating-linear-gradient(
+                    to bottom,
+                    rgba(216,161,169,0.45) 0 6px,
+                    transparent 6px 12px
+                );
         }
 
         .logo {
             font-size: 35px;
+
             font-weight: bold;
+
             letter-spacing: 2px;
+
             margin-bottom: 18px;
-            color: var(--azul-oscuro);
+
+            color:
+                var(--azul-oscuro);
+
             line-height: 1;
         }
 
         .subtitulo {
             font-size: 20px;
+
             margin-bottom: 8px;
         }
 
         .lugar {
             font-size: 16px;
+
             color: #596573;
+
             margin-bottom: 20px;
         }
 
         .lineita {
             width: 70px;
+
             height: 2px;
-            background: var(--rosa);
-            margin: 16px 0 18px 0;
+
+            background:
+                var(--rosa);
+
+            margin:
+                16px 0 18px 0;
         }
 
         .texto-info {
             font-size: 16px;
+
             line-height: 1.55;
+
             margin-bottom: 24px;
         }
 
         .menu {
             margin-top: 8px;
-            padding: 14px 14px 10px 14px;
-            background: rgba(255, 255, 255, 0.35);
-            border: 1px solid rgba(135, 158, 179, 0.45);
+
+            padding:
+                14px 14px 10px 14px;
+
+            background:
+                rgba(255,255,255,0.35);
+
+            border:
+                1px solid rgba(135,158,179,0.45);
         }
 
         .menu a {
             display: block;
+
             width: fit-content;
+
             margin-bottom: 10px;
-            color: var(--azul-oscuro);
-            text-decoration: underline;
+
+            color:
+                var(--azul-oscuro);
+
+            text-decoration:
+                underline;
+
             font-size: 17px;
         }
 
         .menu a::before {
             content: "♡ ";
-            color: var(--rosa);
+
+            color:
+                var(--rosa);
         }
 
         .actualizacion {
             margin-top: 28px;
+
             padding-top: 14px;
-            border-top: 1px solid rgba(75, 96, 125, 0.22);
+
+            border-top:
+                1px solid rgba(75,96,125,0.22);
+
             font-size: 13px;
+
             color: #5c6673;
         }
 
         .firma {
             margin-top: 22px;
+
             font-size: 13px;
-            color: var(--verde);
+
+            color:
+                var(--verde);
+
             letter-spacing: 1px;
         }
 
-        /* BLOQUES DERECHA */
+
+        /* ZONA DE FOTOS */
 
         .fotos {
             position: relative;
-            overflow: hidden;
+
+            min-height: 850px;
+
+            overflow: visible;
+
             background:
-                linear-gradient(to bottom, rgba(166, 183, 199, 0.11), rgba(245, 237, 222, 0.12));
-            border-bottom: 4px solid var(--azul-oscuro);
+                linear-gradient(
+                    to bottom,
+                    rgba(166,183,199,0.11),
+                    rgba(245,237,222,0.12)
+                );
+
+            border-bottom:
+                4px solid var(--azul-oscuro);
         }
 
         .fotos::before {
             content: "";
+
             position: absolute;
+
             left: 24px;
             right: 24px;
             top: 24px;
-            height: 1px;
-            background:
-                repeating-linear-gradient(to right,
-                    rgba(141, 154, 120, 0.65) 0 6px,
-                    transparent 6px 12px);
-        }
 
-        .titulo-fotos,
-        .musica h2,
-        .guestbook h2 {
-            color: var(--azul-oscuro);
-            letter-spacing: 1px;
-            font-weight: normal;
+            height: 1px;
+
+            background:
+                repeating-linear-gradient(
+                    to right,
+                    rgba(141,154,120,0.65) 0 6px,
+                    transparent 6px 12px
+                );
         }
 
         .titulo-fotos {
             position: absolute;
+
             top: 34px;
             left: 30px;
+
             font-size: 19px;
-            background: rgba(252, 250, 246, 0.88);
-            padding: 0 8px 0 0;
+
+            letter-spacing: 1px;
+
+            color:
+                var(--azul-oscuro);
+
+            background:
+                rgba(252,250,246,0.88);
+
+            padding:
+                0 8px 0 0;
         }
 
-        .titulo-fotos::after,
-        .musica h2::after,
-        .guestbook h2::after {
+        .titulo-fotos::after {
             content: "  ♡";
-            color: var(--rosa);
+
+            color:
+                var(--rosa);
+
             font-size: 16px;
         }
+
 
         /* FOTOS */
 
         .foto {
             position: absolute;
-            width: 125px;
-            background: var(--blanco);
-            border: 3px solid var(--azul-oscuro);
+
+            width: 115px;
+
+            background:
+                var(--blanco);
+
+            border:
+                3px solid var(--azul-oscuro);
+
             padding: 4px;
-            box-shadow: 0 2px 8px rgba(75, 96, 125, 0.13);
+
+            box-shadow:
+                0 2px 8px rgba(75,96,125,0.13);
+
             cursor: pointer;
-            transition: transform 0.22s ease, box-shadow 0.22s ease;
-            transform: rotate(var(--rot, 0deg));
+
+            transition:
+                transform 0.22s ease,
+                box-shadow 0.22s ease;
+
+            transform:
+                rotate(var(--rot, 0deg));
         }
 
         .foto img {
             width: 100%;
+
+            height: auto;
+
             display: block;
         }
 
         .foto:hover {
-            transform: scale(2.2) rotate(var(--rot, 0deg));
-            z-index: 30;
-            box-shadow: 0 8px 18px rgba(75, 96, 125, 0.22);
-        }
+            transform:
+                scale(1.65)
+                rotate(var(--rot, 0deg));
 
-        .foto.vacia {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 90px;
-            font-size: 17px;
-            color: var(--azul-oscuro);
-            background:
-                linear-gradient(to bottom, rgba(237, 212, 215, 0.3), rgba(197, 210, 222, 0.24));
+            z-index: 50;
+
+            box-shadow:
+                0 8px 18px
+                rgba(75,96,125,0.22);
         }
 
         .foto::after {
             content: "";
+
             position: absolute;
-            width: 14px;
-            height: 14px;
-            right: 6px;
-            bottom: 6px;
+
+            width: 13px;
+            height: 13px;
+
+            right: 5px;
+            bottom: 5px;
+
             border-radius: 50%;
-            background: rgba(216, 161, 169, 0.22);
+
+            background:
+                rgba(216,161,169,0.20);
         }
 
-        /* POSICIONES */
+
+        /* DISTRIBUCION DE LAS 18 FOTOS */
 
         .foto1 {
-            top: 58px;
-            left: 120px;
-            --rot: -1deg;
-        }
-
-        .foto2 {
-            top: 42px;
-            left: 270px;
-            --rot: 1.5deg;
-        }
-
-        .foto3 {
-            top: 148px;
-            left: 165px;
+            top: 70px;
+            left: 65px;
             --rot: -2deg;
         }
 
-        .foto4 {
-            top: 238px;
-            left: 310px;
+        .foto2 {
+            top: 45px;
+            left: 205px;
             --rot: 1deg;
         }
 
-        .foto5 {
-            top: 142px;
-            left: 465px;
+        .foto3 {
+            top: 85px;
+            left: 350px;
             --rot: -1deg;
         }
 
-        .foto6 {
-            top: 74px;
-            left: 635px;
+        .foto4 {
+            top: 55px;
+            left: 500px;
             --rot: 2deg;
         }
+
+        .foto5 {
+            top: 195px;
+            left: 115px;
+            --rot: 1.5deg;
+        }
+
+        .foto6 {
+            top: 175px;
+            left: 265px;
+            --rot: -2deg;
+        }
+
+        .foto7 {
+            top: 205px;
+            left: 420px;
+            --rot: 1deg;
+        }
+
+        .foto8 {
+            top: 190px;
+            left: 570px;
+            --rot: -1deg;
+        }
+
+        .foto9 {
+            top: 325px;
+            left: 60px;
+            --rot: 2deg;
+        }
+
+        .foto10 {
+            top: 340px;
+            left: 215px;
+            --rot: -1deg;
+        }
+
+        .foto11 {
+            top: 320px;
+            left: 375px;
+            --rot: 1.5deg;
+        }
+
+        .foto12 {
+            top: 350px;
+            left: 535px;
+            --rot: -2deg;
+        }
+
+        .foto13 {
+            top: 485px;
+            left: 110px;
+            --rot: -1deg;
+        }
+
+        .foto14 {
+            top: 470px;
+            left: 275px;
+            --rot: 2deg;
+        }
+
+        .foto15 {
+            top: 500px;
+            left: 440px;
+            --rot: -1.5deg;
+        }
+
+        .foto16 {
+            top: 625px;
+            left: 75px;
+            --rot: 1deg;
+        }
+
+        .foto17 {
+            top: 615px;
+            left: 250px;
+            --rot: -2deg;
+        }
+
+        .foto18 {
+            top: 640px;
+            left: 430px;
+            --rot: 2deg;
+        }
+
 
         /* ZONA INFERIOR */
 
         .abajo {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+
+            grid-template-columns:
+                1fr 1fr;
+
             height: 100%;
         }
 
         .musica,
         .guestbook {
             padding: 34px;
-            background: rgba(245, 237, 222, 0.28);
+
+            background:
+                rgba(245,237,222,0.28);
+
             position: relative;
         }
 
         .musica {
-            border-right: 4px solid var(--azul-oscuro);
+            border-right:
+                4px solid var(--azul-oscuro);
         }
 
         .musica::before,
         .guestbook::before {
             content: "";
+
             position: absolute;
+
             top: 18px;
             left: 18px;
             right: 18px;
+
             height: 1px;
+
             background:
-                linear-gradient(to right,
-                    rgba(216, 161, 169, 0.4),
-                    rgba(141, 154, 120, 0.35),
-                    rgba(216, 161, 169, 0.4));
+                linear-gradient(
+                    to right,
+                    rgba(216,161,169,0.4),
+                    rgba(141,154,120,0.35),
+                    rgba(216,161,169,0.4)
+                );
         }
 
         .musica h2,
         .guestbook h2 {
-            margin: 6px 0 20px 0;
+            margin:
+                6px 0 20px 0;
+
             font-size: 19px;
+
+            font-weight: normal;
+
+            letter-spacing: 1px;
+
+            color:
+                var(--azul-oscuro);
+        }
+
+        .musica h2::after,
+        .guestbook h2::after {
+            content: "  ♡";
+
+            color:
+                var(--rosa);
+
+            font-size: 16px;
         }
 
         .reproductor,
         .mensajes {
             min-height: 132px;
+
             padding: 22px;
-            background: rgba(255, 255, 255, 0.45);
-            border: 2px solid var(--azul-medio);
-            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+
+            background:
+                rgba(255,255,255,0.45);
+
+            border:
+                2px solid var(--azul-medio);
+
+            box-shadow:
+                inset 0 0 0 1px
+                rgba(255,255,255,0.35);
+
             font-size: 17px;
+
             line-height: 1.5;
+
             position: relative;
         }
 
         .reproductor {
             background:
-                linear-gradient(to bottom, rgba(166, 183, 199, 0.18), rgba(245, 237, 222, 0.2));
+                linear-gradient(
+                    to bottom,
+                    rgba(166,183,199,0.18),
+                    rgba(245,237,222,0.2)
+                );
         }
 
         .mensajes {
             background:
-                linear-gradient(to bottom, rgba(237, 212, 215, 0.14), rgba(245, 237, 222, 0.18));
+                linear-gradient(
+                    to bottom,
+                    rgba(237,212,215,0.14),
+                    rgba(245,237,222,0.18)
+                );
         }
 
         .reproductor::after,
         .mensajes::after {
             content: "✿";
+
             position: absolute;
+
             right: 12px;
             bottom: 8px;
+
             font-size: 16px;
-            color: rgba(141, 154, 120, 0.65);
+
+            color:
+                rgba(141,154,120,0.65);
         }
+
 
         /* CELULAR */
 
         @media (max-width: 700px) {
+
             .pagina {
                 width: 96%;
+
                 margin: 12px auto;
             }
 
             .estructura {
                 display: block;
+
+                min-height: auto;
             }
 
             .sidebar {
                 border-right: none;
-                border-bottom: 4px solid var(--azul-oscuro);
+
+                border-bottom:
+                    4px solid var(--azul-oscuro);
             }
 
             .sidebar::after {
@@ -397,7 +673,38 @@
             }
 
             .fotos {
-                min-height: 560px;
+                min-height: auto;
+
+                padding:
+                    70px 15px 25px 15px;
+
+                display: grid;
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 12px;
+
+                overflow: hidden;
+            }
+
+            .foto {
+                position: relative;
+
+                top: auto !important;
+
+                left: auto !important;
+
+                width: 100%;
+
+                transform:
+                    rotate(var(--rot, 0deg));
+            }
+
+            .foto:hover {
+                transform:
+                    scale(1.08)
+                    rotate(var(--rot, 0deg));
             }
 
             .abajo {
@@ -406,92 +713,216 @@
 
             .musica {
                 border-right: none;
-                border-bottom: 4px solid var(--azul-oscuro);
-            }
 
-            .foto:hover {
-                transform: scale(1.2) rotate(var(--rot, 0deg));
+                border-bottom:
+                    4px solid var(--azul-oscuro);
             }
         }
     </style>
 </head>
 
+
 <body>
 
     <div class="pagina">
+
         <div class="estructura">
 
-            <!-- COLUMNA IZQUIERDA -->
-            <aside class="sidebar">
-                <div class="logo">CORAZÓN</div>
 
-                <div class="subtitulo">banda de dream-pop</div>
-                <div class="lugar">villa maría, argentina</div>
+            <!-- COLUMNA IZQUIERDA -->
+
+            <aside class="sidebar">
+
+                <div class="logo">
+                    CORAZÓN
+                </div>
+
+                <div class="subtitulo">
+                    banda de dream-pop
+                </div>
+
+                <div class="lugar">
+                    villa maría, argentina
+                </div>
 
                 <div class="lineita"></div>
 
                 <div class="texto-info">
-                    esta columna puede llevar información de la banda, una pequeña bio,
-                    novedades, links o fechas.
+                    música, imágenes y otras cosas
+                    desde algún lugar entre el sueño
+                    y el ruido.
                 </div>
 
                 <div class="menu">
-                    <a href="#">inicio</a>
-                    <a href="#">fotos</a>
-                    <a href="#">música</a>
-                    <a href="#">guestbook</a>
-                    <a href="#">contacto</a>
+
+                    <a href="#">
+                        inicio
+                    </a>
+
+                    <a href="#">
+                        fotos
+                    </a>
+
+                    <a href="#">
+                        música
+                    </a>
+
+                    <a href="#">
+                        guestbook
+                    </a>
+
+                    <a href="#">
+                        contacto
+                    </a>
+
                 </div>
 
                 <div class="actualizacion">
-                    última actualización:<br>
-                    16.09.2026
+                    última actualización:
+                    <br>
+                    17.09.2026
                 </div>
 
                 <div class="firma">
-                    dream-pop / early internet / corazÓn
+                    dream-pop / early internet / corazón
                 </div>
+
             </aside>
 
-            <!-- FOTOS -->
-            <section class="fotos">
-                <div class="titulo-fotos">fotos</div>
 
-                <div class="foto vacia foto1">
-                    <img src="fotos/fidelfelipe.JPG" alt="Foto de CORAZÓN">    
+
+            <!-- FOTOS -->
+
+            <section class="fotos">
+
+                <div class="titulo-fotos">
+                    fotos
                 </div>
-                <div class="foto vacia foto2">foto</div>
-                   <img src="fotos/fotocamarita.JPG" alt="Foto de CORAZÓN">  
-                <div class="foto vacia foto3">foto</div>
-                  <img src="fotos/fotocamarita1.JPG" alt="Foto de CORAZÓN">  
-                <div class="foto vacia foto4">foto</div>
-                  <img src="fotos/fotocamarita2.JPG" alt="Foto de CORAZÓN">  
-                <div class="foto vacia foto5">foto</div>
-                   <img src="fotos/fotocamarita3.JPG" alt="Foto de CORAZÓN">  
-                <div class="foto vacia foto6">foto</div>
-                   <img src="fotos/fotocamarita4.JPG" alt="Foto de CORAZÓN">  
+
+
+                <div class="foto foto1">
+                    <img src="fotos/fotocamarita1.JPG" alt="Corazón 1">
+                </div>
+
+                <div class="foto foto2">
+                    <img src="fotos/fotocamarita2.JPG" alt="Corazón 2">
+                </div>
+
+                <div class="foto foto3">
+                    <img src="fotos/fotocamarita3.JPG" alt="Corazón 3">
+                </div>
+
+                <div class="foto foto4">
+                    <img src="fotos/fotocamarita4.JPG" alt="Corazón 4">
+                </div>
+
+                <div class="foto foto5">
+                    <img src="fotos/fotocamarita5.JPG" alt="Corazón 5">
+                </div>
+
+                <div class="foto foto6">
+                    <img src="fotos/fotocamarita6.JPG" alt="Corazón 6">
+                </div>
+
+                <div class="foto foto7">
+                    <img src="fotos/fotocamarita7.JPG" alt="Corazón 7">
+                </div>
+
+                <div class="foto foto8">
+                    <img src="fotos/fotocamarita8.JPG" alt="Corazón 8">
+                </div>
+
+                <div class="foto foto9">
+                    <img src="fotos/fotocamarita9.JPG" alt="Corazón 9">
+                </div>
+
+                <div class="foto foto10">
+                    <img src="fotos/fotocamarita10.JPG" alt="Corazón 10">
+                </div>
+
+                <div class="foto foto11">
+                    <img src="fotos/fotocamarita11.JPG" alt="Corazón 11">
+                </div>
+
+                <div class="foto foto12">
+                    <img src="fotos/fotocamarita12.JPG" alt="Corazón 12">
+                </div>
+
+                <div class="foto foto13">
+                    <img src="fotos/fotocamarita13.JPG" alt="Corazón 13">
+                </div>
+
+                <div class="foto foto14">
+                    <img src="fotos/fotocamarita14.JPG" alt="Corazón 14">
+                </div>
+
+                <div class="foto foto15">
+                    <img src="fotos/fotocamarita15.JPG" alt="Corazón 15">
+                </div>
+
+                <div class="foto foto16">
+                    <img src="fotos/fotocamarita16.JPG" alt="Corazón 16">
+                </div>
+
+                <div class="foto foto17">
+                    <img src="fotos/fotocamarita17.JPG" alt="Corazón 17">
+                </div>
+
+                <div class="foto foto18">
+                    <img src="fotos/fotocamarita18.JPG" alt="Corazón 18">
+                </div>
+
             </section>
+
+
 
             <!-- ABAJO -->
+
             <section class="abajo">
 
+
+                <!-- MUSICA -->
+
                 <div class="musica">
-                    <h2>música</h2>
+
+                    <h2>
+                        música
+                    </h2>
+
                     <div class="reproductor">
-                        acá puede ir el reproductor de SoundCloud o Spotify.
+
+                        acá va a ir el reproductor
+                        de SoundCloud.
+
                     </div>
+
                 </div>
 
+
+
+                <!-- GUESTBOOK -->
+
                 <div class="guestbook">
-                    <h2>guestbook</h2>
+
+                    <h2>
+                        guestbook
+                    </h2>
+
                     <div class="mensajes">
-                        acá después pueden ir los mensajes.
+
+                        próximamente vas a poder
+                        dejar mensajes acá...
+
                     </div>
+
                 </div>
+
 
             </section>
 
+
         </div>
+
     </div>
 
 </body>
