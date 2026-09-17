@@ -41,12 +41,9 @@
 
         html,
         body {
-
             width: 100%;
             height: 100%;
-
             margin: 0;
-
             overflow: hidden;
         }
 
@@ -60,8 +57,7 @@
                 Times,
                 serif;
 
-            background-color:
-                var(--beige);
+            background-color: var(--beige);
 
             background-image:
 
@@ -83,16 +79,13 @@
                 9px 9px;
 
             display: flex;
-
             align-items: center;
             justify-content: center;
         }
 
 
 
-        /* ======================================== */
-        /* PAGINA COMPLETA                          */
-        /* ======================================== */
+        /* PAGINA */
 
         .pagina {
 
@@ -118,8 +111,6 @@
         }
 
 
-        /* MARCO INTERIOR AZUL */
-
         .pagina::before {
 
             content: "";
@@ -137,8 +128,6 @@
             z-index: 20;
         }
 
-
-        /* MARCO INTERIOR ROSA */
 
         .pagina::after {
 
@@ -159,9 +148,7 @@
 
 
 
-        /* ======================================== */
-        /* ESTRUCTURA GENERAL                       */
-        /* ======================================== */
+        /* ESTRUCTURA GENERAL */
 
         .estructura {
 
@@ -173,8 +160,8 @@
             grid-template-columns:
                 230px minmax(0, 1fr);
 
-           grid-template-rows:
-           minmax(0, 68%) minmax(0, 32%);
+            grid-template-rows:
+                minmax(0, 68%) minmax(0, 32%);
 
             position: relative;
 
@@ -183,9 +170,7 @@
 
 
 
-        /* ======================================== */
-        /* COLUMNA IZQUIERDA                        */
-        /* ======================================== */
+        /* COLUMNA IZQUIERDA */
 
         .sidebar {
 
@@ -302,9 +287,6 @@
         }
 
 
-
-        /* MENU */
-
         .menu {
 
             margin-top: 6px;
@@ -348,9 +330,6 @@
         }
 
 
-
-        /* ACTUALIZACION */
-
         .actualizacion {
 
             margin-top: 22px;
@@ -381,9 +360,7 @@
 
 
 
-        /* ======================================== */
-        /* FOTOS                                    */
-        /* ======================================== */
+        /* FOTOS */
 
         .fotos {
 
@@ -421,9 +398,6 @@
         }
 
 
-
-        /* LINEA DECORATIVA */
-
         .fotos::before {
 
             content: "";
@@ -451,9 +425,6 @@
                 );
         }
 
-
-
-        /* TITULO */
 
         .titulo-fotos {
 
@@ -510,7 +481,6 @@
                 var(--azul-oscuro);
 
             box-shadow:
-
                 0 2px 5px
                 rgba(75,96,125,0.13);
 
@@ -519,7 +489,6 @@
             overflow: hidden;
 
             transition:
-
                 transform 0.20s ease,
                 box-shadow 0.20s ease;
 
@@ -540,11 +509,6 @@
         }
 
 
-
-        /* ======================================== */
-        /* FOTO GRANDE AL PASAR EL MOUSE            */
-        /* ======================================== */
-
         .foto:hover {
 
             transform:
@@ -553,7 +517,6 @@
             z-index: 100;
 
             box-shadow:
-
                 0 10px 30px
                 rgba(75,96,125,0.38);
 
@@ -564,34 +527,22 @@
 
 
 
-        /*
-           Las fotos de los bordes crecen
-           hacia ADENTRO de la página.
-        */
-
-
-        /* primera columna */
+        /* fotos de extremos crecen hacia adentro */
 
         .foto:nth-child(6n + 2) {
-
             transform-origin:
                 left center;
         }
 
 
-        /* ultima columna */
-
         .foto:nth-child(6n + 1) {
-
             transform-origin:
                 right center;
         }
 
 
 
-        /* ======================================== */
-        /* PARTE INFERIOR                           */
-        /* ======================================== */
+        /* PARTE INFERIOR */
 
         .abajo {
 
@@ -608,15 +559,15 @@
 
 
 
-        /* ======================================== */
-        /* MUSICA                                   */
-        /* ======================================== */
+        .musica,
+        .guestbook {
 
-       .musica,
-       .guestbook {
-          padding:
-        24px 22px 20px 22px;
-         }
+            min-width: 0;
+            min-height: 0;
+
+            padding:
+                24px 22px 20px 22px;
+
             background:
                 rgba(245,237,222,0.28);
 
@@ -664,8 +615,6 @@
 
 
 
-        /* TITULOS INFERIORES */
-
         .musica h2,
         .guestbook h2 {
 
@@ -696,9 +645,7 @@
 
 
 
-        /* ======================================== */
-        /* SOUNDCLOUD                               */
-        /* ======================================== */
+        /* SOUNDCLOUD */
 
         .reproductor {
 
@@ -741,18 +688,157 @@
 
 
 
-        /* ======================================== */
-        /* LIBRO DE QUEJAS                          */
-        /* ======================================== */
+        /* LIBRO DE QUEJAS */
 
-        .mensajes {
-
-            width: 100%;
+        .guestbook-contenido {
 
             height:
                 calc(100% - 30px);
 
-            padding: 18px;
+            display: grid;
+
+            grid-template-columns:
+                43% 57%;
+
+            gap: 10px;
+
+            min-height: 0;
+        }
+
+
+
+        /* FORMULARIO */
+
+        .form-queja {
+
+            border:
+                2px solid
+                var(--azul-medio);
+
+            background:
+                rgba(255,255,255,0.35);
+
+            padding: 10px;
+
+            min-height: 0;
+        }
+
+
+        .form-queja label {
+
+            display: block;
+
+            font-size: 12px;
+
+            margin-bottom: 3px;
+
+            color:
+                var(--azul-oscuro);
+        }
+
+
+        .form-queja input,
+        .form-queja textarea {
+
+            width: 100%;
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            background:
+                rgba(252,250,246,0.85);
+
+            font-family:
+                "Times New Roman",
+                Times,
+                serif;
+
+            font-size: 12px;
+
+            color:
+                var(--texto);
+
+            padding: 5px;
+
+            outline: none;
+        }
+
+
+        .form-queja input:focus,
+        .form-queja textarea:focus {
+
+            border-color:
+                var(--azul-oscuro);
+        }
+
+
+        .form-queja textarea {
+
+            height: 55px;
+
+            resize: none;
+
+            margin-bottom: 6px;
+        }
+
+
+        .form-queja input {
+
+            margin-bottom: 7px;
+        }
+
+
+        .form-queja button {
+
+            border:
+                1px solid
+                var(--azul-oscuro);
+
+            background:
+                var(--crema);
+
+            color:
+                var(--azul-oscuro);
+
+            font-family:
+                "Times New Roman",
+                Times,
+                serif;
+
+            font-size: 12px;
+
+            padding:
+                5px 10px;
+
+            cursor: pointer;
+        }
+
+
+        .form-queja button:hover {
+
+            background:
+                var(--rosa-suave);
+        }
+
+
+        .estado {
+
+            font-size: 11px;
+
+            margin-top: 6px;
+
+            min-height: 14px;
+
+            color:
+                var(--verde);
+        }
+
+
+
+        /* LISTADO DE MENSAJES */
+
+        .lista-mensajes {
 
             border:
                 2px solid
@@ -770,34 +856,114 @@
 
                 );
 
-            font-size: 14px;
+            padding:
+                9px 11px;
 
-            line-height: 1.5;
+            overflow-y: auto;
 
-            position: relative;
+            min-height: 0;
         }
 
 
-        .mensajes::after {
+        .mensaje {
 
-            content: "✿";
+            padding:
+                5px 2px 7px 2px;
 
-            position: absolute;
+            border-bottom:
+                1px dotted
+                rgba(75,96,125,0.40);
 
-            right: 10px;
-            bottom: 7px;
+            font-size: 12px;
+        }
 
-            font-size: 14px;
+
+        .mensaje:last-child {
+
+            border-bottom: none;
+        }
+
+
+        .mensaje-cabecera {
+
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            gap: 7px;
+
+            margin-bottom: 3px;
+        }
+
+
+        .mensaje-nombre {
+
+            font-weight: bold;
 
             color:
-                rgba(141,154,120,0.65);
+                var(--azul-oscuro);
+        }
+
+
+        .mensaje-fecha {
+
+            color: #777;
+
+            font-size: 10px;
+
+            white-space: nowrap;
+        }
+
+
+        .mensaje-texto {
+
+            line-height: 1.3;
+
+            overflow-wrap:
+                anywhere;
+        }
+
+
+        .sin-mensajes {
+
+            font-size: 12px;
+
+            color: #777;
+
+            font-style: italic;
         }
 
 
 
-        /* ======================================== */
-        /* PANTALLAS MAS CHICAS                     */
-        /* ======================================== */
+        /* SCROLL DEL LIBRO */
+
+        .lista-mensajes::-webkit-scrollbar {
+
+            width: 7px;
+        }
+
+
+        .lista-mensajes::-webkit-scrollbar-track {
+
+            background:
+                var(--crema);
+        }
+
+
+        .lista-mensajes::-webkit-scrollbar-thumb {
+
+            background:
+                var(--azul-suave);
+
+            border:
+                1px solid
+                var(--azul-oscuro);
+        }
+
+
+
+        /* PANTALLAS MAS CHICAS */
 
         @media
         (max-width: 900px) {
@@ -843,18 +1009,10 @@
 
 
 
-        /* ======================================== */
-        /* CELULAR                                  */
-        /* ======================================== */
+        /* CELULAR */
 
         @media
         (max-width: 650px) {
-
-            /*
-                En teléfono permitimos scroll,
-                porque meter las 18 fotos en una
-                sola pantalla las haría ilegibles.
-            */
 
             html,
             body {
@@ -953,11 +1111,33 @@
                     4px solid
                     var(--azul-oscuro);
 
-                height: 260px;
+                height: 280px;
             }
 
 
             .guestbook {
+
+                height: auto;
+
+                min-height: 430px;
+            }
+
+
+            .guestbook-contenido {
+
+                display: block;
+
+                height: auto;
+            }
+
+
+            .form-queja {
+
+                margin-bottom: 10px;
+            }
+
+
+            .lista-mensajes {
 
                 height: 220px;
             }
@@ -980,9 +1160,7 @@
 
 
 
-            <!-- ================================= -->
-            <!-- COLUMNA IZQUIERDA                -->
-            <!-- ================================= -->
+            <!-- COLUMNA IZQUIERDA -->
 
             <aside class="sidebar">
 
@@ -1068,9 +1246,7 @@
 
 
 
-            <!-- ================================= -->
-            <!-- FOTOS                            -->
-            <!-- ================================= -->
+            <!-- FOTOS -->
 
             <section
                 class="fotos"
@@ -1083,201 +1259,76 @@
                 </div>
 
 
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita1.JPG"
-                        alt="Corazón 1"
-                    >
-
+                    <img src="fotos/fotocamarita1.JPG" alt="Corazón 1">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita2.JPG"
-                        alt="Corazón 2"
-                    >
-
+                    <img src="fotos/fotocamarita2.JPG" alt="Corazón 2">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita3.JPG"
-                        alt="Corazón 3"
-                    >
-
+                    <img src="fotos/fotocamarita3.JPG" alt="Corazón 3">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita4.JPG"
-                        alt="Corazón 4"
-                    >
-
+                    <img src="fotos/fotocamarita4.JPG" alt="Corazón 4">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita5.JPG"
-                        alt="Corazón 5"
-                    >
-
+                    <img src="fotos/fotocamarita5.JPG" alt="Corazón 5">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita6.JPG"
-                        alt="Corazón 6"
-                    >
-
+                    <img src="fotos/fotocamarita6.JPG" alt="Corazón 6">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita7.JPG"
-                        alt="Corazón 7"
-                    >
-
+                    <img src="fotos/fotocamarita7.JPG" alt="Corazón 7">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita8.JPG"
-                        alt="Corazón 8"
-                    >
-
+                    <img src="fotos/fotocamarita8.JPG" alt="Corazón 8">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita9.JPG"
-                        alt="Corazón 9"
-                    >
-
+                    <img src="fotos/fotocamarita9.JPG" alt="Corazón 9">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita10.JPG"
-                        alt="Corazón 10"
-                    >
-
+                    <img src="fotos/fotocamarita10.JPG" alt="Corazón 10">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita11.JPG"
-                        alt="Corazón 11"
-                    >
-
+                    <img src="fotos/fotocamarita11.JPG" alt="Corazón 11">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita12.JPG"
-                        alt="Corazón 12"
-                    >
-
+                    <img src="fotos/fotocamarita12.JPG" alt="Corazón 12">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita13.JPG"
-                        alt="Corazón 13"
-                    >
-
+                    <img src="fotos/fotocamarita13.JPG" alt="Corazón 13">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita14.JPG"
-                        alt="Corazón 14"
-                    >
-
+                    <img src="fotos/fotocamarita14.JPG" alt="Corazón 14">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita15.JPG"
-                        alt="Corazón 15"
-                    >
-
+                    <img src="fotos/fotocamarita15.JPG" alt="Corazón 15">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita16.JPG"
-                        alt="Corazón 16"
-                    >
-
+                    <img src="fotos/fotocamarita16.JPG" alt="Corazón 16">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita17.JPG"
-                        alt="Corazón 17"
-                    >
-
+                    <img src="fotos/fotocamarita17.JPG" alt="Corazón 17">
                 </div>
 
-
-
                 <div class="foto">
-
-                    <img
-                        src="fotos/fotocamarita18.JPG"
-                        alt="Corazón 18"
-                    >
-
+                    <img src="fotos/fotocamarita18.JPG" alt="Corazón 18">
                 </div>
 
 
@@ -1285,9 +1336,7 @@
 
 
 
-            <!-- ================================= -->
-            <!-- PARTE INFERIOR                   -->
-            <!-- ================================= -->
+            <!-- PARTE INFERIOR -->
 
             <section class="abajo">
 
@@ -1304,7 +1353,6 @@
                     <h2>
                         música
                     </h2>
-
 
 
                     <div class="reproductor">
@@ -1345,11 +1393,76 @@
                     </h2>
 
 
+                    <div class="guestbook-contenido">
 
-                    <div class="mensajes">
 
-                        próximamente vas a poder
-                        dejar mensajes acá...
+                        <!-- FORMULARIO -->
+
+                        <form
+                            class="form-queja"
+                            id="formQueja"
+                        >
+
+
+                            <label for="nombre">
+                                nombre
+                            </label>
+
+
+                            <input
+                                type="text"
+                                id="nombre"
+                                maxlength="30"
+                                placeholder="anónimo también vale"
+                            >
+
+
+                            <label for="mensaje">
+                                queja / mensaje
+                            </label>
+
+
+                            <textarea
+                                id="mensaje"
+                                maxlength="250"
+                                required
+                                placeholder="escribí algo..."
+                            ></textarea>
+
+
+                            <button
+                                type="submit"
+                                id="botonEnviar"
+                            >
+                                dejar queja ♡
+                            </button>
+
+
+                            <div
+                                class="estado"
+                                id="estado"
+                            ></div>
+
+
+                        </form>
+
+
+
+                        <!-- MENSAJES -->
+
+                        <div
+                            class="lista-mensajes"
+                            id="listaMensajes"
+                        >
+
+
+                            <div class="sin-mensajes">
+                                cargando quejas...
+                            </div>
+
+
+                        </div>
+
 
                     </div>
 
@@ -1364,6 +1477,300 @@
 
 
     </div>
+
+
+
+    <!-- SUPABASE -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+
+    <script>
+
+        /*
+            CONEXION A SUPABASE
+        */
+
+        const SUPABASE_URL =
+            "https://zrilfkbfamqalnhivrbi.supabase.co";
+
+
+        const SUPABASE_KEY =
+            "sb_publishable_mcPUeS82W0XCNciGy6KAEA_qVm7P8sG";
+
+
+        const clienteSupabase =
+            supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
+            );
+
+
+
+        /*
+            ELEMENTOS DE LA PAGINA
+        */
+
+        const formQueja =
+            document.getElementById("formQueja");
+
+        const inputNombre =
+            document.getElementById("nombre");
+
+        const inputMensaje =
+            document.getElementById("mensaje");
+
+        const listaMensajes =
+            document.getElementById("listaMensajes");
+
+        const estado =
+            document.getElementById("estado");
+
+        const botonEnviar =
+            document.getElementById("botonEnviar");
+
+
+
+        /*
+            CARGAR MENSAJES
+        */
+
+        async function cargarMensajes() {
+
+            listaMensajes.innerHTML =
+                '<div class="sin-mensajes">cargando quejas...</div>';
+
+
+            const { data, error } =
+                await clienteSupabase
+
+                    .from("mensajes")
+
+                    .select(
+                        "id, nombre, mensaje, created_at"
+                    )
+
+                    .order(
+                        "created_at",
+                        { ascending: false }
+                    )
+
+                    .limit(50);
+
+
+            if (error) {
+
+                console.error(error);
+
+                listaMensajes.innerHTML =
+                    '<div class="sin-mensajes">no se pudieron cargar las quejas :(</div>';
+
+                return;
+            }
+
+
+            listaMensajes.innerHTML = "";
+
+
+            if (!data || data.length === 0) {
+
+                listaMensajes.innerHTML =
+                    '<div class="sin-mensajes">todavía nadie se quejó. sospechoso...</div>';
+
+                return;
+            }
+
+
+            data.forEach((item) => {
+
+                const bloque =
+                    document.createElement("div");
+
+                bloque.className =
+                    "mensaje";
+
+
+                const cabecera =
+                    document.createElement("div");
+
+                cabecera.className =
+                    "mensaje-cabecera";
+
+
+                const nombre =
+                    document.createElement("span");
+
+                nombre.className =
+                    "mensaje-nombre";
+
+                nombre.textContent =
+                    item.nombre || "anónimo";
+
+
+                const fecha =
+                    document.createElement("span");
+
+                fecha.className =
+                    "mensaje-fecha";
+
+
+                const fechaReal =
+                    new Date(item.created_at);
+
+
+                fecha.textContent =
+                    fechaReal.toLocaleDateString(
+                        "es-AR",
+                        {
+                            day: "2-digit",
+                            month: "2-digit",
+                            year: "2-digit"
+                        }
+                    );
+
+
+                const texto =
+                    document.createElement("div");
+
+                texto.className =
+                    "mensaje-texto";
+
+                texto.textContent =
+                    item.mensaje;
+
+
+                cabecera.appendChild(nombre);
+
+                cabecera.appendChild(fecha);
+
+
+                bloque.appendChild(cabecera);
+
+                bloque.appendChild(texto);
+
+
+                listaMensajes.appendChild(
+                    bloque
+                );
+
+            });
+
+        }
+
+
+
+        /*
+            PUBLICAR MENSAJE
+        */
+
+        formQueja.addEventListener(
+            "submit",
+
+            async (evento) => {
+
+                evento.preventDefault();
+
+
+                let nombre =
+                    inputNombre.value.trim();
+
+
+                const mensaje =
+                    inputMensaje.value.trim();
+
+
+                if (!mensaje) {
+
+                    estado.textContent =
+                        "tenés que escribir algo";
+
+                    return;
+                }
+
+
+                if (!nombre) {
+
+                    nombre =
+                        "anónimo";
+                }
+
+
+                botonEnviar.disabled =
+                    true;
+
+
+                estado.textContent =
+                    "publicando...";
+
+
+                const { error } =
+                    await clienteSupabase
+
+                        .from("mensajes")
+
+                        .insert([
+
+                            {
+                                nombre:
+                                    nombre,
+
+                                mensaje:
+                                    mensaje
+                            }
+
+                        ]);
+
+
+                botonEnviar.disabled =
+                    false;
+
+
+                if (error) {
+
+                    console.error(error);
+
+                    estado.textContent =
+                        "no se pudo publicar :(";
+
+                    return;
+                }
+
+
+                inputMensaje.value =
+                    "";
+
+
+                estado.textContent =
+                    "queja publicada ♡";
+
+
+                await cargarMensajes();
+
+
+                setTimeout(
+                    () => {
+
+                        estado.textContent =
+                            "";
+
+                    },
+                    2500
+                );
+
+            }
+        );
+
+
+
+        /*
+            CARGAR AL ABRIR LA PAGINA
+        */
+
+        cargarMensajes();
+
+    </script>
 
 
 </body>
