@@ -2025,7 +2025,95 @@
         actualizarContador();
 
         cargarMensajes();
+/* ======================================== */
+/* CURSOR CORAZÓN 8-BIT                     */
+/* ======================================== */
 
+@media (pointer: fine) {
+
+    body,
+    a,
+    button,
+    input,
+    textarea,
+    .foto {
+        cursor: none !important;
+    }
+
+    .cursor-corazon {
+        position: fixed;
+
+        width: 28px;
+        height: 28px;
+
+        left: 0;
+        top: 0;
+
+        pointer-events: none;
+
+        z-index: 999999;
+
+        transform:
+            translate(-4px, -4px);
+
+        image-rendering: pixelated;
+    }
+
+    .cursor-corazon svg {
+        display: block;
+
+        width: 100%;
+        height: 100%;
+
+        image-rendering: pixelated;
+    }
+
+
+    /* PIXELES DE LA ESTELA */
+
+    .estela-cursor {
+        position: fixed;
+
+        width: 6px;
+        height: 6px;
+
+        pointer-events: none;
+
+        z-index: 999998;
+
+        image-rendering: pixelated;
+
+        animation:
+            desaparecer-estela
+            0.7s linear forwards;
+    }
+
+
+    @keyframes desaparecer-estela {
+
+        0% {
+            opacity: 0.95;
+
+            transform:
+                translate(-50%, -50%)
+                scale(1);
+        }
+
+        70% {
+            opacity: 0.45;
+        }
+
+        100% {
+            opacity: 0;
+
+            transform:
+                translate(-50%, 12px)
+                scale(0.3);
+        }
+
+    }
+
+}
 
     </script>
 
