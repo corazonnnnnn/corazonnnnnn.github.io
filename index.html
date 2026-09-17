@@ -287,8 +287,6 @@
         }
 
 
-        /* MENU */
-
         .menu {
 
             margin-top: 6px;
@@ -596,8 +594,6 @@
                 var(--azul-oscuro);
         }
 
-
-        /* extremos hacia adentro */
 
         .foto:nth-child(6n + 2) {
             transform-origin:
@@ -1013,6 +1009,76 @@
             border:
                 1px solid
                 var(--azul-oscuro);
+        }
+
+
+
+        /* CURSOR CORAZÓN 8-BIT */
+
+        @media (pointer: fine) {
+
+            body,
+            a,
+            button,
+            input,
+            textarea,
+            .foto {
+                cursor: none !important;
+            }
+
+            .cursor-corazon {
+                position: fixed;
+                width: 28px;
+                height: 28px;
+                left: 0;
+                top: 0;
+                pointer-events: none;
+                z-index: 999999;
+                transform: translate(-4px, -4px);
+                image-rendering: pixelated;
+            }
+
+            .cursor-corazon svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                image-rendering: pixelated;
+            }
+
+            .estela-cursor {
+                position: fixed;
+                width: 6px;
+                height: 6px;
+                pointer-events: none;
+                z-index: 999998;
+                image-rendering: pixelated;
+                animation:
+                    desaparecer-estela
+                    0.7s linear forwards;
+            }
+
+            @keyframes desaparecer-estela {
+
+                0% {
+                    opacity: 0.95;
+                    transform:
+                        translate(-50%, -50%)
+                        scale(1);
+                }
+
+                70% {
+                    opacity: 0.45;
+                }
+
+                100% {
+                    opacity: 0;
+                    transform:
+                        translate(-50%, 12px)
+                        scale(0.3);
+                }
+
+            }
+
         }
 
 
@@ -1545,6 +1611,54 @@
 
 
 
+    <!-- CURSOR PERSONALIZADO -->
+
+    <div
+        class="cursor-corazon"
+        id="cursorCorazon"
+    >
+
+        <svg
+            viewBox="0 0 8 8"
+            xmlns="http://www.w3.org/2000/svg"
+            shape-rendering="crispEdges"
+        >
+
+            <rect x="1" y="1" width="2" height="1" fill="#d8a1a9"/>
+            <rect x="5" y="1" width="2" height="1" fill="#d8a1a9"/>
+
+            <rect x="0" y="2" width="8" height="2" fill="#d8a1a9"/>
+
+            <rect x="1" y="4" width="6" height="1" fill="#d8a1a9"/>
+            <rect x="2" y="5" width="4" height="1" fill="#d8a1a9"/>
+            <rect x="3" y="6" width="2" height="1" fill="#d8a1a9"/>
+
+            <rect x="1" y="2" width="1" height="1" fill="#f5edde"/>
+
+            <rect x="1" y="0" width="2" height="1" fill="#4b607d"/>
+            <rect x="5" y="0" width="2" height="1" fill="#4b607d"/>
+
+            <rect x="0" y="1" width="1" height="1" fill="#4b607d"/>
+            <rect x="3" y="1" width="2" height="1" fill="#4b607d"/>
+            <rect x="7" y="1" width="1" height="1" fill="#4b607d"/>
+
+            <rect x="0" y="4" width="1" height="1" fill="#4b607d"/>
+            <rect x="7" y="4" width="1" height="1" fill="#4b607d"/>
+
+            <rect x="1" y="5" width="1" height="1" fill="#4b607d"/>
+            <rect x="6" y="5" width="1" height="1" fill="#4b607d"/>
+
+            <rect x="2" y="6" width="1" height="1" fill="#4b607d"/>
+            <rect x="5" y="6" width="1" height="1" fill="#4b607d"/>
+
+            <rect x="3" y="7" width="2" height="1" fill="#4b607d"/>
+
+        </svg>
+
+    </div>
+
+
+
     <!-- SUPABASE -->
 
     <script
@@ -1571,10 +1685,7 @@
 
 
 
-        /* ===================================== */
-        /* CONTADOR DE VISITAS                  */
-        /* ===================================== */
-
+        /* CONTADOR DE VISITAS */
 
         async function actualizarContador() {
 
@@ -1597,11 +1708,6 @@
             const unDia =
                 24 * 60 * 60 * 1000;
 
-
-            /*
-                SI PASARON 24 HORAS,
-                SUMAMOS UNA VISITA
-            */
 
             if (
                 !ultimaVisita ||
@@ -1642,11 +1748,6 @@
 
 
 
-            /*
-                SI YA FUE CONTADO HOY,
-                SOLO LEEMOS EL TOTAL
-            */
-
             const {
                 data,
                 error
@@ -1683,10 +1784,7 @@
 
 
 
-        /* ===================================== */
-        /* LIBRO DE QUEJAS                      */
-        /* ===================================== */
-
+        /* LIBRO DE QUEJAS */
 
         const formQueja =
             document.getElementById(
@@ -2020,327 +2118,171 @@
 
 
 
+        /* CURSOR CORAZÓN */
+
+        const cursorCorazon =
+            document.getElementById(
+                "cursorCorazon"
+            );
+
+
+        const coloresEstela = [
+
+            "#d8a1a9",
+            "#879eb3",
+            "#8d9a78",
+            "#f5edde",
+            "#a6b7c7"
+
+        ];
+
+
+        let ultimoRastro = 0;
+
+
+        document.addEventListener(
+
+            "mousemove",
+
+            (evento) => {
+
+
+                cursorCorazon.style.left =
+                    evento.clientX + "px";
+
+                cursorCorazon.style.top =
+                    evento.clientY + "px";
+
+
+                const ahora =
+                    Date.now();
+
+
+                if (
+                    ahora - ultimoRastro < 35
+                ) {
+
+                    return;
+
+                }
+
+
+                ultimoRastro =
+                    ahora;
+
+
+
+                const pixel =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                pixel.className =
+                    "estela-cursor";
+
+
+                pixel.style.left =
+                    evento.clientX + "px";
+
+
+                pixel.style.top =
+                    evento.clientY + "px";
+
+
+
+                const color =
+                    coloresEstela[
+                        Math.floor(
+                            Math.random() *
+                            coloresEstela.length
+                        )
+                    ];
+
+
+                pixel.style.background =
+                    color;
+
+
+
+                const desplazamientoX =
+                    Math.random() * 10 - 5;
+
+
+                const desplazamientoY =
+                    Math.random() * 10 - 5;
+
+
+                pixel.style.marginLeft =
+                    desplazamientoX + "px";
+
+
+                pixel.style.marginTop =
+                    desplazamientoY + "px";
+
+
+                document.body.appendChild(
+                    pixel
+                );
+
+
+
+                setTimeout(
+
+                    () => {
+
+                        pixel.remove();
+
+                    },
+
+                    700
+
+                );
+
+            }
+
+        );
+
+
+
+        document.addEventListener(
+
+            "mouseleave",
+
+            () => {
+
+                cursorCorazon.style.display =
+                    "none";
+
+            }
+
+        );
+
+
+        document.addEventListener(
+
+            "mouseenter",
+
+            () => {
+
+                cursorCorazon.style.display =
+                    "block";
+
+            }
+
+        );
+
+
+
         /* ARRANQUE */
 
         actualizarContador();
 
         cargarMensajes();
-/* ======================================== */
-/* CURSOR CORAZÓN 8-BIT                     */
-/* ======================================== */
 
-@media (pointer: fine) {
-
-    body,
-    a,
-    button,
-    input,
-    textarea,
-    .foto {
-        cursor: none !important;
-    }
-
-    .cursor-corazon {
-        position: fixed;
-
-        width: 28px;
-        height: 28px;
-
-        left: 0;
-        top: 0;
-
-        pointer-events: none;
-
-        z-index: 999999;
-
-        transform:
-            translate(-4px, -4px);
-
-        image-rendering: pixelated;
-    }
-
-    .cursor-corazon svg {
-        display: block;
-
-        width: 100%;
-        height: 100%;
-
-        image-rendering: pixelated;
-    }
-
-
-    /* PIXELES DE LA ESTELA */
-
-    .estela-cursor {
-        position: fixed;
-
-        width: 6px;
-        height: 6px;
-
-        pointer-events: none;
-
-        z-index: 999998;
-
-        image-rendering: pixelated;
-
-        animation:
-            desaparecer-estela
-            0.7s linear forwards;
-    }
-
-
-    @keyframes desaparecer-estela {
-
-        0% {
-            opacity: 0.95;
-
-            transform:
-                translate(-50%, -50%)
-                scale(1);
-        }
-
-        70% {
-            opacity: 0.45;
-        }
-
-        100% {
-            opacity: 0;
-
-            transform:
-                translate(-50%, 12px)
-                scale(0.3);
-        }
-
-    }
-
-}
 
     </script>
-<!-- CURSOR PERSONALIZADO -->
 
-<div
-    class="cursor-corazon"
-    id="cursorCorazon"
->
-    <svg
-        viewBox="0 0 8 8"
-        xmlns="http://www.w3.org/2000/svg"
-        shape-rendering="crispEdges"
-    >
-
-        <!-- corazón pixelado -->
-
-        <rect x="1" y="1" width="2" height="1" fill="#d8a1a9"/>
-        <rect x="5" y="1" width="2" height="1" fill="#d8a1a9"/>
-
-        <rect x="0" y="2" width="8" height="2" fill="#d8a1a9"/>
-
-        <rect x="1" y="4" width="6" height="1" fill="#d8a1a9"/>
-        <rect x="2" y="5" width="4" height="1" fill="#d8a1a9"/>
-        <rect x="3" y="6" width="2" height="1" fill="#d8a1a9"/>
-
-        <!-- brillo -->
-
-        <rect x="1" y="2" width="1" height="1" fill="#f5edde"/>
-
-        <!-- borde -->
-
-        <rect x="1" y="0" width="2" height="1" fill="#4b607d"/>
-        <rect x="5" y="0" width="2" height="1" fill="#4b607d"/>
-
-        <rect x="0" y="1" width="1" height="1" fill="#4b607d"/>
-        <rect x="3" y="1" width="2" height="1" fill="#4b607d"/>
-        <rect x="7" y="1" width="1" height="1" fill="#4b607d"/>
-
-        <rect x="0" y="4" width="1" height="1" fill="#4b607d"/>
-        <rect x="7" y="4" width="1" height="1" fill="#4b607d"/>
-
-        <rect x="1" y="5" width="1" height="1" fill="#4b607d"/>
-        <rect x="6" y="5" width="1" height="1" fill="#4b607d"/>
-
-        <rect x="2" y="6" width="1" height="1" fill="#4b607d"/>
-        <rect x="5" y="6" width="1" height="1" fill="#4b607d"/>
-
-        <rect x="3" y="7" width="2" height="1" fill="#4b607d"/>
-
-    </svg>
-</div>
-
-
-<script>
-
-    const cursorCorazon =
-        document.getElementById(
-            "cursorCorazon"
-        );
-
-
-    const coloresEstela = [
-
-        "#d8a1a9",
-        "#879eb3",
-        "#8d9a78",
-        "#f5edde",
-        "#a6b7c7"
-
-    ];
-
-
-    let ultimoRastro = 0;
-
-
-    document.addEventListener(
-
-        "mousemove",
-
-        (evento) => {
-
-
-            /* MOVER CORAZÓN */
-
-            cursorCorazon.style.left =
-                evento.clientX + "px";
-
-            cursorCorazon.style.top =
-                evento.clientY + "px";
-
-
-
-            /*
-                NO CREAR DEMASIADOS
-                PIXELES A LA VEZ
-            */
-
-            const ahora =
-                Date.now();
-
-
-            if (
-                ahora - ultimoRastro < 35
-            ) {
-
-                return;
-
-            }
-
-
-            ultimoRastro =
-                ahora;
-
-
-
-            /* CREAR ESTELA */
-
-            const pixel =
-                document.createElement(
-                    "div"
-                );
-
-
-            pixel.className =
-                "estela-cursor";
-
-
-            pixel.style.left =
-                evento.clientX + "px";
-
-
-            pixel.style.top =
-                evento.clientY + "px";
-
-
-
-            const color =
-                coloresEstela[
-                    Math.floor(
-                        Math.random() *
-                        coloresEstela.length
-                    )
-                ];
-
-
-            pixel.style.background =
-                color;
-
-
-
-            /*
-                PEQUEÑA VARIACIÓN
-                DE POSICIÓN
-            */
-
-            const desplazamientoX =
-                Math.random() * 10 - 5;
-
-
-            const desplazamientoY =
-                Math.random() * 10 - 5;
-
-
-            pixel.style.marginLeft =
-                desplazamientoX + "px";
-
-
-            pixel.style.marginTop =
-                desplazamientoY + "px";
-
-
-            document.body.appendChild(
-                pixel
-            );
-
-
-
-            /* BORRARLO DESPUÉS */
-
-            setTimeout(
-
-                () => {
-
-                    pixel.remove();
-
-                },
-
-                700
-
-            );
-
-        }
-
-    );
-
-
-
-    /* OCULTAR CUANDO SALE DE LA VENTANA */
-
-    document.addEventListener(
-
-        "mouseleave",
-
-        () => {
-
-            cursorCorazon.style.display =
-                "none";
-
-        }
-
-    );
-
-
-    document.addEventListener(
-
-        "mouseenter",
-
-        () => {
-
-            cursorCorazon.style.display =
-                "block";
-
-        }
-
-    );
-
-</script>
 
 </body>
 
