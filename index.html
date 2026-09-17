@@ -287,6 +287,8 @@
         }
 
 
+        /* MENU */
+
         .menu {
 
             margin-top: 6px;
@@ -330,17 +332,86 @@
         }
 
 
+
+        /* CONTADOR DE VISITAS */
+
+        .contador-visitas {
+
+            margin-top: 20px;
+
+            padding:
+                11px 9px;
+
+            text-align: center;
+
+            background:
+                rgba(255,255,255,0.40);
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            box-shadow:
+                inset 0 0 0 1px
+                rgba(216,161,169,0.18);
+
+            color:
+                var(--azul-oscuro);
+        }
+
+
+        .contador-titulo {
+
+            font-size: 11px;
+
+            letter-spacing: 1px;
+
+            color:
+                var(--rosa);
+
+            margin-bottom: 4px;
+        }
+
+
+        .contador-texto {
+
+            font-size: 12px;
+
+            line-height: 1.4;
+        }
+
+
+        .contador-numero {
+
+            display: inline-block;
+
+            margin-top: 3px;
+
+            font-size: 20px;
+
+            font-weight: bold;
+
+            letter-spacing: 2px;
+
+            color:
+                var(--azul-oscuro);
+        }
+
+
+
+        /* ACTUALIZACION */
+
         .actualizacion {
 
-            margin-top: 22px;
+            margin-top: 18px;
 
-            padding-top: 12px;
+            padding-top: 10px;
 
             border-top:
                 1px solid
                 rgba(75,96,125,0.22);
 
-            font-size: 12px;
+            font-size: 11px;
 
             color: #5c6673;
         }
@@ -348,7 +419,7 @@
 
         .firma {
 
-            margin-top: 18px;
+            margin-top: 14px;
 
             font-size: 12px;
 
@@ -526,8 +597,7 @@
         }
 
 
-
-        /* fotos de extremos crecen hacia adentro */
+        /* extremos hacia adentro */
 
         .foto:nth-child(6n + 2) {
             transform-origin:
@@ -556,7 +626,6 @@
 
             height: 100%;
         }
-
 
 
         .musica,
@@ -612,7 +681,6 @@
 
                 );
         }
-
 
 
         .musica h2,
@@ -706,9 +774,6 @@
         }
 
 
-
-        /* FORMULARIO */
-
         .form-queja {
 
             border:
@@ -765,11 +830,9 @@
         }
 
 
-        .form-queja input:focus,
-        .form-queja textarea:focus {
+        .form-queja input {
 
-            border-color:
-                var(--azul-oscuro);
+            margin-bottom: 7px;
         }
 
 
@@ -780,12 +843,6 @@
             resize: none;
 
             margin-bottom: 6px;
-        }
-
-
-        .form-queja input {
-
-            margin-bottom: 7px;
         }
 
 
@@ -836,7 +893,7 @@
 
 
 
-        /* LISTADO DE MENSAJES */
+        /* MENSAJES */
 
         .lista-mensajes {
 
@@ -934,9 +991,6 @@
             font-style: italic;
         }
 
-
-
-        /* SCROLL DEL LIBRO */
 
         .lista-mensajes::-webkit-scrollbar {
 
@@ -1193,31 +1247,56 @@
 
                 <div class="menu">
 
-
                     <a href="#">
                         inicio
                     </a>
-
 
                     <a href="#fotos">
                         fotos
                     </a>
 
-
                     <a href="#musica">
                         música
                     </a>
-
 
                     <a href="#guestbook">
                         guestbook
                     </a>
 
-
                     <a href="#">
                         contacto
                     </a>
 
+                </div>
+
+
+
+                <!-- CONTADOR -->
+
+                <div class="contador-visitas">
+
+                    <div class="contador-titulo">
+                        ✧ FELICIDADES ✧
+                    </div>
+
+                    <div class="contador-texto">
+
+                        SOS LA VISITA NÚMERO
+
+                        <br>
+
+                        <span
+                            class="contador-numero"
+                            id="numeroVisitas"
+                        >
+                            ...
+                        </span>
+
+                        <br>
+
+                        ♡
+
+                    </div>
 
                 </div>
 
@@ -1349,14 +1428,12 @@
                     id="musica"
                 >
 
-
                     <h2>
                         música
                     </h2>
 
 
                     <div class="reproductor">
-
 
                         <iframe
 
@@ -1372,9 +1449,7 @@
 
                         ></iframe>
 
-
                     </div>
-
 
                 </div>
 
@@ -1387,7 +1462,6 @@
                     id="guestbook"
                 >
 
-
                     <h2>
                         libro de quejas
                     </h2>
@@ -1396,13 +1470,10 @@
                     <div class="guestbook-contenido">
 
 
-                        <!-- FORMULARIO -->
-
                         <form
                             class="form-queja"
                             id="formQueja"
                         >
-
 
                             <label for="nombre">
                                 nombre
@@ -1443,29 +1514,23 @@
                                 id="estado"
                             ></div>
 
-
                         </form>
 
 
-
-                        <!-- MENSAJES -->
 
                         <div
                             class="lista-mensajes"
                             id="listaMensajes"
                         >
 
-
                             <div class="sin-mensajes">
                                 cargando quejas...
                             </div>
-
 
                         </div>
 
 
                     </div>
-
 
                 </div>
 
@@ -1487,11 +1552,8 @@
     ></script>
 
 
-    <script>
 
-        /*
-            CONEXION A SUPABASE
-        */
+    <script>
 
         const SUPABASE_URL =
             "https://zrilfkbfamqalnhivrbi.supabase.co";
@@ -1509,33 +1571,159 @@
 
 
 
-        /*
-            ELEMENTOS DE LA PAGINA
-        */
+        /* ===================================== */
+        /* CONTADOR DE VISITAS                  */
+        /* ===================================== */
+
+
+        async function actualizarContador() {
+
+            const elemento =
+                document.getElementById(
+                    "numeroVisitas"
+                );
+
+
+            const ahora =
+                Date.now();
+
+
+            const ultimaVisita =
+                localStorage.getItem(
+                    "corazon_ultima_visita"
+                );
+
+
+            const unDia =
+                24 * 60 * 60 * 1000;
+
+
+            /*
+                SI PASARON 24 HORAS,
+                SUMAMOS UNA VISITA
+            */
+
+            if (
+                !ultimaVisita ||
+                ahora - Number(ultimaVisita) > unDia
+            ) {
+
+                const {
+                    data,
+                    error
+                } =
+                    await clienteSupabase
+                        .rpc(
+                            "incrementar_visitas"
+                        );
+
+
+                if (!error) {
+
+                    elemento.textContent =
+                        data;
+
+                    localStorage.setItem(
+                        "corazon_ultima_visita",
+                        ahora.toString()
+                    );
+
+                    return;
+
+                }
+
+
+                console.error(
+                    "Error contador:",
+                    error
+                );
+
+            }
+
+
+
+            /*
+                SI YA FUE CONTADO HOY,
+                SOLO LEEMOS EL TOTAL
+            */
+
+            const {
+                data,
+                error
+            } =
+                await clienteSupabase
+
+                    .from("visitas")
+
+                    .select("contador")
+
+                    .eq("id", 1)
+
+                    .single();
+
+
+            if (error) {
+
+                console.error(
+                    "Error leyendo contador:",
+                    error
+                );
+
+                elemento.textContent =
+                    "?";
+
+                return;
+            }
+
+
+            elemento.textContent =
+                data.contador;
+
+        }
+
+
+
+        /* ===================================== */
+        /* LIBRO DE QUEJAS                      */
+        /* ===================================== */
+
 
         const formQueja =
-            document.getElementById("formQueja");
+            document.getElementById(
+                "formQueja"
+            );
+
 
         const inputNombre =
-            document.getElementById("nombre");
+            document.getElementById(
+                "nombre"
+            );
+
 
         const inputMensaje =
-            document.getElementById("mensaje");
+            document.getElementById(
+                "mensaje"
+            );
+
 
         const listaMensajes =
-            document.getElementById("listaMensajes");
+            document.getElementById(
+                "listaMensajes"
+            );
+
 
         const estado =
-            document.getElementById("estado");
+            document.getElementById(
+                "estado"
+            );
+
 
         const botonEnviar =
-            document.getElementById("botonEnviar");
+            document.getElementById(
+                "botonEnviar"
+            );
 
 
-
-        /*
-            CARGAR MENSAJES
-        */
 
         async function cargarMensajes() {
 
@@ -1543,7 +1731,10 @@
                 '<div class="sin-mensajes">cargando quejas...</div>';
 
 
-            const { data, error } =
+            const {
+                data,
+                error
+            } =
                 await clienteSupabase
 
                     .from("mensajes")
@@ -1554,7 +1745,9 @@
 
                     .order(
                         "created_at",
-                        { ascending: false }
+                        {
+                            ascending: false
+                        }
                     )
 
                     .limit(50);
@@ -1568,117 +1761,167 @@
                     '<div class="sin-mensajes">no se pudieron cargar las quejas :(</div>';
 
                 return;
+
             }
 
 
-            listaMensajes.innerHTML = "";
+            listaMensajes.innerHTML =
+                "";
 
 
-            if (!data || data.length === 0) {
+            if (
+                !data ||
+                data.length === 0
+            ) {
 
                 listaMensajes.innerHTML =
                     '<div class="sin-mensajes">todavía nadie se quejó. sospechoso...</div>';
 
                 return;
+
             }
 
 
-            data.forEach((item) => {
 
-                const bloque =
-                    document.createElement("div");
-
-                bloque.className =
-                    "mensaje";
+            data.forEach(
+                (item) => {
 
 
-                const cabecera =
-                    document.createElement("div");
-
-                cabecera.className =
-                    "mensaje-cabecera";
-
-
-                const nombre =
-                    document.createElement("span");
-
-                nombre.className =
-                    "mensaje-nombre";
-
-                nombre.textContent =
-                    item.nombre || "anónimo";
+                    const bloque =
+                        document.createElement(
+                            "div"
+                        );
 
 
-                const fecha =
-                    document.createElement("span");
-
-                fecha.className =
-                    "mensaje-fecha";
+                    bloque.className =
+                        "mensaje";
 
 
-                const fechaReal =
-                    new Date(item.created_at);
+
+                    const cabecera =
+                        document.createElement(
+                            "div"
+                        );
 
 
-                fecha.textContent =
-                    fechaReal.toLocaleDateString(
-                        "es-AR",
-                        {
-                            day: "2-digit",
-                            month: "2-digit",
-                            year: "2-digit"
-                        }
+                    cabecera.className =
+                        "mensaje-cabecera";
+
+
+
+                    const nombre =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    nombre.className =
+                        "mensaje-nombre";
+
+
+                    nombre.textContent =
+                        item.nombre ||
+                        "anónimo";
+
+
+
+                    const fecha =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    fecha.className =
+                        "mensaje-fecha";
+
+
+
+                    const fechaReal =
+                        new Date(
+                            item.created_at
+                        );
+
+
+                    fecha.textContent =
+                        fechaReal.toLocaleDateString(
+                            "es-AR",
+                            {
+                                day: "2-digit",
+                                month: "2-digit",
+                                year: "2-digit"
+                            }
+                        );
+
+
+
+                    const texto =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    texto.className =
+                        "mensaje-texto";
+
+
+                    texto.textContent =
+                        item.mensaje;
+
+
+
+                    cabecera.appendChild(
+                        nombre
                     );
 
 
-                const texto =
-                    document.createElement("div");
-
-                texto.className =
-                    "mensaje-texto";
-
-                texto.textContent =
-                    item.mensaje;
+                    cabecera.appendChild(
+                        fecha
+                    );
 
 
-                cabecera.appendChild(nombre);
-
-                cabecera.appendChild(fecha);
-
-
-                bloque.appendChild(cabecera);
-
-                bloque.appendChild(texto);
+                    bloque.appendChild(
+                        cabecera
+                    );
 
 
-                listaMensajes.appendChild(
-                    bloque
-                );
+                    bloque.appendChild(
+                        texto
+                    );
 
-            });
+
+                    listaMensajes.appendChild(
+                        bloque
+                    );
+
+                }
+            );
 
         }
 
 
 
-        /*
-            PUBLICAR MENSAJE
-        */
+        /* PUBLICAR QUEJA */
 
         formQueja.addEventListener(
+
             "submit",
 
             async (evento) => {
+
 
                 evento.preventDefault();
 
 
                 let nombre =
-                    inputNombre.value.trim();
+                    inputNombre
+                        .value
+                        .trim();
 
 
                 const mensaje =
-                    inputMensaje.value.trim();
+                    inputMensaje
+                        .value
+                        .trim();
 
 
                 if (!mensaje) {
@@ -1687,6 +1930,7 @@
                         "tenés que escribir algo";
 
                     return;
+
                 }
 
 
@@ -1694,6 +1938,7 @@
 
                     nombre =
                         "anónimo";
+
                 }
 
 
@@ -1705,7 +1950,9 @@
                     "publicando...";
 
 
-                const { error } =
+                const {
+                    error
+                } =
                     await clienteSupabase
 
                         .from("mensajes")
@@ -1729,12 +1976,17 @@
 
                 if (error) {
 
-                    console.error(error);
+                    console.error(
+                        error
+                    );
+
 
                     estado.textContent =
                         "no se pudo publicar :(";
 
+
                     return;
+
                 }
 
 
@@ -1750,25 +2002,30 @@
 
 
                 setTimeout(
+
                     () => {
 
                         estado.textContent =
                             "";
 
                     },
+
                     2500
+
                 );
 
             }
+
         );
 
 
 
-        /*
-            CARGAR AL ABRIR LA PAGINA
-        */
+        /* ARRANQUE */
+
+        actualizarContador();
 
         cargarMensajes();
+
 
     </script>
 
