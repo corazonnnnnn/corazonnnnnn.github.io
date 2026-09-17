@@ -103,7 +103,6 @@
             min-height: 1130px;
 
             position: relative;
-
             z-index: 1;
         }
 
@@ -155,8 +154,7 @@
 
             margin-bottom: 18px;
 
-            color:
-                var(--azul-oscuro);
+            color: var(--azul-oscuro);
 
             line-height: 1;
         }
@@ -176,8 +174,7 @@
             width: 70px;
             height: 2px;
 
-            background:
-                var(--rosa);
+            background: var(--rosa);
 
             margin:
                 16px 0 18px 0;
@@ -208,19 +205,16 @@
 
             margin-bottom: 10px;
 
-            color:
-                var(--azul-oscuro);
+            color: var(--azul-oscuro);
 
-            text-decoration:
-                underline;
+            text-decoration: underline;
 
             font-size: 17px;
         }
 
         .menu a::before {
             content: "♡ ";
-            color:
-                var(--rosa);
+            color: var(--rosa);
         }
 
         .actualizacion {
@@ -241,8 +235,7 @@
 
             font-size: 13px;
 
-            color:
-                var(--verde);
+            color: var(--verde);
 
             letter-spacing: 1px;
         }
@@ -309,8 +302,7 @@
             font-size: 19px;
             letter-spacing: 1px;
 
-            color:
-                var(--azul-oscuro);
+            color: var(--azul-oscuro);
 
             background:
                 rgba(252,250,246,0.88);
@@ -323,14 +315,13 @@
         .titulo-fotos::after {
             content: "  ♡";
 
-            color:
-                var(--rosa);
+            color: var(--rosa);
 
             font-size: 16px;
         }
 
 
-        /* FOTOS */
+        /* FOTOS NORMALES */
 
         .foto {
             position: relative;
@@ -343,8 +334,7 @@
 
             padding: 4px;
 
-            background:
-                var(--blanco);
+            background: var(--blanco);
 
             border:
                 2px solid var(--azul-oscuro);
@@ -357,8 +347,10 @@
             overflow: hidden;
 
             transition:
-                transform 0.22s ease,
-                box-shadow 0.22s ease;
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+
+            z-index: 1;
         }
 
         .foto img {
@@ -371,16 +363,31 @@
             object-position: center;
         }
 
+
+        /* FOTO AGRANDADA AL PASAR EL MOUSE */
+
         .foto:hover {
-            transform:
-                scale(1.35);
+            transform: scale(3);
 
-            z-index: 50;
+            aspect-ratio: 1 / 1;
 
-            overflow: visible;
+            z-index: 100;
+
+            overflow: hidden;
 
             box-shadow:
-                0 8px 20px rgba(75,96,125,0.28);
+                0 10px 30px rgba(75,96,125,0.40);
+
+            border:
+                2px solid var(--azul-oscuro);
+        }
+
+        .foto:hover img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            object-position: center;
         }
 
 
@@ -442,16 +449,14 @@
 
             letter-spacing: 1px;
 
-            color:
-                var(--azul-oscuro);
+            color: var(--azul-oscuro);
         }
 
         .musica h2::after,
         .guestbook h2::after {
             content: "  ♡";
 
-            color:
-                var(--rosa);
+            color: var(--rosa);
 
             font-size: 16px;
         }
@@ -557,9 +562,10 @@
                 aspect-ratio: 1 / 1;
             }
 
+            /* En celular evitamos el aumento x3 */
             .foto:hover {
-                transform:
-                    scale(1.05);
+                transform: scale(1.05);
+                aspect-ratio: 1 / 1;
             }
 
             .abajo {
@@ -573,6 +579,7 @@
                     4px solid var(--azul-oscuro);
             }
         }
+
     </style>
 </head>
 
