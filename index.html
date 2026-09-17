@@ -22,7 +22,6 @@
             --rosa-suave: #edd4d7;
 
             --verde: #8d9a78;
-
             --texto: #2e3440;
         }
 
@@ -32,9 +31,7 @@
 
         body {
             margin: 0;
-
             color: var(--texto);
-
             font-family: "Times New Roman", Times, serif;
 
             background-color: var(--beige);
@@ -50,16 +47,12 @@
                 );
 
             background-size: 18px 18px;
-
-            background-position:
-                0 0,
-                9px 9px;
+            background-position: 0 0, 9px 9px;
         }
 
         .pagina {
             width: 95%;
             max-width: 1200px;
-
             margin: 24px auto;
 
             background: rgba(252,250,246,0.92);
@@ -70,15 +63,12 @@
                 0 3px 12px rgba(75,96,125,0.15);
 
             position: relative;
-
             overflow: hidden;
         }
 
         .pagina::before {
             content: "";
-
             position: absolute;
-
             inset: 10px;
 
             border:
@@ -89,9 +79,7 @@
 
         .pagina::after {
             content: "";
-
             position: absolute;
-
             inset: 18px;
 
             border:
@@ -162,9 +150,7 @@
 
         .logo {
             font-size: 35px;
-
             font-weight: bold;
-
             letter-spacing: 2px;
 
             margin-bottom: 18px;
@@ -177,21 +163,17 @@
 
         .subtitulo {
             font-size: 20px;
-
             margin-bottom: 8px;
         }
 
         .lugar {
             font-size: 16px;
-
             color: #596573;
-
             margin-bottom: 20px;
         }
 
         .lineita {
             width: 70px;
-
             height: 2px;
 
             background:
@@ -203,9 +185,7 @@
 
         .texto-info {
             font-size: 16px;
-
             line-height: 1.55;
-
             margin-bottom: 24px;
         }
 
@@ -224,7 +204,6 @@
 
         .menu a {
             display: block;
-
             width: fit-content;
 
             margin-bottom: 10px;
@@ -240,7 +219,6 @@
 
         .menu a::before {
             content: "♡ ";
-
             color:
                 var(--rosa);
         }
@@ -275,9 +253,20 @@
         .fotos {
             position: relative;
 
-            min-height: 850px;
+            display: grid;
 
-            overflow: visible;
+            grid-template-columns:
+                repeat(6, 1fr);
+
+            grid-template-rows:
+                repeat(3, 1fr);
+
+            gap: 8px;
+
+            padding:
+                65px 18px 18px 18px;
+
+            min-height: 850px;
 
             background:
                 linear-gradient(
@@ -288,6 +277,8 @@
 
             border-bottom:
                 4px solid var(--azul-oscuro);
+
+            overflow: visible;
         }
 
         .fotos::before {
@@ -316,7 +307,6 @@
             left: 30px;
 
             font-size: 19px;
-
             letter-spacing: 1px;
 
             color:
@@ -325,8 +315,9 @@
             background:
                 rgba(252,250,246,0.88);
 
-            padding:
-                0 8px 0 0;
+            padding-right: 8px;
+
+            z-index: 10;
         }
 
         .titulo-fotos::after {
@@ -342,177 +333,54 @@
         /* FOTOS */
 
         .foto {
-            position: absolute;
+            position: relative;
 
-            width: 115px;
+            width: 100%;
+            height: 100%;
+
+            min-width: 0;
+            min-height: 0;
+
+            padding: 4px;
 
             background:
                 var(--blanco);
 
             border:
-                3px solid var(--azul-oscuro);
-
-            padding: 4px;
+                2px solid var(--azul-oscuro);
 
             box-shadow:
-                0 2px 8px rgba(75,96,125,0.13);
+                0 2px 6px rgba(75,96,125,0.13);
 
             cursor: pointer;
+
+            overflow: hidden;
 
             transition:
                 transform 0.22s ease,
                 box-shadow 0.22s ease;
-
-            transform:
-                rotate(var(--rot, 0deg));
         }
 
         .foto img {
             width: 100%;
-
-            height: auto;
+            height: 100%;
 
             display: block;
+
+            object-fit: cover;
+            object-position: center;
         }
 
         .foto:hover {
             transform:
-                scale(1.65)
-                rotate(var(--rot, 0deg));
+                scale(1.35);
 
             z-index: 50;
 
+            overflow: visible;
+
             box-shadow:
-                0 8px 18px
-                rgba(75,96,125,0.22);
-        }
-
-        .foto::after {
-            content: "";
-
-            position: absolute;
-
-            width: 13px;
-            height: 13px;
-
-            right: 5px;
-            bottom: 5px;
-
-            border-radius: 50%;
-
-            background:
-                rgba(216,161,169,0.20);
-        }
-
-
-        /* DISTRIBUCION DE LAS 18 FOTOS */
-
-        .foto1 {
-            top: 70px;
-            left: 65px;
-            --rot: -2deg;
-        }
-
-        .foto2 {
-            top: 45px;
-            left: 205px;
-            --rot: 1deg;
-        }
-
-        .foto3 {
-            top: 85px;
-            left: 350px;
-            --rot: -1deg;
-        }
-
-        .foto4 {
-            top: 55px;
-            left: 500px;
-            --rot: 2deg;
-        }
-
-        .foto5 {
-            top: 195px;
-            left: 115px;
-            --rot: 1.5deg;
-        }
-
-        .foto6 {
-            top: 175px;
-            left: 265px;
-            --rot: -2deg;
-        }
-
-        .foto7 {
-            top: 205px;
-            left: 420px;
-            --rot: 1deg;
-        }
-
-        .foto8 {
-            top: 190px;
-            left: 570px;
-            --rot: -1deg;
-        }
-
-        .foto9 {
-            top: 325px;
-            left: 60px;
-            --rot: 2deg;
-        }
-
-        .foto10 {
-            top: 340px;
-            left: 215px;
-            --rot: -1deg;
-        }
-
-        .foto11 {
-            top: 320px;
-            left: 375px;
-            --rot: 1.5deg;
-        }
-
-        .foto12 {
-            top: 350px;
-            left: 535px;
-            --rot: -2deg;
-        }
-
-        .foto13 {
-            top: 485px;
-            left: 110px;
-            --rot: -1deg;
-        }
-
-        .foto14 {
-            top: 470px;
-            left: 275px;
-            --rot: 2deg;
-        }
-
-        .foto15 {
-            top: 500px;
-            left: 440px;
-            --rot: -1.5deg;
-        }
-
-        .foto16 {
-            top: 625px;
-            left: 75px;
-            --rot: 1deg;
-        }
-
-        .foto17 {
-            top: 615px;
-            left: 250px;
-            --rot: -2deg;
-        }
-
-        .foto18 {
-            top: 640px;
-            left: 430px;
-            --rot: 2deg;
+                0 8px 20px rgba(75,96,125,0.28);
         }
 
 
@@ -601,11 +469,9 @@
                 2px solid var(--azul-medio);
 
             box-shadow:
-                inset 0 0 0 1px
-                rgba(255,255,255,0.35);
+                inset 0 0 0 1px rgba(255,255,255,0.35);
 
             font-size: 17px;
-
             line-height: 1.5;
 
             position: relative;
@@ -651,13 +517,11 @@
 
             .pagina {
                 width: 96%;
-
                 margin: 12px auto;
             }
 
             .estructura {
                 display: block;
-
                 min-height: auto;
             }
 
@@ -675,36 +539,27 @@
             .fotos {
                 min-height: auto;
 
-                padding:
-                    70px 15px 25px 15px;
-
-                display: grid;
-
                 grid-template-columns:
                     repeat(2, 1fr);
 
-                gap: 12px;
+                grid-template-rows:
+                    none;
+
+                gap: 8px;
+
+                padding:
+                    65px 10px 15px 10px;
 
                 overflow: hidden;
             }
 
             .foto {
-                position: relative;
-
-                top: auto !important;
-
-                left: auto !important;
-
-                width: 100%;
-
-                transform:
-                    rotate(var(--rot, 0deg));
+                aspect-ratio: 1 / 1;
             }
 
             .foto:hover {
                 transform:
-                    scale(1.08)
-                    rotate(var(--rot, 0deg));
+                    scale(1.05);
             }
 
             .abajo {
@@ -799,76 +654,75 @@
                     fotos
                 </div>
 
-
-                <div class="foto foto1">
+                <div class="foto">
                     <img src="fotos/fotocamarita1.JPG" alt="Corazón 1">
                 </div>
 
-                <div class="foto foto2">
+                <div class="foto">
                     <img src="fotos/fotocamarita2.JPG" alt="Corazón 2">
                 </div>
 
-                <div class="foto foto3">
+                <div class="foto">
                     <img src="fotos/fotocamarita3.JPG" alt="Corazón 3">
                 </div>
 
-                <div class="foto foto4">
+                <div class="foto">
                     <img src="fotos/fotocamarita4.JPG" alt="Corazón 4">
                 </div>
 
-                <div class="foto foto5">
+                <div class="foto">
                     <img src="fotos/fotocamarita5.JPG" alt="Corazón 5">
                 </div>
 
-                <div class="foto foto6">
+                <div class="foto">
                     <img src="fotos/fotocamarita6.JPG" alt="Corazón 6">
                 </div>
 
-                <div class="foto foto7">
+                <div class="foto">
                     <img src="fotos/fotocamarita7.JPG" alt="Corazón 7">
                 </div>
 
-                <div class="foto foto8">
+                <div class="foto">
                     <img src="fotos/fotocamarita8.JPG" alt="Corazón 8">
                 </div>
 
-                <div class="foto foto9">
+                <div class="foto">
                     <img src="fotos/fotocamarita9.JPG" alt="Corazón 9">
                 </div>
 
-                <div class="foto foto10">
+                <div class="foto">
                     <img src="fotos/fotocamarita10.JPG" alt="Corazón 10">
                 </div>
 
-                <div class="foto foto11">
+                <div class="foto">
                     <img src="fotos/fotocamarita11.JPG" alt="Corazón 11">
                 </div>
 
-                <div class="foto foto12">
+                <div class="foto">
                     <img src="fotos/fotocamarita12.JPG" alt="Corazón 12">
                 </div>
 
-                <div class="foto foto13">
+                <div class="foto">
                     <img src="fotos/fotocamarita13.JPG" alt="Corazón 13">
                 </div>
 
-                <div class="foto foto14">
+                <div class="foto">
                     <img src="fotos/fotocamarita14.JPG" alt="Corazón 14">
                 </div>
 
-                <div class="foto foto15">
+                <div class="foto">
                     <img src="fotos/fotocamarita15.JPG" alt="Corazón 15">
                 </div>
 
-                <div class="foto foto16">
+                <div class="foto">
                     <img src="fotos/fotocamarita16.JPG" alt="Corazón 16">
                 </div>
 
-                <div class="foto foto17">
+                <div class="foto">
                     <img src="fotos/fotocamarita17.JPG" alt="Corazón 17">
                 </div>
 
-                <div class="foto foto18">
+                <div class="foto">
                     <img src="fotos/fotocamarita18.JPG" alt="Corazón 18">
                 </div>
 
@@ -876,12 +730,9 @@
 
 
 
-            <!-- ABAJO -->
+            <!-- PARTE INFERIOR -->
 
             <section class="abajo">
-
-
-                <!-- MUSICA -->
 
                 <div class="musica">
 
@@ -890,17 +741,12 @@
                     </h2>
 
                     <div class="reproductor">
-
                         acá va a ir el reproductor
                         de SoundCloud.
-
                     </div>
 
                 </div>
 
-
-
-                <!-- GUESTBOOK -->
 
                 <div class="guestbook">
 
@@ -909,17 +755,13 @@
                     </h2>
 
                     <div class="mensajes">
-
                         próximamente vas a poder
                         dejar mensajes acá...
-
                     </div>
 
                 </div>
 
-
             </section>
-
 
         </div>
 
