@@ -47,9 +47,12 @@
 
         html,
         body {
+
             width: 100%;
             height: 100%;
+
             margin: 0;
+
             overflow: hidden;
         }
 
@@ -292,6 +295,7 @@
         }
 
 
+
         /* MENU */
 
         .menu {
@@ -342,15 +346,80 @@
 
 
 
+        /* REDES */
+
+        .redes {
+
+            margin-top: 14px;
+
+            padding-top: 10px;
+
+            border-top:
+                1px dotted
+                rgba(75,96,125,0.35);
+        }
+
+
+        .redes-titulo {
+
+            font-size: 10px;
+
+            color:
+                var(--verde);
+
+            letter-spacing: 1px;
+
+            margin-bottom: 6px;
+        }
+
+
+        .redes a {
+
+            display: block;
+
+            width:
+                fit-content;
+
+            margin-bottom: 4px;
+
+            font-size: 11px;
+
+            color:
+                var(--azul-oscuro);
+
+            text-decoration:
+                underline;
+        }
+
+
+        .redes a:hover {
+
+            color:
+                var(--rosa);
+        }
+
+
+        .icono-red {
+
+            display: inline-block;
+
+            width: 27px;
+
+            color:
+                var(--rosa);
+        }
+
+
+
         /* CONTADOR */
 
         .contador-visitas {
 
             margin-top:
-                20px;
+                14px;
 
             padding:
-                11px 9px;
+                9px 8px;
 
             text-align:
                 center;
@@ -374,7 +443,7 @@
         .contador-titulo {
 
             font-size:
-                11px;
+                10px;
 
             letter-spacing:
                 1px;
@@ -383,17 +452,17 @@
                 var(--rosa);
 
             margin-bottom:
-                4px;
+                3px;
         }
 
 
         .contador-texto {
 
             font-size:
-                12px;
+                11px;
 
             line-height:
-                1.4;
+                1.3;
         }
 
 
@@ -403,10 +472,10 @@
                 inline-block;
 
             margin-top:
-                3px;
+                2px;
 
             font-size:
-                20px;
+                19px;
 
             font-weight:
                 bold;
@@ -425,17 +494,17 @@
         .actualizacion {
 
             margin-top:
-                18px;
+                12px;
 
             padding-top:
-                10px;
+                8px;
 
             border-top:
                 1px solid
                 rgba(75,96,125,0.22);
 
             font-size:
-                11px;
+                10px;
 
             color:
                 #5c6673;
@@ -445,10 +514,10 @@
         .firma {
 
             margin-top:
-                14px;
+                10px;
 
             font-size:
-                12px;
+                11px;
 
             color:
                 var(--verde);
@@ -607,9 +676,6 @@
             box-shadow:
                 0 2px 5px
                 rgba(75,96,125,0.13);
-
-            cursor:
-                pointer;
 
             overflow:
                 hidden;
@@ -834,6 +900,126 @@
 
             border:
                 0;
+        }
+
+
+
+        /* SOUNDCLOUD CLAUSURADO */
+
+        .clausura-soundcloud {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            text-align:
+                center;
+
+            padding:
+                18px;
+
+            border:
+                2px dashed
+                var(--azul-medio);
+
+            background:
+                repeating-linear-gradient(
+                    -45deg,
+                    rgba(216,161,169,0.12),
+                    rgba(216,161,169,0.12) 8px,
+                    rgba(245,237,222,0.40) 8px,
+                    rgba(245,237,222,0.40) 16px
+                );
+
+            color:
+                var(--azul-oscuro);
+        }
+
+
+        .clausura-contenido {
+
+            max-width:
+                360px;
+        }
+
+
+        .clausura-ascii {
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                12px;
+
+            color:
+                var(--rosa);
+
+            letter-spacing:
+                1px;
+
+            margin:
+                6px 0;
+        }
+
+
+        .clausura-titulo {
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                clamp(18px, 2vw, 28px);
+
+            font-weight:
+                bold;
+
+            letter-spacing:
+                3px;
+
+            margin-bottom:
+                8px;
+
+            color:
+                var(--azul-oscuro);
+        }
+
+
+        .clausura-fecha {
+
+            font-size:
+                14px;
+
+            margin-bottom:
+                8px;
+
+            color:
+                var(--rosa);
+        }
+
+
+        .clausura-texto {
+
+            font-size:
+                12px;
+
+            line-height:
+                1.5;
+
+            color:
+                #596573;
         }
 
 
@@ -1431,6 +1617,7 @@
                 </div>
 
 
+
                 <div class="menu">
 
                     <a href="#">
@@ -1446,11 +1633,50 @@
                     </a>
 
                     <a href="#guestbook">
-                        libro de quejas
+                        guestbook
                     </a>
 
                     <a href="#">
                         contacto
+                    </a>
+
+                </div>
+
+
+
+                <!-- REDES -->
+
+                <div class="redes">
+
+                    <div class="redes-titulo">
+                        ENCONTRANOS EN:
+                    </div>
+
+                    <a
+                        href="https://www.instagram.com/coraazonnnn/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span class="icono-red">[ig]</span>
+                        instagram
+                    </a>
+
+                    <a
+                        href="https://www.tiktok.com/@coraaazoonnnn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span class="icono-red">[tt]</span>
+                        tiktok
+                    </a>
+
+                    <a
+                        href="https://www.pi.fyi/u/corazonn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <span class="icono-red">[pi]</span>
+                        pi.fyi
                     </a>
 
                 </div>
@@ -1495,7 +1721,7 @@
 
                     <br>
 
-                    17.09.2026
+                    13.10.2026
 
                 </div>
 
@@ -1510,6 +1736,8 @@
             </aside>
 
 
+
+            <!-- FOTOS -->
 
             <section
                 class="fotos"
@@ -1605,6 +1833,8 @@
 
 
 
+                <!-- MUSICA -->
+
                 <div
                     class="musica"
                     id="musica"
@@ -1616,27 +1846,47 @@
                     </h2>
 
 
-                    <div class="reproductor">
+                    <div
+                        class="reproductor"
+                        id="reproductorMusica"
+                    >
 
-                        <iframe
+                        <div class="clausura-soundcloud">
 
-                            scrolling="no"
+                            <div class="clausura-contenido">
 
-                            frameborder="no"
+                                <div class="clausura-ascii">
+                                    +-----------------------+
+                                </div>
 
-                            allow="autoplay"
+                                <div class="clausura-titulo">
+                                    CLAUSURADO
+                                </div>
 
-                            src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/corazon-942052517/sets/a6d07793-2ccc-40c3-a9f0-960546723608&color=%234b607d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+                                <div class="clausura-fecha">
+                                    HASTA EL 16/10
+                                </div>
 
-                            title="corazón en SoundCloud"
+                                <div class="clausura-texto">
+                                    estamos preparando algo.<br>
+                                    vuelva pronto ♡
+                                </div>
 
-                        ></iframe>
+                                <div class="clausura-ascii">
+                                    +-----------------------+
+                                </div>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
                 </div>
 
 
+
+                <!-- LIBRO DE QUEJAS -->
 
                 <div
                     class="guestbook"
@@ -1807,6 +2057,62 @@
                 SUPABASE_URL,
                 SUPABASE_KEY
             );
+
+
+
+        /* ===================================== */
+        /* SOUNDCLOUD CLAUSURADO                */
+        /* ===================================== */
+
+        function controlarSoundCloud() {
+
+            const reproductor =
+                document.getElementById(
+                    "reproductorMusica"
+                );
+
+
+            /*
+                Apertura:
+                16/10/2026 a las 00:00
+                hora argentina
+            */
+
+            const fechaApertura =
+                new Date(
+                    "2026-10-16T00:00:00-03:00"
+                );
+
+
+            const ahora =
+                new Date();
+
+
+            if (
+                ahora >= fechaApertura
+            ) {
+
+                reproductor.innerHTML = `
+
+                    <iframe
+
+                        scrolling="no"
+
+                        frameborder="no"
+
+                        allow="autoplay"
+
+                        src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/corazon-942052517/sets/a6d07793-2ccc-40c3-a9f0-960546723608&color=%234b607d&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false"
+
+                        title="corazón en SoundCloud"
+
+                    ></iframe>
+
+                `;
+
+            }
+
+        }
 
 
 
@@ -2378,6 +2684,8 @@
 
 
         /* ARRANQUE */
+
+        controlarSoundCloud();
 
         actualizarContador();
 
