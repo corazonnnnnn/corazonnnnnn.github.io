@@ -1,1 +1,1359 @@
+<!DOCTYPE html>
+<html lang="es">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>archivos locales — corazón</title>
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="favicon.svg"
+    >
+
+
+    <style>
+
+        :root {
+
+            --azul-fondo: #c5d2de;
+            --azul-suave: #a6b7c7;
+            --azul-medio: #879eb3;
+            --azul-oscuro: #4b607d;
+
+            --crema: #f5edde;
+            --beige: #eadfce;
+
+            --rosa: #d8a1a9;
+            --rosa-suave: #edd4d7;
+
+            --verde: #8d9a78;
+
+            --texto: #2e3440;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html,
+        body {
+
+            margin: 0;
+
+            min-height: 100%;
+
+            color:
+                var(--texto);
+
+            font-family:
+                "Times New Roman",
+                Times,
+                serif;
+        }
+
+
+        body {
+
+            background-color:
+                var(--beige);
+
+            background-image:
+                url("fondo-floral.jpg");
+
+            background-size:
+                cover;
+
+            background-position:
+                center;
+
+            background-repeat:
+                no-repeat;
+
+            background-attachment:
+                fixed;
+
+            padding:
+                12px;
+        }
+
+
+
+        /* CONTENEDOR */
+
+        .pagina {
+
+            width:
+                min(1450px, calc(100vw - 24px));
+
+            min-height:
+                calc(100vh - 24px);
+
+            margin:
+                0 auto;
+
+            background:
+                rgba(234,223,206,0.96);
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            box-shadow:
+                0 3px 14px
+                rgba(75,96,125,0.20);
+
+            position:
+                relative;
+
+            padding:
+                30px;
+
+        }
+
+
+        .pagina::before {
+
+            content: "";
+
+            position:
+                absolute;
+
+            inset:
+                8px;
+
+            border:
+                2px solid
+                rgba(75,96,125,0.20);
+
+            pointer-events:
+                none;
+        }
+
+
+        .pagina::after {
+
+            content: "";
+
+            position:
+                absolute;
+
+            inset:
+                15px;
+
+            border:
+                1px solid
+                rgba(216,161,169,0.22);
+
+            pointer-events:
+                none;
+        }
+
+
+
+        /* CABECERA */
+
+        .cabecera {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                flex-start;
+
+            gap:
+                20px;
+
+            padding:
+                15px 15px 22px;
+
+            border-bottom:
+                4px solid
+                var(--azul-oscuro);
+
+            margin-bottom:
+                22px;
+        }
+
+
+        .titulo {
+
+            font-size:
+                clamp(28px,4vw,50px);
+
+            color:
+                var(--azul-oscuro);
+
+            letter-spacing:
+                2px;
+
+            line-height:
+                1;
+        }
+
+
+        .subtitulo {
+
+            margin-top:
+                8px;
+
+            font-size:
+                13px;
+
+            color:
+                var(--verde);
+
+            letter-spacing:
+                1px;
+        }
+
+
+        .volver {
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            background:
+                var(--crema);
+
+            padding:
+                8px 12px;
+
+            font-size:
+                13px;
+
+            color:
+                var(--azul-oscuro);
+
+            text-decoration:
+                underline;
+
+            white-space:
+                nowrap;
+        }
+
+
+        .volver::before {
+
+            content:
+                "< ";
+        }
+
+
+        .volver:hover {
+
+            background:
+                var(--rosa-suave);
+        }
+
+
+
+        /* NAVEGACION INTERNA */
+
+        .indice {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            display:
+                flex;
+
+            gap:
+                9px;
+
+            flex-wrap:
+                wrap;
+
+            padding:
+                0 15px 20px;
+
+        }
+
+
+        .indice a {
+
+            color:
+                var(--azul-oscuro);
+
+            border:
+                1px dotted
+                var(--azul-medio);
+
+            background:
+                rgba(245,237,222,0.55);
+
+            padding:
+                6px 10px;
+
+            font-size:
+                12px;
+
+            text-decoration:
+                none;
+        }
+
+
+        .indice a::before {
+
+            content:
+                "[ ";
+            color:
+                var(--rosa);
+        }
+
+
+        .indice a::after {
+
+            content:
+                " ]";
+            color:
+                var(--rosa);
+        }
+
+
+        .indice a:hover {
+
+            background:
+                var(--rosa-suave);
+        }
+
+
+
+        /* SECCIONES */
+
+        .seccion {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            margin:
+                0 15px 28px;
+
+            padding:
+                18px;
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            background:
+                rgba(245,237,222,0.38);
+
+        }
+
+
+        .seccion-titulo {
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            gap:
+                10px;
+
+            font-size:
+                19px;
+
+            color:
+                var(--azul-oscuro);
+
+            letter-spacing:
+                1px;
+
+            margin-bottom:
+                7px;
+        }
+
+
+        .seccion-titulo::before {
+
+            content:
+                "♡";
+
+            color:
+                var(--rosa);
+        }
+
+
+        .seccion-subtitulo {
+
+            font-size:
+                11px;
+
+            color:
+                #68727c;
+
+            margin-bottom:
+                15px;
+
+            padding-bottom:
+                9px;
+
+            border-bottom:
+                1px dotted
+                rgba(75,96,125,0.40);
+        }
+
+
+
+        /* GALERIA */
+
+        .galeria {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(6, minmax(0,1fr));
+
+            gap:
+                10px;
+
+        }
+
+
+        .foto {
+
+            aspect-ratio:
+                1 / 1;
+
+            padding:
+                4px;
+
+            background:
+                var(--crema);
+
+            border:
+                2px solid
+                var(--azul-oscuro);
+
+            overflow:
+                hidden;
+
+            position:
+                relative;
+
+            transition:
+                transform .18s ease,
+                box-shadow .18s ease;
+
+            z-index:
+                1;
+        }
+
+
+        .foto img {
+
+            width:
+                100%;
+
+            height:
+                100%;
+
+            object-fit:
+                cover;
+
+            display:
+                block;
+
+        }
+
+
+        .foto:hover {
+
+            transform:
+                scale(1.45);
+
+            z-index:
+                100;
+
+            box-shadow:
+                0 10px 30px
+                rgba(75,96,125,0.40);
+        }
+
+
+
+        /* FLYERS */
+
+        .flyers-vacio {
+
+            min-height:
+                180px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border:
+                1px dashed
+                var(--azul-medio);
+
+            background:
+                repeating-linear-gradient(
+                    -45deg,
+                    rgba(216,161,169,0.05),
+                    rgba(216,161,169,0.05) 10px,
+                    transparent 10px,
+                    transparent 20px
+                );
+
+            text-align:
+                center;
+
+            color:
+                #6a7280;
+
+            font-size:
+                13px;
+        }
+
+
+        .archivo-ascii {
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            color:
+                var(--rosa);
+
+            margin-bottom:
+                8px;
+        }
+
+
+
+        /* DEMOS */
+
+        .lista-demos {
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            background:
+                rgba(234,223,206,0.40);
+        }
+
+
+        .demo {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                28px 1fr auto;
+
+            align-items:
+                center;
+
+            gap:
+                8px;
+
+            padding:
+                9px 10px;
+
+            border-bottom:
+                1px dotted
+                rgba(75,96,125,0.35);
+
+            font-size:
+                12px;
+        }
+
+
+        .demo:last-child {
+
+            border-bottom:
+                none;
+        }
+
+
+        .demo-icono {
+
+            color:
+                var(--rosa);
+
+            font-family:
+                monospace;
+        }
+
+
+        .demo-nombre {
+
+            color:
+                var(--azul-oscuro);
+        }
+
+
+        .demo-estado {
+
+            color:
+                var(--verde);
+
+            font-size:
+                10px;
+        }
+
+
+
+        /* PIE */
+
+        .pie {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            text-align:
+                center;
+
+            padding:
+                5px 15px 15px;
+
+            color:
+                var(--verde);
+
+            font-size:
+                11px;
+
+            letter-spacing:
+                1px;
+        }
+
+
+
+        /* CURSOR */
+
+        @media (pointer:fine) {
+
+            body,
+            a,
+            .foto {
+
+                cursor:
+                    none !important;
+            }
+
+
+            .cursor-corazon {
+
+                position:
+                    fixed;
+
+                width:
+                    28px;
+
+                height:
+                    28px;
+
+                left:
+                    0;
+
+                top:
+                    0;
+
+                pointer-events:
+                    none;
+
+                z-index:
+                    999999;
+
+                transform:
+                    translate(-4px,-4px);
+
+            }
+
+
+            .estela-cursor {
+
+                position:
+                    fixed;
+
+                width:
+                    6px;
+
+                height:
+                    6px;
+
+                pointer-events:
+                    none;
+
+                z-index:
+                    999998;
+
+                animation:
+                    desaparecer-estela
+                    .7s linear forwards;
+            }
+
+
+            @keyframes desaparecer-estela {
+
+                0% {
+
+                    opacity:
+                        .95;
+                }
+
+                100% {
+
+                    opacity:
+                        0;
+
+                    transform:
+                        translateY(12px)
+                        scale(.3);
+                }
+
+            }
+
+        }
+
+
+
+        /* TABLET */
+
+        @media
+        (max-width:950px) {
+
+            .galeria {
+
+                grid-template-columns:
+                    repeat(4,1fr);
+            }
+
+        }
+
+
+
+        /* CELULAR */
+
+        @media
+        (max-width:650px) {
+
+            body {
+
+                padding:
+                    7px;
+            }
+
+
+            .pagina {
+
+                width:
+                    100%;
+
+                padding:
+                    22px 10px;
+            }
+
+
+            .cabecera {
+
+                display:
+                    block;
+            }
+
+
+            .volver {
+
+                display:
+                    inline-block;
+
+                margin-top:
+                    15px;
+            }
+
+
+            .galeria {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+
+            .foto:hover {
+
+                transform:
+                    scale(1.04);
+            }
+
+
+            .seccion {
+
+                margin-left:
+                    7px;
+
+                margin-right:
+                    7px;
+
+                padding:
+                    12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+<div class="pagina">
+
+
+    <!-- CABECERA -->
+
+    <header class="cabecera">
+
+
+        <div>
+
+            <div class="titulo">
+                archivos locales
+            </div>
+
+            <div class="subtitulo">
+                carpeta compartida / corazón / villa maría
+            </div>
+
+        </div>
+
+
+        <a
+            class="volver"
+            href="index.html"
+        >
+            volver al home
+        </a>
+
+
+    </header>
+
+
+
+    <!-- INDICE -->
+
+    <nav class="indice">
+
+        <a href="#fotos">
+            fotos
+        </a>
+
+        <a href="#flyers">
+            flyers
+        </a>
+
+        <a href="#demos">
+            demos
+        </a>
+
+    </nav>
+
+
+
+    <!-- FOTOS -->
+
+    <section
+        class="seccion"
+        id="fotos"
+    >
+
+
+        <div class="seccion-titulo">
+            fotos
+        </div>
+
+
+        <div class="seccion-subtitulo">
+            archivos encontrados en alguna carpeta sin nombre.
+        </div>
+
+
+
+        <div class="galeria">
+
+
+            <div class="foto">
+                <img src="fotos/fotocamarita1.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita2.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita3.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita4.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita5.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita6.JPG">
+            </div>
+
+
+            <div class="foto">
+                <img src="fotos/fotocamarita7.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita8.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita9.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita10.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita11.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita12.JPG">
+            </div>
+
+
+            <div class="foto">
+                <img src="fotos/fotocamarita13.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita14.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita15.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita16.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita17.JPG">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita18.JPG">
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- FLYERS -->
+
+    <section
+        class="seccion"
+        id="flyers"
+    >
+
+
+        <div class="seccion-titulo">
+            flyers / afiches
+        </div>
+
+
+        <div class="seccion-subtitulo">
+            recitales, anuncios, imágenes perdidas y papelitos varios.
+        </div>
+
+
+        <div class="flyers-vacio">
+
+            <div>
+
+                <div class="archivo-ascii">
+                    [ archivo vacío ]
+                </div>
+
+                todavía no subimos nada acá
+
+                <br>
+
+                ♡
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- DEMOS -->
+
+    <section
+        class="seccion"
+        id="demos"
+    >
+
+
+        <div class="seccion-titulo">
+            demos / grabaciones
+        </div>
+
+
+        <div class="seccion-subtitulo">
+            versiones, ensayos, archivos de audio y otras cosas que quizás no deberían existir.
+        </div>
+
+
+
+        <div class="lista-demos">
+
+
+            <div class="demo">
+
+                <div class="demo-icono">
+                    &gt;
+                </div>
+
+                <div class="demo-nombre">
+                    demo_01.wav
+                </div>
+
+                <div class="demo-estado">
+                    próximamente
+                </div>
+
+            </div>
+
+
+            <div class="demo">
+
+                <div class="demo-icono">
+                    &gt;
+                </div>
+
+                <div class="demo-nombre">
+                    ensayo_sin_fecha.mp3
+                </div>
+
+                <div class="demo-estado">
+                    próximamente
+                </div>
+
+            </div>
+
+
+            <div class="demo">
+
+                <div class="demo-icono">
+                    &gt;
+                </div>
+
+                <div class="demo-nombre">
+                    archivo_desconocido.mp3
+                </div>
+
+                <div class="demo-estado">
+                    próximamente
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <div class="pie">
+
+        corazón / archivos locales / gracias por revolver nuestras carpetas ♡
+
+    </div>
+
+
+</div>
+
+
+
+<!-- CURSOR -->
+
+<div
+    class="cursor-corazon"
+    id="cursorCorazon"
+>
+
+    <svg
+        viewBox="0 0 8 8"
+        xmlns="http://www.w3.org/2000/svg"
+        shape-rendering="crispEdges"
+    >
+
+        <rect
+            x="1"
+            y="1"
+            width="2"
+            height="1"
+            fill="#d8a1a9"
+        />
+
+        <rect
+            x="5"
+            y="1"
+            width="2"
+            height="1"
+            fill="#d8a1a9"
+        />
+
+        <rect
+            x="0"
+            y="2"
+            width="8"
+            height="2"
+            fill="#d8a1a9"
+        />
+
+        <rect
+            x="1"
+            y="4"
+            width="6"
+            height="1"
+            fill="#d8a1a9"
+        />
+
+        <rect
+            x="2"
+            y="5"
+            width="4"
+            height="1"
+            fill="#d8a1a9"
+        />
+
+        <rect
+            x="3"
+            y="6"
+            width="2"
+            height="1"
+            fill="#d8a1a9"
+        />
+
+    </svg>
+
+</div>
+
+
+
+<script>
+
+
+const cursorCorazon =
+document.getElementById(
+    "cursorCorazon"
+);
+
+
+const coloresEstela = [
+
+    "#d8a1a9",
+    "#879eb3",
+    "#8d9a78",
+    "#f5edde",
+    "#a6b7c7"
+
+];
+
+
+let ultimoRastro =
+0;
+
+
+
+document.addEventListener(
+
+    "mousemove",
+
+    evento => {
+
+
+        cursorCorazon.style.left =
+        evento.clientX +
+        "px";
+
+
+        cursorCorazon.style.top =
+        evento.clientY +
+        "px";
+
+
+        const ahora =
+        Date.now();
+
+
+        if (
+            ahora -
+            ultimoRastro <
+            35
+        ) {
+
+            return;
+        }
+
+
+        ultimoRastro =
+        ahora;
+
+
+        const pixel =
+        document.createElement(
+            "div"
+        );
+
+
+        pixel.className =
+        "estela-cursor";
+
+
+        pixel.style.left =
+        evento.clientX +
+        "px";
+
+
+        pixel.style.top =
+        evento.clientY +
+        "px";
+
+
+        pixel.style.background =
+        coloresEstela[
+            Math.floor(
+                Math.random() *
+                coloresEstela.length
+            )
+        ];
+
+
+        pixel.style.marginLeft =
+        (
+            Math.random() *
+            10 -
+            5
+        ) +
+        "px";
+
+
+        pixel.style.marginTop =
+        (
+            Math.random() *
+            10 -
+            5
+        ) +
+        "px";
+
+
+        document.body.appendChild(
+            pixel
+        );
+
+
+        setTimeout(
+
+            () => {
+
+                pixel.remove();
+
+            },
+
+            700
+
+        );
+
+    }
+
+);
+
+
+document.addEventListener(
+
+    "mouseleave",
+
+    () => {
+
+        cursorCorazon.style.display =
+        "none";
+
+    }
+
+);
+
+
+document.addEventListener(
+
+    "mouseenter",
+
+    () => {
+
+        cursorCorazon.style.display =
+        "block";
+
+    }
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
