@@ -501,6 +501,10 @@
 
 
 
+        /* ===================================== */
+        /* ACTUALIZACION                         */
+        /* ===================================== */
+
         .actualizacion {
 
             margin-top:
@@ -534,6 +538,39 @@
 
             letter-spacing:
                 1px;
+        }
+
+
+
+        /* EASTER EGG */
+
+        .secreto-link {
+
+            color:
+                var(--verde);
+
+            text-decoration:
+                none;
+
+            margin-left:
+                3px;
+
+            display:
+                inline-block;
+
+            transition:
+                color .15s ease,
+                transform .15s ease;
+        }
+
+
+        .secreto-link:hover {
+
+            color:
+                var(--rosa);
+
+            transform:
+                scale(1.25);
         }
 
 
@@ -870,7 +907,7 @@
 
 
         /* ===================================== */
-        /* ULTIMO LANZAMIENTO / YOUTUBE          */
+        /* YOUTUBE                               */
         /* ===================================== */
 
         .reproductor {
@@ -1212,6 +1249,271 @@
 
 
         /* ===================================== */
+        /* POP UP ACTUALIZACION                  */
+        /* ===================================== */
+
+        .popup-overlay {
+
+            display:
+                none;
+
+            position:
+                fixed;
+
+            inset:
+                0;
+
+            background:
+                rgba(46,52,64,0.35);
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                20px;
+
+            z-index:
+                1000000;
+        }
+
+
+        .popup-ventana {
+
+            width:
+                min(430px, 95vw);
+
+            background:
+                var(--beige);
+
+            border:
+                2px solid
+                var(--azul-oscuro);
+
+            box-shadow:
+                8px 8px 0
+                rgba(75,96,125,0.25);
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            position:
+                relative;
+        }
+
+
+        .popup-barra {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            padding:
+                6px 8px;
+
+            background:
+                var(--azul-oscuro);
+
+            color:
+                var(--crema);
+
+            font-size:
+                10px;
+
+            letter-spacing:
+                1px;
+        }
+
+
+        .popup-cerrar-x {
+
+            border:
+                1px solid
+                var(--crema);
+
+            background:
+                transparent;
+
+            color:
+                var(--crema);
+
+            width:
+                22px;
+
+            height:
+                20px;
+
+            padding:
+                0;
+
+            font-family:
+                monospace;
+
+            font-size:
+                12px;
+        }
+
+
+        .popup-contenido {
+
+            padding:
+                25px;
+
+            text-align:
+                center;
+
+            border:
+                5px double
+                rgba(135,158,179,0.45);
+
+            margin:
+                7px;
+        }
+
+
+        .popup-ascii {
+
+            color:
+                var(--rosa);
+
+            font-size:
+                10px;
+
+            margin-bottom:
+                12px;
+        }
+
+
+        .popup-titulo {
+
+            color:
+                var(--azul-oscuro);
+
+            font-size:
+                19px;
+
+            font-weight:
+                bold;
+
+            letter-spacing:
+                1px;
+
+            margin-bottom:
+                12px;
+        }
+
+
+        .popup-texto {
+
+            color:
+                #596573;
+
+            font-size:
+                11px;
+
+            line-height:
+                1.7;
+
+            margin-bottom:
+                18px;
+        }
+
+
+        .popup-novedades {
+
+            border:
+                1px dashed
+                var(--azul-medio);
+
+            padding:
+                10px;
+
+            margin:
+                15px 0;
+
+            text-align:
+                left;
+
+            font-size:
+                10px;
+
+            line-height:
+                1.7;
+
+            background:
+                rgba(245,237,222,0.55);
+        }
+
+
+        .popup-novedades span {
+
+            color:
+                var(--rosa);
+        }
+
+
+        .popup-botones {
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            gap:
+                8px;
+
+            flex-wrap:
+                wrap;
+        }
+
+
+        .popup-botones a,
+        .popup-botones button {
+
+            border:
+                1px solid
+                var(--azul-oscuro);
+
+            background:
+                var(--crema);
+
+            color:
+                var(--azul-oscuro);
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                10px;
+
+            padding:
+                7px 10px;
+
+            text-decoration:
+                none;
+        }
+
+
+        .popup-botones a:hover,
+        .popup-botones button:hover {
+
+            background:
+                var(--rosa-suave);
+        }
+
+
+
+        /* ===================================== */
         /* CURSOR                                */
         /* ===================================== */
 
@@ -1260,7 +1562,7 @@
                     none;
 
                 z-index:
-                    999999;
+                    9999999;
 
                 transform:
                     translate(-4px,-4px);
@@ -1298,7 +1600,7 @@
                     none;
 
                 z-index:
-                    999998;
+                    9999998;
 
                 animation:
                     desaparecer-estela
@@ -1543,6 +1845,13 @@
                     220px;
             }
 
+
+            .popup-contenido {
+
+                padding:
+                    18px;
+            }
+
         }
 
     </style>
@@ -1551,6 +1860,111 @@
 
 
 <body>
+
+
+
+<!-- ===================================== -->
+<!-- POP UP DE ACTUALIZACION               -->
+<!-- ===================================== -->
+
+<div
+    class="popup-overlay"
+    id="popupActualizacion"
+>
+
+    <div class="popup-ventana">
+
+
+        <div class="popup-barra">
+
+            <span>
+                corazon.exe
+            </span>
+
+
+            <button
+                class="popup-cerrar-x"
+                id="cerrarPopupX"
+                type="button"
+            >
+                X
+            </button>
+
+        </div>
+
+
+        <div class="popup-contenido">
+
+
+            <div class="popup-ascii">
+                +-------------------------------+
+            </div>
+
+
+            <div class="popup-titulo">
+                ¡¡NUEVA ACTUALIZACIÓN!!
+            </div>
+
+
+            <div class="popup-texto">
+
+                funciones nuevas y secretos!
+
+                <br>
+
+                versión 22.10.2026 ♡
+
+            </div>
+
+
+            <div class="popup-novedades">
+
+                <span>&gt;</span> último lanzamiento en el home
+
+                <br>
+
+                <span>&gt;</span> archivos locales
+
+                <br>
+
+                <span>&gt;</span> fotos, flyers y demos
+
+                <br>
+
+                <span>&gt;</span> otras cosas que quizás no deberías buscar...
+
+            </div>
+
+
+            <div class="popup-botones">
+
+
+                <a
+                    href="archivos-locales.html"
+                    id="popupArchivos"
+                >
+                    [ ver archivos ]
+                </a>
+
+
+                <button
+                    type="button"
+                    id="cerrarPopup"
+                >
+                    [ cerrar ]
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
 
 
 <div class="pagina">
@@ -1719,13 +2133,28 @@
 
             <br>
 
-            13.10.2026
+            22.10.2026
 
         </div>
 
 
+
+        <!--
+            EL CORAZON ES LA ENTRADA
+            AL EASTER EGG :)
+        -->
+
         <div class="firma">
+
             gracias por pasar
+
+            <a
+                class="secreto-link"
+                href="secreto-01.html"
+            >
+                ♡
+            </a>
+
         </div>
 
 
@@ -2055,6 +2484,138 @@
             SUPABASE_URL,
             SUPABASE_KEY
         );
+
+
+
+    /* ===================================== */
+    /* POP UP ACTUALIZACION                  */
+    /* ===================================== */
+
+    function iniciarPopupActualizacion() {
+
+
+        const popup =
+            document.getElementById(
+                "popupActualizacion"
+            );
+
+
+        const cerrar =
+            document.getElementById(
+                "cerrarPopup"
+            );
+
+
+        const cerrarX =
+            document.getElementById(
+                "cerrarPopupX"
+            );
+
+
+        const archivos =
+            document.getElementById(
+                "popupArchivos"
+            );
+
+
+        const clavePopup =
+            "corazon_popup_actualizacion_2026_10_22";
+
+
+
+        if (
+            !localStorage.getItem(
+                clavePopup
+            )
+        ) {
+
+            popup.style.display =
+                "flex";
+
+        }
+
+
+
+        function cerrarActualizacion() {
+
+            popup.style.display =
+                "none";
+
+
+            localStorage.setItem(
+                clavePopup,
+                "visto"
+            );
+
+        }
+
+
+
+        cerrar.addEventListener(
+            "click",
+            cerrarActualizacion
+        );
+
+
+        cerrarX.addEventListener(
+            "click",
+            cerrarActualizacion
+        );
+
+
+        archivos.addEventListener(
+            "click",
+            () => {
+
+                localStorage.setItem(
+                    clavePopup,
+                    "visto"
+                );
+
+            }
+        );
+
+
+
+        popup.addEventListener(
+
+            "click",
+
+            evento => {
+
+                if (
+                    evento.target === popup
+                ) {
+
+                    cerrarActualizacion();
+
+                }
+
+            }
+
+        );
+
+
+
+        document.addEventListener(
+
+            "keydown",
+
+            evento => {
+
+                if (
+                    evento.key === "Escape"
+                ) {
+
+                    cerrarActualizacion();
+
+                }
+
+            }
+
+        );
+
+    }
 
 
 
@@ -2687,6 +3248,8 @@
     /* ===================================== */
     /* ARRANQUE                              */
     /* ===================================== */
+
+    iniciarPopupActualizacion();
 
     actualizarContador();
 
