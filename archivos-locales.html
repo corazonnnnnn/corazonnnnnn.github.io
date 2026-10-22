@@ -701,6 +701,9 @@
 
             background:
                 rgba(234,223,206,0.40);
+
+            padding:
+                12px;
         }
 
 
@@ -710,23 +713,17 @@
                 grid;
 
             grid-template-columns:
-                28px 1fr auto;
-
-            align-items:
-                center;
+                28px minmax(0,1fr);
 
             gap:
-                8px;
+                10px;
 
             padding:
-                9px 10px;
+                13px 10px;
 
             border-bottom:
                 1px dotted
                 rgba(75,96,125,0.35);
-
-            font-size:
-                12px;
         }
 
 
@@ -743,7 +740,40 @@
                 var(--rosa);
 
             font-family:
+                "Courier New",
                 monospace;
+
+            font-size:
+                16px;
+
+            padding-top:
+                2px;
+        }
+
+
+        .demo-contenido {
+
+            min-width:
+                0;
+        }
+
+
+        .demo-cabecera {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            gap:
+                12px;
+
+            margin-bottom:
+                8px;
         }
 
 
@@ -751,6 +781,16 @@
 
             color:
                 var(--azul-oscuro);
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                12px;
+
+            overflow-wrap:
+                anywhere;
         }
 
 
@@ -760,7 +800,63 @@
                 var(--verde);
 
             font-size:
+                9px;
+
+            letter-spacing:
+                1px;
+
+            white-space:
+                nowrap;
+        }
+
+
+        .demo-audio {
+
+            width:
+                100%;
+
+            max-width:
+                650px;
+
+            height:
+                32px;
+
+            display:
+                block;
+        }
+
+
+        .demo-links {
+
+            margin-top:
+                7px;
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                9px;
+        }
+
+
+        .demo-links a {
+
+            color:
+                var(--rosa);
+
+            text-decoration:
+                underline;
+
+            margin-right:
                 10px;
+        }
+
+
+        .demo-links a:hover {
+
+            color:
+                var(--azul-oscuro);
         }
 
 
@@ -811,7 +907,8 @@
             body,
             a,
             .foto,
-            .flyer {
+            .flyer,
+            audio {
 
                 cursor:
                     none !important;
@@ -1047,6 +1144,43 @@
                     scale(1.02);
             }
 
+
+            .demo {
+
+                grid-template-columns:
+                    22px minmax(0,1fr);
+
+                padding-left:
+                    4px;
+
+                padding-right:
+                    4px;
+            }
+
+
+            .demo-cabecera {
+
+                display:
+                    block;
+            }
+
+
+            .demo-estado {
+
+                display:
+                    block;
+
+                margin-top:
+                    4px;
+            }
+
+
+            .demo-audio {
+
+                max-width:
+                    100%;
+            }
+
         }
 
     </style>
@@ -1061,9 +1195,7 @@
 <div class="pagina">
 
 
-    <!-- ===================================== -->
-    <!-- CABECERA                              -->
-    <!-- ===================================== -->
+    <!-- CABECERA -->
 
     <header class="cabecera">
 
@@ -1093,9 +1225,7 @@
 
 
 
-    <!-- ===================================== -->
-    <!-- INDICE                                -->
-    <!-- ===================================== -->
+    <!-- INDICE -->
 
     <nav class="indice">
 
@@ -1163,7 +1293,6 @@
                 <img src="fotos/fotocamarita6.JPG" alt="corazón">
             </div>
 
-
             <div class="foto">
                 <img src="fotos/fotocamarita7.JPG" alt="corazón">
             </div>
@@ -1187,7 +1316,6 @@
             <div class="foto">
                 <img src="fotos/fotocamarita12.JPG" alt="corazón">
             </div>
-
 
             <div class="foto">
                 <img src="fotos/fotocamarita13.JPG" alt="corazón">
@@ -1372,53 +1500,123 @@
         <div class="lista-demos">
 
 
+            <!-- DESCOMPOSICIÓN -->
+
             <div class="demo">
+
 
                 <div class="demo-icono">
                     &gt;
                 </div>
 
-                <div class="demo-nombre">
-                    demo_01.wav
+
+                <div class="demo-contenido">
+
+
+                    <div class="demo-cabecera">
+
+                        <div class="demo-nombre">
+                            6. descomposición.mp3
+                        </div>
+
+                        <div class="demo-estado">
+                            [ archivo encontrado ]
+                        </div>
+
+                    </div>
+
+
+                    <audio
+                        class="demo-audio"
+                        controls
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="demos/6.%20descomposici%C3%B3n.mp3"
+                            type="audio/mpeg"
+                        >
+
+                        tu navegador no puede reproducir este archivo.
+
+                    </audio>
+
+
+                    <div class="demo-links">
+
+                        <a
+                            href="demos/6.%20descomposici%C3%B3n.mp3"
+                            target="_blank"
+                        >
+                            [ abrir archivo ]
+                        </a>
+
+                    </div>
+
+
                 </div>
 
-                <div class="demo-estado">
-                    próximamente
-                </div>
 
             </div>
 
 
+
+            <!-- TODO MAL -->
+
             <div class="demo">
+
 
                 <div class="demo-icono">
                     &gt;
                 </div>
 
-                <div class="demo-nombre">
-                    ensayo_sin_fecha.mp3
+
+                <div class="demo-contenido">
+
+
+                    <div class="demo-cabecera">
+
+                        <div class="demo-nombre">
+                            todo mal single.mp3
+                        </div>
+
+                        <div class="demo-estado">
+                            [ archivo encontrado ]
+                        </div>
+
+                    </div>
+
+
+                    <audio
+                        class="demo-audio"
+                        controls
+                        preload="metadata"
+                    >
+
+                        <source
+                            src="demos/todo%20mal%20single.mp3"
+                            type="audio/mpeg"
+                        >
+
+                        tu navegador no puede reproducir este archivo.
+
+                    </audio>
+
+
+                    <div class="demo-links">
+
+                        <a
+                            href="demos/todo%20mal%20single.mp3"
+                            target="_blank"
+                        >
+                            [ abrir archivo ]
+                        </a>
+
+                    </div>
+
+
                 </div>
 
-                <div class="demo-estado">
-                    próximamente
-                </div>
-
-            </div>
-
-
-            <div class="demo">
-
-                <div class="demo-icono">
-                    &gt;
-                </div>
-
-                <div class="demo-nombre">
-                    archivo_desconocido.mp3
-                </div>
-
-                <div class="demo-estado">
-                    próximamente
-                </div>
 
             </div>
 
@@ -1430,9 +1628,7 @@
 
 
 
-    <!-- ===================================== -->
-    <!-- PIE                                   -->
-    <!-- ===================================== -->
+    <!-- PIE -->
 
     <div class="pie">
 
