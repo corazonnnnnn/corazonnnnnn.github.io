@@ -62,6 +62,11 @@
         }
 
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+
         body {
 
             background-color:
@@ -88,7 +93,9 @@
 
 
 
-        /* CONTENEDOR */
+        /* ===================================== */
+        /* CONTENEDOR GENERAL                    */
+        /* ===================================== */
 
         .pagina {
 
@@ -117,7 +124,6 @@
 
             padding:
                 30px;
-
         }
 
 
@@ -160,7 +166,9 @@
 
 
 
-        /* CABECERA */
+        /* ===================================== */
+        /* CABECERA                              */
+        /* ===================================== */
 
         .cabecera {
 
@@ -267,7 +275,9 @@
 
 
 
-        /* NAVEGACION INTERNA */
+        /* ===================================== */
+        /* INDICE                                */
+        /* ===================================== */
 
         .indice {
 
@@ -288,7 +298,6 @@
 
             padding:
                 0 15px 20px;
-
         }
 
 
@@ -319,6 +328,7 @@
 
             content:
                 "[ ";
+
             color:
                 var(--rosa);
         }
@@ -328,6 +338,7 @@
 
             content:
                 " ]";
+
             color:
                 var(--rosa);
         }
@@ -341,7 +352,9 @@
 
 
 
-        /* SECCIONES */
+        /* ===================================== */
+        /* SECCIONES                             */
+        /* ===================================== */
 
         .seccion {
 
@@ -363,7 +376,6 @@
 
             background:
                 rgba(245,237,222,0.38);
-
         }
 
 
@@ -423,7 +435,9 @@
 
 
 
-        /* GALERIA */
+        /* ===================================== */
+        /* GALERIA DE FOTOS                     */
+        /* ===================================== */
 
         .galeria {
 
@@ -435,7 +449,6 @@
 
             gap:
                 10px;
-
         }
 
 
@@ -482,7 +495,6 @@
 
             display:
                 block;
-
         }
 
 
@@ -501,62 +513,185 @@
 
 
 
-        /* FLYERS */
+        /* ===================================== */
+        /* FLYERS                                */
+        /* ===================================== */
 
-        .flyers-vacio {
+        .galeria-flyers {
 
-            min-height:
-                180px;
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3, minmax(0, 1fr));
+
+            gap:
+                30px;
+
+            align-items:
+                start;
+
+            padding:
+                15px 20px 20px;
+        }
+
+
+        .flyer {
+
+            position:
+                relative;
+
+            padding:
+                8px 8px 28px;
+
+            background:
+                var(--crema);
+
+            border:
+                1px solid
+                rgba(75,96,125,0.60);
+
+            box-shadow:
+                4px 6px 12px
+                rgba(75,96,125,0.20);
+
+            transition:
+                transform .18s ease,
+                box-shadow .18s ease;
+
+            z-index:
+                1;
+        }
+
+
+        .flyer:nth-child(1) {
+
+            transform:
+                rotate(-1.5deg);
+        }
+
+
+        .flyer:nth-child(2) {
+
+            transform:
+                rotate(1deg);
+        }
+
+
+        .flyer:nth-child(3) {
+
+            transform:
+                rotate(-0.6deg);
+        }
+
+
+        .flyer:hover {
+
+            transform:
+                rotate(0deg)
+                scale(1.05);
+
+            z-index:
+                50;
+
+            box-shadow:
+                8px 12px 25px
+                rgba(75,96,125,0.30);
+        }
+
+
+        .flyer a {
+
+            display:
+                block;
+
+            text-decoration:
+                none;
+
+            color:
+                inherit;
+        }
+
+
+        .flyer img {
+
+            display:
+                block;
+
+            width:
+                100%;
+
+            height:
+                auto;
+
+            border:
+                1px solid
+                rgba(75,96,125,0.28);
+        }
+
+
+        .flyer-info {
+
+            position:
+                absolute;
+
+            left:
+                8px;
+
+            right:
+                8px;
+
+            bottom:
+                7px;
 
             display:
                 flex;
 
-            align-items:
-                center;
-
             justify-content:
-                center;
+                space-between;
 
-            border:
-                1px dashed
-                var(--azul-medio);
-
-            background:
-                repeating-linear-gradient(
-                    -45deg,
-                    rgba(216,161,169,0.05),
-                    rgba(216,161,169,0.05) 10px,
-                    transparent 10px,
-                    transparent 20px
-                );
-
-            text-align:
-                center;
-
-            color:
-                #6a7280;
-
-            font-size:
-                13px;
-        }
-
-
-        .archivo-ascii {
+            gap:
+                5px;
 
             font-family:
                 "Courier New",
                 monospace;
 
+            font-size:
+                9px;
+
+            color:
+                var(--azul-oscuro);
+        }
+
+
+        .flyer-archivo {
+
+            overflow:
+                hidden;
+
+            text-overflow:
+                ellipsis;
+
+            white-space:
+                nowrap;
+        }
+
+
+        .flyer-abrir {
+
             color:
                 var(--rosa);
 
-            margin-bottom:
-                8px;
+            white-space:
+                nowrap;
         }
 
 
 
-        /* DEMOS */
+        /* ===================================== */
+        /* DEMOS                                 */
+        /* ===================================== */
 
         .lista-demos {
 
@@ -630,7 +765,9 @@
 
 
 
-        /* PIE */
+        /* ===================================== */
+        /* PIE                                   */
+        /* ===================================== */
 
         .pie {
 
@@ -658,13 +795,23 @@
 
 
 
-        /* CURSOR */
+        /* ===================================== */
+        /* CURSOR CORAZON                        */
+        /* ===================================== */
+
+        .cursor-corazon {
+
+            display:
+                none;
+        }
+
 
         @media (pointer:fine) {
 
             body,
             a,
-            .foto {
+            .foto,
+            .flyer {
 
                 cursor:
                     none !important;
@@ -672,6 +819,9 @@
 
 
             .cursor-corazon {
+
+                display:
+                    block;
 
                 position:
                     fixed;
@@ -697,6 +847,21 @@
                 transform:
                     translate(-4px,-4px);
 
+                image-rendering:
+                    pixelated;
+            }
+
+
+            .cursor-corazon svg {
+
+                display:
+                    block;
+
+                width:
+                    100%;
+
+                height:
+                    100%;
             }
 
 
@@ -729,7 +894,12 @@
 
                     opacity:
                         .95;
+
+                    transform:
+                        translate(-50%,-50%)
+                        scale(1);
                 }
+
 
                 100% {
 
@@ -737,7 +907,7 @@
                         0;
 
                     transform:
-                        translateY(12px)
+                        translate(-50%,12px)
                         scale(.3);
                 }
 
@@ -747,7 +917,9 @@
 
 
 
-        /* TABLET */
+        /* ===================================== */
+        /* TABLET                                */
+        /* ===================================== */
 
         @media
         (max-width:950px) {
@@ -758,11 +930,20 @@
                     repeat(4,1fr);
             }
 
+
+            .galeria-flyers {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
         }
 
 
 
-        /* CELULAR */
+        /* ===================================== */
+        /* CELULAR                               */
+        /* ===================================== */
 
         @media
         (max-width:650px) {
@@ -827,6 +1008,45 @@
                     12px;
             }
 
+
+            .galeria-flyers {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    22px;
+
+                padding:
+                    10px;
+            }
+
+
+            .flyer {
+
+                max-width:
+                    420px;
+
+                margin:
+                    0 auto;
+            }
+
+
+            .flyer:nth-child(1),
+            .flyer:nth-child(2),
+            .flyer:nth-child(3) {
+
+                transform:
+                    rotate(0deg);
+            }
+
+
+            .flyer:hover {
+
+                transform:
+                    scale(1.02);
+            }
+
         }
 
     </style>
@@ -841,7 +1061,9 @@
 <div class="pagina">
 
 
-    <!-- CABECERA -->
+    <!-- ===================================== -->
+    <!-- CABECERA                              -->
+    <!-- ===================================== -->
 
     <header class="cabecera">
 
@@ -871,7 +1093,9 @@
 
 
 
-    <!-- INDICE -->
+    <!-- ===================================== -->
+    <!-- INDICE                                -->
+    <!-- ===================================== -->
 
     <nav class="indice">
 
@@ -891,7 +1115,9 @@
 
 
 
-    <!-- FOTOS -->
+    <!-- ===================================== -->
+    <!-- FOTOS                                 -->
+    <!-- ===================================== -->
 
     <section
         class="seccion"
@@ -914,77 +1140,77 @@
 
 
             <div class="foto">
-                <img src="fotos/fotocamarita1.JPG">
+                <img src="fotos/fotocamarita1.JPG" alt="corazón">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita2.JPG">
+                <img src="fotos/fotocamarita2.JPG" alt="corazón">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita3.JPG">
+                <img src="fotos/fotocamarita3.JPG" alt="corazón">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita4.JPG">
+                <img src="fotos/fotocamarita4.JPG" alt="corazón">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita5.JPG">
+                <img src="fotos/fotocamarita5.JPG" alt="corazón">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita6.JPG">
-            </div>
-
-
-            <div class="foto">
-                <img src="fotos/fotocamarita7.JPG">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/fotocamarita8.JPG">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/fotocamarita9.JPG">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/fotocamarita10.JPG">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/fotocamarita11.JPG">
-            </div>
-
-            <div class="foto">
-                <img src="fotos/fotocamarita12.JPG">
+                <img src="fotos/fotocamarita6.JPG" alt="corazón">
             </div>
 
 
             <div class="foto">
-                <img src="fotos/fotocamarita13.JPG">
+                <img src="fotos/fotocamarita7.JPG" alt="corazón">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita14.JPG">
+                <img src="fotos/fotocamarita8.JPG" alt="corazón">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita15.JPG">
+                <img src="fotos/fotocamarita9.JPG" alt="corazón">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita16.JPG">
+                <img src="fotos/fotocamarita10.JPG" alt="corazón">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita17.JPG">
+                <img src="fotos/fotocamarita11.JPG" alt="corazón">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita18.JPG">
+                <img src="fotos/fotocamarita12.JPG" alt="corazón">
+            </div>
+
+
+            <div class="foto">
+                <img src="fotos/fotocamarita13.JPG" alt="corazón">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita14.JPG" alt="corazón">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita15.JPG" alt="corazón">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita16.JPG" alt="corazón">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita17.JPG" alt="corazón">
+            </div>
+
+            <div class="foto">
+                <img src="fotos/fotocamarita18.JPG" alt="corazón">
             </div>
 
 
@@ -995,7 +1221,9 @@
 
 
 
-    <!-- FLYERS -->
+    <!-- ===================================== -->
+    <!-- FLYERS                                -->
+    <!-- ===================================== -->
 
     <section
         class="seccion"
@@ -1010,24 +1238,108 @@
 
         <div class="seccion-subtitulo">
             recitales, anuncios, imágenes perdidas y papelitos varios.
+            hacé click sobre un flyer para verlo completo.
         </div>
 
 
-        <div class="flyers-vacio">
 
-            <div>
+        <div class="galeria-flyers">
 
-                <div class="archivo-ascii">
-                    [ archivo vacío ]
-                </div>
 
-                todavía no subimos nada acá
+            <!-- FLYER 3 -->
 
-                <br>
+            <div class="flyer">
 
-                ♡
+                <a
+                    href="flyers/3.png"
+                    target="_blank"
+                >
+
+                    <img
+                        src="flyers/3.png"
+                        alt="Flyer corazón 3"
+                    >
+
+                    <div class="flyer-info">
+
+                        <span class="flyer-archivo">
+                            3.png
+                        </span>
+
+                        <span class="flyer-abrir">
+                            [ abrir ]
+                        </span>
+
+                    </div>
+
+                </a>
 
             </div>
+
+
+
+            <!-- FLYER 4 -->
+
+            <div class="flyer">
+
+                <a
+                    href="flyers/4.png"
+                    target="_blank"
+                >
+
+                    <img
+                        src="flyers/4.png"
+                        alt="Flyer corazón 4"
+                    >
+
+                    <div class="flyer-info">
+
+                        <span class="flyer-archivo">
+                            4.png
+                        </span>
+
+                        <span class="flyer-abrir">
+                            [ abrir ]
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- FLYER 8 -->
+
+            <div class="flyer">
+
+                <a
+                    href="flyers/8.png"
+                    target="_blank"
+                >
+
+                    <img
+                        src="flyers/8.png"
+                        alt="Flyer corazón 8"
+                    >
+
+                    <div class="flyer-info">
+
+                        <span class="flyer-archivo">
+                            8.png
+                        </span>
+
+                        <span class="flyer-abrir">
+                            [ abrir ]
+                        </span>
+
+                    </div>
+
+                </a>
+
+            </div>
+
 
         </div>
 
@@ -1036,7 +1348,9 @@
 
 
 
-    <!-- DEMOS -->
+    <!-- ===================================== -->
+    <!-- DEMOS                                 -->
+    <!-- ===================================== -->
 
     <section
         class="seccion"
@@ -1116,6 +1430,10 @@
 
 
 
+    <!-- ===================================== -->
+    <!-- PIE                                   -->
+    <!-- ===================================== -->
+
     <div class="pie">
 
         corazón / archivos locales / gracias por revolver nuestras carpetas ♡
@@ -1127,7 +1445,9 @@
 
 
 
-<!-- CURSOR -->
+<!-- ===================================== -->
+<!-- CURSOR                                -->
+<!-- ===================================== -->
 
 <div
     class="cursor-corazon"
@@ -1140,53 +1460,34 @@
         shape-rendering="crispEdges"
     >
 
-        <rect
-            x="1"
-            y="1"
-            width="2"
-            height="1"
-            fill="#d8a1a9"
-        />
+        <rect x="1" y="1" width="2" height="1" fill="#d8a1a9"/>
+        <rect x="5" y="1" width="2" height="1" fill="#d8a1a9"/>
 
-        <rect
-            x="5"
-            y="1"
-            width="2"
-            height="1"
-            fill="#d8a1a9"
-        />
+        <rect x="0" y="2" width="8" height="2" fill="#d8a1a9"/>
 
-        <rect
-            x="0"
-            y="2"
-            width="8"
-            height="2"
-            fill="#d8a1a9"
-        />
+        <rect x="1" y="4" width="6" height="1" fill="#d8a1a9"/>
+        <rect x="2" y="5" width="4" height="1" fill="#d8a1a9"/>
+        <rect x="3" y="6" width="2" height="1" fill="#d8a1a9"/>
 
-        <rect
-            x="1"
-            y="4"
-            width="6"
-            height="1"
-            fill="#d8a1a9"
-        />
+        <rect x="1" y="2" width="1" height="1" fill="#f5edde"/>
 
-        <rect
-            x="2"
-            y="5"
-            width="4"
-            height="1"
-            fill="#d8a1a9"
-        />
+        <rect x="1" y="0" width="2" height="1" fill="#4b607d"/>
+        <rect x="5" y="0" width="2" height="1" fill="#4b607d"/>
 
-        <rect
-            x="3"
-            y="6"
-            width="2"
-            height="1"
-            fill="#d8a1a9"
-        />
+        <rect x="0" y="1" width="1" height="1" fill="#4b607d"/>
+        <rect x="3" y="1" width="2" height="1" fill="#4b607d"/>
+        <rect x="7" y="1" width="1" height="1" fill="#4b607d"/>
+
+        <rect x="0" y="4" width="1" height="1" fill="#4b607d"/>
+        <rect x="7" y="4" width="1" height="1" fill="#4b607d"/>
+
+        <rect x="1" y="5" width="1" height="1" fill="#4b607d"/>
+        <rect x="6" y="5" width="1" height="1" fill="#4b607d"/>
+
+        <rect x="2" y="6" width="1" height="1" fill="#4b607d"/>
+        <rect x="5" y="6" width="1" height="1" fill="#4b607d"/>
+
+        <rect x="3" y="7" width="2" height="1" fill="#4b607d"/>
 
     </svg>
 
@@ -1197,158 +1498,164 @@
 <script>
 
 
-const cursorCorazon =
-document.getElementById(
-    "cursorCorazon"
-);
+    /* ===================================== */
+    /* CURSOR                                */
+    /* ===================================== */
+
+    const cursorCorazon =
+        document.getElementById(
+            "cursorCorazon"
+        );
 
 
-const coloresEstela = [
+    const coloresEstela = [
 
-    "#d8a1a9",
-    "#879eb3",
-    "#8d9a78",
-    "#f5edde",
-    "#a6b7c7"
+        "#d8a1a9",
+        "#879eb3",
+        "#8d9a78",
+        "#f5edde",
+        "#a6b7c7"
 
-];
-
-
-let ultimoRastro =
-0;
+    ];
 
 
-
-document.addEventListener(
-
-    "mousemove",
-
-    evento => {
+    let ultimoRastro =
+        0;
 
 
-        cursorCorazon.style.left =
-        evento.clientX +
-        "px";
+
+    document.addEventListener(
+
+        "mousemove",
+
+        evento => {
 
 
-        cursorCorazon.style.top =
-        evento.clientY +
-        "px";
+            cursorCorazon.style.left =
+                evento.clientX +
+                "px";
 
 
-        const ahora =
-        Date.now();
+            cursorCorazon.style.top =
+                evento.clientY +
+                "px";
 
 
-        if (
-            ahora -
-            ultimoRastro <
-            35
-        ) {
+            const ahora =
+                Date.now();
 
-            return;
+
+            if (
+                ahora -
+                ultimoRastro <
+                35
+            ) {
+
+                return;
+
+            }
+
+
+            ultimoRastro =
+                ahora;
+
+
+            const pixel =
+                document.createElement(
+                    "div"
+                );
+
+
+            pixel.className =
+                "estela-cursor";
+
+
+            pixel.style.left =
+                evento.clientX +
+                "px";
+
+
+            pixel.style.top =
+                evento.clientY +
+                "px";
+
+
+            pixel.style.background =
+                coloresEstela[
+                    Math.floor(
+                        Math.random() *
+                        coloresEstela.length
+                    )
+                ];
+
+
+            pixel.style.marginLeft =
+                (
+                    Math.random() *
+                    10 -
+                    5
+                ) +
+                "px";
+
+
+            pixel.style.marginTop =
+                (
+                    Math.random() *
+                    10 -
+                    5
+                ) +
+                "px";
+
+
+            document.body.appendChild(
+                pixel
+            );
+
+
+            setTimeout(
+
+                () => {
+
+                    pixel.remove();
+
+                },
+
+                700
+
+            );
+
         }
 
-
-        ultimoRastro =
-        ahora;
+    );
 
 
-        const pixel =
-        document.createElement(
-            "div"
-        );
+
+    document.addEventListener(
+
+        "mouseleave",
+
+        () => {
+
+            cursorCorazon.style.display =
+                "none";
+
+        }
+
+    );
 
 
-        pixel.className =
-        "estela-cursor";
+    document.addEventListener(
 
+        "mouseenter",
 
-        pixel.style.left =
-        evento.clientX +
-        "px";
+        () => {
 
+            cursorCorazon.style.display =
+                "block";
 
-        pixel.style.top =
-        evento.clientY +
-        "px";
+        }
 
-
-        pixel.style.background =
-        coloresEstela[
-            Math.floor(
-                Math.random() *
-                coloresEstela.length
-            )
-        ];
-
-
-        pixel.style.marginLeft =
-        (
-            Math.random() *
-            10 -
-            5
-        ) +
-        "px";
-
-
-        pixel.style.marginTop =
-        (
-            Math.random() *
-            10 -
-            5
-        ) +
-        "px";
-
-
-        document.body.appendChild(
-            pixel
-        );
-
-
-        setTimeout(
-
-            () => {
-
-                pixel.remove();
-
-            },
-
-            700
-
-        );
-
-    }
-
-);
-
-
-document.addEventListener(
-
-    "mouseleave",
-
-    () => {
-
-        cursorCorazon.style.display =
-        "none";
-
-    }
-
-);
-
-
-document.addEventListener(
-
-    "mouseenter",
-
-    () => {
-
-        cursorCorazon.style.display =
-        "block";
-
-    }
-
-);
+    );
 
 
 </script>
