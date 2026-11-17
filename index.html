@@ -1056,19 +1056,16 @@
 
 
         /* ===================================== */
-        /* SPOTIFY                               */
+        /* TARJETA SPOTIFY                       */
         /* ===================================== */
 
-        .reproductor {
-
-            width:
-                100%;
+        .spotify-home {
 
             height:
                 calc(100% - 30px);
 
-            padding:
-                6px;
+            min-height:
+                145px;
 
             border:
                 2px solid
@@ -1076,17 +1073,351 @@
 
             background:
                 linear-gradient(
-                    to bottom,
-                    rgba(166,183,199,0.14),
-                    rgba(234,223,206,0.50)
+                    135deg,
+                    rgba(245,237,222,0.95),
+                    rgba(237,212,215,0.30),
+                    rgba(166,183,199,0.22)
                 );
+
+            display:
+                grid;
+
+            grid-template-columns:
+                82px 1fr;
+
+            align-items:
+                center;
+
+            gap:
+                17px;
+
+            padding:
+                16px 20px;
+
+            position:
+                relative;
 
             overflow:
                 hidden;
         }
 
 
-        .reproductor iframe {
+        .spotify-home::before {
+
+            content:
+                "♪";
+
+            position:
+                absolute;
+
+            right:
+                17px;
+
+            top:
+                7px;
+
+            font-size:
+                57px;
+
+            color:
+                rgba(216,161,169,0.14);
+
+            transform:
+                rotate(8deg);
+        }
+
+
+        .spotify-icono {
+
+            width:
+                72px;
+
+            height:
+                72px;
+
+            border:
+                2px solid
+                var(--azul-oscuro);
+
+            background:
+                var(--crema);
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                20px;
+
+            font-weight:
+                bold;
+
+            color:
+                var(--rosa);
+
+            box-shadow:
+                4px 4px 0
+                rgba(75,96,125,0.12);
+
+            transform:
+                rotate(-2deg);
+        }
+
+
+        .spotify-info {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+        }
+
+
+        .spotify-mini {
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                9px;
+
+            color:
+                var(--verde);
+
+            letter-spacing:
+                1px;
+
+            margin-bottom:
+                4px;
+        }
+
+
+        .spotify-nombre {
+
+            color:
+                var(--azul-oscuro);
+
+            font-size:
+                20px;
+
+            font-weight:
+                bold;
+
+            margin-bottom:
+                5px;
+        }
+
+
+        .spotify-texto {
+
+            color:
+                #616b77;
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                9px;
+
+            line-height:
+                1.45;
+
+            margin-bottom:
+                11px;
+        }
+
+
+        .spotify-acciones {
+
+            display:
+                flex;
+
+            flex-wrap:
+                wrap;
+
+            gap:
+                7px;
+        }
+
+
+        .spotify-acciones button,
+        .spotify-acciones a {
+
+            border:
+                1px solid
+                var(--azul-oscuro);
+
+            background:
+                var(--crema);
+
+            color:
+                var(--azul-oscuro);
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                9px;
+
+            padding:
+                6px 8px;
+
+            text-decoration:
+                none;
+        }
+
+
+        .spotify-acciones button:hover,
+        .spotify-acciones a:hover {
+
+            background:
+                var(--rosa-suave);
+        }
+
+
+
+        /* ===================================== */
+        /* MODAL SPOTIFY                         */
+        /* ===================================== */
+
+        .spotify-overlay {
+
+            display:
+                none;
+
+            position:
+                fixed;
+
+            inset:
+                0;
+
+            background:
+                rgba(46,52,64,0.60);
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                20px;
+
+            z-index:
+                2000000;
+        }
+
+
+        .spotify-modal {
+
+            width:
+                min(590px,95vw);
+
+            background:
+                var(--beige);
+
+            border:
+                2px solid
+                var(--azul-oscuro);
+
+            box-shadow:
+                9px 9px 0
+                rgba(75,96,125,0.30);
+
+            font-family:
+                "Courier New",
+                monospace;
+        }
+
+
+        .spotify-modal-barra {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            align-items:
+                center;
+
+            padding:
+                7px 9px;
+
+            background:
+                var(--azul-oscuro);
+
+            color:
+                var(--crema);
+
+            font-size:
+                10px;
+
+            letter-spacing:
+                1px;
+        }
+
+
+        .spotify-modal-cerrar {
+
+            width:
+                24px;
+
+            height:
+                21px;
+
+            padding:
+                0;
+
+            border:
+                1px solid
+                var(--crema);
+
+            background:
+                transparent;
+
+            color:
+                var(--crema);
+
+            font-family:
+                monospace;
+        }
+
+
+        .spotify-modal-contenido {
+
+            padding:
+                12px;
+        }
+
+
+        .spotify-modal-texto {
+
+            margin:
+                1px 2px 10px;
+
+            color:
+                var(--verde);
+
+            font-size:
+                9px;
+        }
+
+
+        .spotify-modal iframe {
 
             display:
                 block;
@@ -1095,16 +1426,13 @@
                 100%;
 
             height:
-                100%;
-
-            min-height:
-                152px;
+                352px;
 
             border:
                 0;
 
             border-radius:
-                8px;
+                10px;
         }
 
 
@@ -1379,7 +1707,7 @@
 
 
         /* ===================================== */
-        /* POP UP                                */
+        /* POP UP ACTUALIZACION                  */
         /* ===================================== */
 
         .popup-overlay {
@@ -1796,6 +2124,29 @@
                     18px 14px 12px;
             }
 
+
+            .spotify-home {
+
+                grid-template-columns:
+                    62px 1fr;
+
+                padding:
+                    12px;
+            }
+
+
+            .spotify-icono {
+
+                width:
+                    56px;
+
+                height:
+                    56px;
+
+                font-size:
+                    15px;
+            }
+
         }
 
 
@@ -1924,7 +2275,20 @@
                     var(--azul-oscuro);
 
                 height:
-                    390px;
+                    auto;
+
+                min-height:
+                    250px;
+            }
+
+
+            .spotify-home {
+
+                height:
+                    auto;
+
+                min-height:
+                    175px;
             }
 
 
@@ -1968,6 +2332,13 @@
                     18px;
             }
 
+
+            .spotify-modal iframe {
+
+                height:
+                    352px;
+            }
+
         }
 
     </style>
@@ -1980,7 +2351,7 @@
 
 
 <!-- ===================================== -->
-<!-- POP UP                                -->
+<!-- POP UP ACTUALIZACION                  -->
 <!-- ===================================== -->
 
 <div
@@ -2041,7 +2412,7 @@
                 <br>
 
                 <span>&gt;</span>
-                escuchanos directo desde Spotify
+                reproductor de Spotify
 
                 <br>
 
@@ -2081,6 +2452,65 @@
 
 
             </div>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- ===================================== -->
+<!-- MODAL SPOTIFY                         -->
+<!-- ===================================== -->
+
+<div
+    class="spotify-overlay"
+    id="spotifyOverlay"
+>
+
+    <div class="spotify-modal">
+
+
+        <div class="spotify-modal-barra">
+
+            <span>
+                spotify.exe / corazón
+            </span>
+
+
+            <button
+                class="spotify-modal-cerrar"
+                id="cerrarSpotify"
+                type="button"
+            >
+                X
+            </button>
+
+        </div>
+
+
+        <div class="spotify-modal-contenido">
+
+
+            <div class="spotify-modal-texto">
+                &gt; reproducción externa encontrada
+            </div>
+
+
+            <iframe
+                src="https://open.spotify.com/embed/artist/4TPyhB6HRUXUJPpEbJ3WQL?utm_source=generator"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+                title="Corazón en Spotify"
+            ></iframe>
 
 
         </div>
@@ -2355,77 +2785,26 @@
         </div>
 
 
-        <div class="foto">
-            <img src="fotos/fotocamarita1.JPG" alt="Corazón 1">
-        </div>
+        <div class="foto"><img src="fotos/fotocamarita1.JPG" alt="Corazón 1"></div>
+        <div class="foto"><img src="fotos/fotocamarita2.JPG" alt="Corazón 2"></div>
+        <div class="foto"><img src="fotos/fotocamarita3.JPG" alt="Corazón 3"></div>
+        <div class="foto"><img src="fotos/fotocamarita4.JPG" alt="Corazón 4"></div>
+        <div class="foto"><img src="fotos/fotocamarita5.JPG" alt="Corazón 5"></div>
+        <div class="foto"><img src="fotos/fotocamarita6.JPG" alt="Corazón 6"></div>
 
-        <div class="foto">
-            <img src="fotos/fotocamarita2.JPG" alt="Corazón 2">
-        </div>
+        <div class="foto"><img src="fotos/fotocamarita7.JPG" alt="Corazón 7"></div>
+        <div class="foto"><img src="fotos/fotocamarita8.JPG" alt="Corazón 8"></div>
+        <div class="foto"><img src="fotos/fotocamarita9.JPG" alt="Corazón 9"></div>
+        <div class="foto"><img src="fotos/fotocamarita10.JPG" alt="Corazón 10"></div>
+        <div class="foto"><img src="fotos/fotocamarita11.JPG" alt="Corazón 11"></div>
+        <div class="foto"><img src="fotos/fotocamarita12.JPG" alt="Corazón 12"></div>
 
-        <div class="foto">
-            <img src="fotos/fotocamarita3.JPG" alt="Corazón 3">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita4.JPG" alt="Corazón 4">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita5.JPG" alt="Corazón 5">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita6.JPG" alt="Corazón 6">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita7.JPG" alt="Corazón 7">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita8.JPG" alt="Corazón 8">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita9.JPG" alt="Corazón 9">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita10.JPG" alt="Corazón 10">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita11.JPG" alt="Corazón 11">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita12.JPG" alt="Corazón 12">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita13.JPG" alt="Corazón 13">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita14.JPG" alt="Corazón 14">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita15.JPG" alt="Corazón 15">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita16.JPG" alt="Corazón 16">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita17.JPG" alt="Corazón 17">
-        </div>
-
-        <div class="foto">
-            <img src="fotos/fotocamarita18.JPG" alt="Corazón 18">
-        </div>
+        <div class="foto"><img src="fotos/fotocamarita13.JPG" alt="Corazón 13"></div>
+        <div class="foto"><img src="fotos/fotocamarita14.JPG" alt="Corazón 14"></div>
+        <div class="foto"><img src="fotos/fotocamarita15.JPG" alt="Corazón 15"></div>
+        <div class="foto"><img src="fotos/fotocamarita16.JPG" alt="Corazón 16"></div>
+        <div class="foto"><img src="fotos/fotocamarita17.JPG" alt="Corazón 17"></div>
+        <div class="foto"><img src="fotos/fotocamarita18.JPG" alt="Corazón 18"></div>
 
 
     </section>
@@ -2453,19 +2832,56 @@
             </h2>
 
 
-            <div class="reproductor">
+            <div class="spotify-home">
 
 
-                <iframe
-                    src="https://open.spotify.com/embed/artist/4TPyhB6HRUXUJPpEbJ3WQL?utm_source=generator"
-                    width="100%"
-                    height="100%"
-                    frameborder="0"
-                    allowfullscreen=""
-                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                    loading="lazy"
-                    title="Corazón en Spotify"
-                ></iframe>
+                <div class="spotify-icono">
+                    [sp]
+                </div>
+
+
+                <div class="spotify-info">
+
+
+                    <div class="spotify-mini">
+                        AUDIO ENCONTRADO:
+                    </div>
+
+
+                    <div class="spotify-nombre">
+                        corazón
+                    </div>
+
+
+                    <div class="spotify-texto">
+                        reproducí nuestros temas sin salir de la web
+                    </div>
+
+
+                    <div class="spotify-acciones">
+
+
+                        <button
+                            type="button"
+                            id="abrirSpotify"
+                        >
+                            [ abrir reproductor ]
+                        </button>
+
+
+                        <a
+                            href="https://open.spotify.com/intl-es/artist/4TPyhB6HRUXUJPpEbJ3WQL?si=DgWVspSVTqmoCS-FBnryng"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            [ spotify ↗ ]
+                        </a>
+
+
+                    </div>
+
+
+                </div>
 
 
             </div>
@@ -2649,7 +3065,7 @@
 
 
     /* ===================================== */
-    /* POP UP                                */
+    /* POP UP ACTUALIZACION                  */
     /* ===================================== */
 
     function iniciarPopupActualizacion() {
@@ -2756,27 +3172,102 @@
 
         );
 
+    }
 
 
-        document.addEventListener(
 
-            "keydown",
+    /* ===================================== */
+    /* SPOTIFY                               */
+    /* ===================================== */
 
-            evento => {
+    const spotifyOverlay =
+        document.getElementById(
+            "spotifyOverlay"
+        );
 
-                if (
-                    evento.key === "Escape"
-                ) {
 
-                    cerrarActualizacion();
+    const abrirSpotify =
+        document.getElementById(
+            "abrirSpotify"
+        );
 
-                }
+
+    const cerrarSpotify =
+        document.getElementById(
+            "cerrarSpotify"
+        );
+
+
+
+    abrirSpotify.addEventListener(
+
+        "click",
+
+        () => {
+
+            spotifyOverlay.style.display =
+                "flex";
+
+        }
+
+    );
+
+
+
+    cerrarSpotify.addEventListener(
+
+        "click",
+
+        () => {
+
+            spotifyOverlay.style.display =
+                "none";
+
+        }
+
+    );
+
+
+
+    spotifyOverlay.addEventListener(
+
+        "click",
+
+        evento => {
+
+            if (
+                evento.target === spotifyOverlay
+            ) {
+
+                spotifyOverlay.style.display =
+                    "none";
 
             }
 
-        );
+        }
 
-    }
+    );
+
+
+
+    document.addEventListener(
+
+        "keydown",
+
+        evento => {
+
+            if (
+                evento.key === "Escape"
+            ) {
+
+                spotifyOverlay.style.display =
+                    "none";
+
+            }
+
+        }
+
+    );
 
 
 
