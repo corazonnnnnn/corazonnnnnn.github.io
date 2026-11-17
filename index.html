@@ -218,17 +218,21 @@
 
 
         .sidebar::-webkit-scrollbar {
+
             width: 4px;
         }
 
 
         .sidebar::-webkit-scrollbar-track {
+
             background: transparent;
         }
 
 
         .sidebar::-webkit-scrollbar-thumb {
-            background: var(--azul-suave);
+
+            background:
+                var(--azul-suave);
         }
 
 
@@ -1056,16 +1060,19 @@
 
 
         /* ===================================== */
-        /* TARJETA SPOTIFY                       */
+        /* SPOTIFY RE-ESCALADO                   */
         /* ===================================== */
 
-        .spotify-home {
+        .spotify-marco {
+
+            width:
+                100%;
 
             height:
                 calc(100% - 30px);
 
             min-height:
-                145px;
+                150px;
 
             border:
                 2px solid
@@ -1073,26 +1080,10 @@
 
             background:
                 linear-gradient(
-                    135deg,
-                    rgba(245,237,222,0.95),
-                    rgba(237,212,215,0.30),
-                    rgba(166,183,199,0.22)
+                    to bottom,
+                    rgba(166,183,199,0.13),
+                    rgba(245,237,222,0.52)
                 );
-
-            display:
-                grid;
-
-            grid-template-columns:
-                82px 1fr;
-
-            align-items:
-                center;
-
-            gap:
-                17px;
-
-            padding:
-                16px 20px;
 
             position:
                 relative;
@@ -1102,331 +1093,48 @@
         }
 
 
-        .spotify-home::before {
-
-            content:
-                "♪";
+        .spotify-escala {
 
             position:
                 absolute;
 
-            right:
-                17px;
+            left:
+                50%;
 
             top:
-                7px;
+                50%;
 
-            font-size:
-                57px;
-
-            color:
-                rgba(216,161,169,0.14);
-
-            transform:
-                rotate(8deg);
-        }
-
-
-        .spotify-icono {
+            /*
+               El iframe mide 153.846% del ancho.
+               Después lo reducimos al 65%.
+               153.846 x .65 = 100%.
+            */
 
             width:
-                72px;
+                153.846%;
 
             height:
-                72px;
-
-            border:
-                2px solid
-                var(--azul-oscuro);
-
-            background:
-                var(--crema);
-
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            font-family:
-                "Courier New",
-                monospace;
-
-            font-size:
-                20px;
-
-            font-weight:
-                bold;
-
-            color:
-                var(--rosa);
-
-            box-shadow:
-                4px 4px 0
-                rgba(75,96,125,0.12);
+                352px;
 
             transform:
-                rotate(-2deg);
+                translate(-50%,-50%)
+                scale(.65);
+
+            transform-origin:
+                center center;
         }
 
 
-        .spotify-info {
-
-            position:
-                relative;
-
-            z-index:
-                2;
-        }
-
-
-        .spotify-mini {
-
-            font-family:
-                "Courier New",
-                monospace;
-
-            font-size:
-                9px;
-
-            color:
-                var(--verde);
-
-            letter-spacing:
-                1px;
-
-            margin-bottom:
-                4px;
-        }
-
-
-        .spotify-nombre {
-
-            color:
-                var(--azul-oscuro);
-
-            font-size:
-                20px;
-
-            font-weight:
-                bold;
-
-            margin-bottom:
-                5px;
-        }
-
-
-        .spotify-texto {
-
-            color:
-                #616b77;
-
-            font-family:
-                "Courier New",
-                monospace;
-
-            font-size:
-                9px;
-
-            line-height:
-                1.45;
-
-            margin-bottom:
-                11px;
-        }
-
-
-        .spotify-acciones {
-
-            display:
-                flex;
-
-            flex-wrap:
-                wrap;
-
-            gap:
-                7px;
-        }
-
-
-        .spotify-acciones button,
-        .spotify-acciones a {
-
-            border:
-                1px solid
-                var(--azul-oscuro);
-
-            background:
-                var(--crema);
-
-            color:
-                var(--azul-oscuro);
-
-            font-family:
-                "Courier New",
-                monospace;
-
-            font-size:
-                9px;
-
-            padding:
-                6px 8px;
-
-            text-decoration:
-                none;
-        }
-
-
-        .spotify-acciones button:hover,
-        .spotify-acciones a:hover {
-
-            background:
-                var(--rosa-suave);
-        }
-
-
-
-        /* ===================================== */
-        /* MODAL SPOTIFY                         */
-        /* ===================================== */
-
-        .spotify-overlay {
-
-            display:
-                none;
-
-            position:
-                fixed;
-
-            inset:
-                0;
-
-            background:
-                rgba(46,52,64,0.60);
-
-            align-items:
-                center;
-
-            justify-content:
-                center;
-
-            padding:
-                20px;
-
-            z-index:
-                2000000;
-        }
-
-
-        .spotify-modal {
-
-            width:
-                min(590px,95vw);
-
-            background:
-                var(--beige);
-
-            border:
-                2px solid
-                var(--azul-oscuro);
-
-            box-shadow:
-                9px 9px 0
-                rgba(75,96,125,0.30);
-
-            font-family:
-                "Courier New",
-                monospace;
-        }
-
-
-        .spotify-modal-barra {
-
-            display:
-                flex;
-
-            justify-content:
-                space-between;
-
-            align-items:
-                center;
-
-            padding:
-                7px 9px;
-
-            background:
-                var(--azul-oscuro);
-
-            color:
-                var(--crema);
-
-            font-size:
-                10px;
-
-            letter-spacing:
-                1px;
-        }
-
-
-        .spotify-modal-cerrar {
-
-            width:
-                24px;
-
-            height:
-                21px;
-
-            padding:
-                0;
-
-            border:
-                1px solid
-                var(--crema);
-
-            background:
-                transparent;
-
-            color:
-                var(--crema);
-
-            font-family:
-                monospace;
-        }
-
-
-        .spotify-modal-contenido {
-
-            padding:
-                12px;
-        }
-
-
-        .spotify-modal-texto {
-
-            margin:
-                1px 2px 10px;
-
-            color:
-                var(--verde);
-
-            font-size:
-                9px;
-        }
-
-
-        .spotify-modal iframe {
-
-            display:
-                block;
+        .spotify-escala iframe {
 
             width:
                 100%;
 
             height:
                 352px;
+
+            display:
+                block;
 
             border:
                 0;
@@ -1707,7 +1415,7 @@
 
 
         /* ===================================== */
-        /* POP UP ACTUALIZACION                  */
+        /* POP UP                                */
         /* ===================================== */
 
         .popup-overlay {
@@ -2124,29 +1832,6 @@
                     18px 14px 12px;
             }
 
-
-            .spotify-home {
-
-                grid-template-columns:
-                    62px 1fr;
-
-                padding:
-                    12px;
-            }
-
-
-            .spotify-icono {
-
-                width:
-                    56px;
-
-                height:
-                    56px;
-
-                font-size:
-                    15px;
-            }
-
         }
 
 
@@ -2275,20 +1960,14 @@
                     var(--azul-oscuro);
 
                 height:
-                    auto;
-
-                min-height:
-                    250px;
+                    310px;
             }
 
 
-            .spotify-home {
+            .spotify-marco {
 
                 height:
-                    auto;
-
-                min-height:
-                    175px;
+                    250px;
             }
 
 
@@ -2332,13 +2011,6 @@
                     18px;
             }
 
-
-            .spotify-modal iframe {
-
-                height:
-                    352px;
-            }
-
         }
 
     </style>
@@ -2351,7 +2023,7 @@
 
 
 <!-- ===================================== -->
-<!-- POP UP ACTUALIZACION                  -->
+<!-- POP UP                                -->
 <!-- ===================================== -->
 
 <div
@@ -2412,7 +2084,7 @@
                 <br>
 
                 <span>&gt;</span>
-                reproductor de Spotify
+                escuchanos desde Spotify
 
                 <br>
 
@@ -2452,65 +2124,6 @@
 
 
             </div>
-
-
-        </div>
-
-
-    </div>
-
-</div>
-
-
-
-<!-- ===================================== -->
-<!-- MODAL SPOTIFY                         -->
-<!-- ===================================== -->
-
-<div
-    class="spotify-overlay"
-    id="spotifyOverlay"
->
-
-    <div class="spotify-modal">
-
-
-        <div class="spotify-modal-barra">
-
-            <span>
-                spotify.exe / corazón
-            </span>
-
-
-            <button
-                class="spotify-modal-cerrar"
-                id="cerrarSpotify"
-                type="button"
-            >
-                X
-            </button>
-
-        </div>
-
-
-        <div class="spotify-modal-contenido">
-
-
-            <div class="spotify-modal-texto">
-                &gt; reproducción externa encontrada
-            </div>
-
-
-            <iframe
-                src="https://open.spotify.com/embed/artist/4TPyhB6HRUXUJPpEbJ3WQL?utm_source=generator"
-                width="100%"
-                height="352"
-                frameborder="0"
-                allowfullscreen=""
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy"
-                title="Corazón en Spotify"
-            ></iframe>
 
 
         </div>
@@ -2752,8 +2365,6 @@
 
 
 
-        <!-- EASTER EGG -->
-
         <div class="firma">
 
             <a
@@ -2832,53 +2443,20 @@
             </h2>
 
 
-            <div class="spotify-home">
+            <div class="spotify-marco">
 
 
-                <div class="spotify-icono">
-                    [sp]
-                </div>
+                <div class="spotify-escala">
 
 
-                <div class="spotify-info">
-
-
-                    <div class="spotify-mini">
-                        AUDIO ENCONTRADO:
-                    </div>
-
-
-                    <div class="spotify-nombre">
-                        corazón
-                    </div>
-
-
-                    <div class="spotify-texto">
-                        reproducí nuestros temas sin salir de la web
-                    </div>
-
-
-                    <div class="spotify-acciones">
-
-
-                        <button
-                            type="button"
-                            id="abrirSpotify"
-                        >
-                            [ abrir reproductor ]
-                        </button>
-
-
-                        <a
-                            href="https://open.spotify.com/intl-es/artist/4TPyhB6HRUXUJPpEbJ3WQL?si=DgWVspSVTqmoCS-FBnryng"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            [ spotify ↗ ]
-                        </a>
-
-
-                    </div>
+                    <iframe
+                        src="https://open.spotify.com/embed/artist/4TPyhB6HRUXUJPpEbJ3WQL?utm_source=generator"
+                        frameborder="0"
+                        allowfullscreen=""
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy"
+                        title="Corazón en Spotify"
+                    ></iframe>
 
 
                 </div>
@@ -3035,10 +2613,6 @@
 
 
 
-<!-- ===================================== -->
-<!-- SUPABASE                              -->
-<!-- ===================================== -->
-
 <script
     src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
 ></script>
@@ -3065,7 +2639,7 @@
 
 
     /* ===================================== */
-    /* POP UP ACTUALIZACION                  */
+    /* POP UP                                */
     /* ===================================== */
 
     function iniciarPopupActualizacion() {
@@ -3153,7 +2727,6 @@
         );
 
 
-
         popup.addEventListener(
 
             "click",
@@ -3173,101 +2746,6 @@
         );
 
     }
-
-
-
-    /* ===================================== */
-    /* SPOTIFY                               */
-    /* ===================================== */
-
-    const spotifyOverlay =
-        document.getElementById(
-            "spotifyOverlay"
-        );
-
-
-    const abrirSpotify =
-        document.getElementById(
-            "abrirSpotify"
-        );
-
-
-    const cerrarSpotify =
-        document.getElementById(
-            "cerrarSpotify"
-        );
-
-
-
-    abrirSpotify.addEventListener(
-
-        "click",
-
-        () => {
-
-            spotifyOverlay.style.display =
-                "flex";
-
-        }
-
-    );
-
-
-
-    cerrarSpotify.addEventListener(
-
-        "click",
-
-        () => {
-
-            spotifyOverlay.style.display =
-                "none";
-
-        }
-
-    );
-
-
-
-    spotifyOverlay.addEventListener(
-
-        "click",
-
-        evento => {
-
-            if (
-                evento.target === spotifyOverlay
-            ) {
-
-                spotifyOverlay.style.display =
-                    "none";
-
-            }
-
-        }
-
-    );
-
-
-
-    document.addEventListener(
-
-        "keydown",
-
-        evento => {
-
-            if (
-                evento.key === "Escape"
-            ) {
-
-                spotifyOverlay.style.display =
-                    "none";
-
-            }
-
-        }
-
-    );
 
 
 
@@ -3595,10 +3073,6 @@
 
 
 
-    /* ===================================== */
-    /* PUBLICAR MENSAJE                      */
-    /* ===================================== */
-
     formQueja.addEventListener(
 
         "submit",
@@ -3839,10 +3313,6 @@
     );
 
 
-
-    /* ===================================== */
-    /* ARRANQUE                              */
-    /* ===================================== */
 
     iniciarPopupActualizacion();
 
