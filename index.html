@@ -2,7 +2,6 @@
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
 
     <meta
@@ -21,7 +20,6 @@
     <style>
 
         :root {
-
             --azul-fondo: #c5d2de;
             --azul-suave: #a6b7c7;
             --azul-medio: #879eb3;
@@ -47,18 +45,14 @@
 
         html,
         body {
-
             width: 100%;
             height: 100%;
-
             margin: 0;
-
             overflow: hidden;
         }
 
 
         body {
-
             color: var(--texto);
 
             font-family:
@@ -85,9 +79,7 @@
                 fixed;
 
             display: flex;
-
             align-items: center;
-
             justify-content: center;
         }
 
@@ -98,7 +90,6 @@
         /* ===================================== */
 
         .pagina {
-
             width:
                 calc(100vw - 30px);
 
@@ -120,13 +111,11 @@
                 rgba(75,96,125,0.18);
 
             position: relative;
-
             overflow: hidden;
         }
 
 
         .pagina::before {
-
             content: "";
 
             position: absolute;
@@ -144,7 +133,6 @@
 
 
         .pagina::after {
-
             content: "";
 
             position: absolute;
@@ -167,7 +155,6 @@
         /* ===================================== */
 
         .estructura {
-
             width: 100%;
             height: 100%;
 
@@ -192,7 +179,6 @@
         /* ===================================== */
 
         .sidebar {
-
             grid-row:
                 1 / 3;
 
@@ -218,26 +204,22 @@
 
 
         .sidebar::-webkit-scrollbar {
-
             width: 4px;
         }
 
 
         .sidebar::-webkit-scrollbar-track {
-
             background: transparent;
         }
 
 
         .sidebar::-webkit-scrollbar-thumb {
-
             background:
                 var(--azul-suave);
         }
 
 
         .sidebar::after {
-
             content: "";
 
             position: absolute;
@@ -262,7 +244,6 @@
 
 
         .logo {
-
             font-size:
                 clamp(27px,2.1vw,35px);
 
@@ -280,7 +261,6 @@
 
 
         .subtitulo {
-
             font-size:
                 clamp(15px,1.2vw,19px);
 
@@ -289,7 +269,6 @@
 
 
         .lugar {
-
             font-size: 14px;
 
             color:
@@ -300,9 +279,7 @@
 
 
         .lineita {
-
             width: 65px;
-
             height: 2px;
 
             background:
@@ -314,7 +291,6 @@
 
 
         .texto-info {
-
             font-size: 14px;
 
             line-height: 1.4;
@@ -329,7 +305,6 @@
         /* ===================================== */
 
         .proximas-fechas {
-
             margin:
                 10px 0 13px;
 
@@ -350,7 +325,6 @@
 
 
         .fechas-titulo {
-
             color:
                 var(--azul-oscuro);
 
@@ -373,7 +347,6 @@
 
 
         .fechas-titulo::after {
-
             content:
                 " ♡";
 
@@ -383,7 +356,6 @@
 
 
         .fecha-dia {
-
             font-family:
                 "Courier New",
                 monospace;
@@ -403,7 +375,6 @@
 
 
         .fecha-evento {
-
             color:
                 var(--azul-oscuro);
 
@@ -419,7 +390,6 @@
 
 
         .fecha-lugar {
-
             font-size:
                 10px;
 
@@ -432,7 +402,6 @@
 
 
         .fecha-bandas {
-
             margin-top:
                 6px;
 
@@ -464,7 +433,6 @@
         /* ===================================== */
 
         .menu {
-
             margin-top: 5px;
 
             padding:
@@ -480,7 +448,6 @@
 
 
         .menu a {
-
             display: block;
 
             width:
@@ -501,7 +468,6 @@
 
 
         .menu a::before {
-
             content:
                 "♡ ";
 
@@ -516,7 +482,6 @@
         /* ===================================== */
 
         .redes {
-
             margin-top: 10px;
 
             padding-top: 8px;
@@ -528,7 +493,6 @@
 
 
         .redes-titulo {
-
             font-size: 9px;
 
             color:
@@ -541,7 +505,6 @@
 
 
         .redes a {
-
             display: block;
 
             width:
@@ -560,14 +523,12 @@
 
 
         .redes a:hover {
-
             color:
                 var(--rosa);
         }
 
 
         .icono-red {
-
             display: inline-block;
 
             width: 27px;
@@ -579,11 +540,91 @@
 
 
         /* ===================================== */
+        /* WEBRING                               */
+        /* ===================================== */
+
+        .webring-caja {
+            margin-top:
+                11px;
+
+            padding:
+                8px 7px;
+
+            border:
+                1px dashed
+                var(--azul-medio);
+
+            background:
+                rgba(245,237,222,0.45);
+
+            overflow:
+                hidden;
+
+            position:
+                relative;
+
+            z-index:
+                2;
+        }
+
+
+        .webring-titulo {
+            margin-bottom:
+                6px;
+
+            color:
+                var(--verde);
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                8px;
+
+            letter-spacing:
+                1px;
+        }
+
+
+        .webring-titulo::after {
+            content:
+                " ♡";
+
+            color:
+                var(--rosa);
+        }
+
+
+        #musicians-ring {
+            max-width:
+                100%;
+
+            font-size:
+                9px;
+        }
+
+
+        #musicians-ring a {
+            color:
+                var(--azul-oscuro);
+        }
+
+
+        #musicians-ring img {
+            max-width:
+                100%;
+            height:
+                auto;
+        }
+
+
+
+        /* ===================================== */
         /* CONTADOR                              */
         /* ===================================== */
 
         .contador-visitas {
-
             margin-top:
                 11px;
 
@@ -606,7 +647,6 @@
 
 
         .contador-titulo {
-
             font-size:
                 9px;
 
@@ -622,7 +662,6 @@
 
 
         .contador-texto {
-
             font-size:
                 10px;
 
@@ -632,7 +671,6 @@
 
 
         .contador-numero {
-
             display:
                 inline-block;
 
@@ -659,7 +697,6 @@
         /* ===================================== */
 
         .actualizacion {
-
             margin-top:
                 10px;
 
@@ -679,7 +716,6 @@
 
 
         .firma {
-
             margin-top:
                 8px;
 
@@ -697,7 +733,6 @@
         /* ===================================== */
 
         .secreto-link {
-
             color:
                 var(--verde);
 
@@ -715,7 +750,6 @@
 
 
         .secreto-link:hover {
-
             color:
                 var(--rosa);
 
@@ -733,7 +767,6 @@
         /* ===================================== */
 
         .fotos {
-
             position:
                 relative;
 
@@ -775,7 +808,6 @@
 
 
         .fotos::before {
-
             content: "";
 
             position:
@@ -805,7 +837,6 @@
 
 
         .titulo-fotos {
-
             position:
                 absolute;
 
@@ -836,7 +867,6 @@
 
 
         .titulo-fotos::after {
-
             content:
                 "  ♡";
 
@@ -846,7 +876,6 @@
 
 
         .foto {
-
             position:
                 relative;
 
@@ -889,7 +918,6 @@
 
 
         .foto img {
-
             width:
                 100%;
 
@@ -908,7 +936,6 @@
 
 
         .foto:hover {
-
             transform:
                 scale(2);
 
@@ -926,14 +953,12 @@
 
 
         .foto:nth-child(6n + 2) {
-
             transform-origin:
                 left center;
         }
 
 
         .foto:nth-child(6n + 1) {
-
             transform-origin:
                 right center;
         }
@@ -945,7 +970,6 @@
         /* ===================================== */
 
         .abajo {
-
             display:
                 grid;
 
@@ -965,7 +989,6 @@
 
         .musica,
         .guestbook {
-
             min-width:
                 0;
 
@@ -987,7 +1010,6 @@
 
 
         .musica {
-
             border-right:
                 4px solid
                 var(--azul-oscuro);
@@ -996,7 +1018,6 @@
 
         .musica::before,
         .guestbook::before {
-
             content: "";
 
             position:
@@ -1026,7 +1047,6 @@
 
         .musica h2,
         .guestbook h2 {
-
             margin:
                 2px 0 10px 0;
 
@@ -1046,7 +1066,6 @@
 
         .musica h2::after,
         .guestbook h2::after {
-
             content:
                 "  ♡";
 
@@ -1064,7 +1083,6 @@
         /* ===================================== */
 
         .spotify-marco {
-
             width:
                 100%;
 
@@ -1094,7 +1112,6 @@
 
 
         .spotify-escala {
-
             position:
                 absolute;
 
@@ -1103,12 +1120,6 @@
 
             top:
                 50%;
-
-            /*
-               El iframe mide 153.846% del ancho.
-               Después lo reducimos al 65%.
-               153.846 x .65 = 100%.
-            */
 
             width:
                 153.846%;
@@ -1126,7 +1137,6 @@
 
 
         .spotify-escala iframe {
-
             width:
                 100%;
 
@@ -1150,7 +1160,6 @@
         /* ===================================== */
 
         .guestbook-contenido {
-
             height:
                 calc(100% - 30px);
 
@@ -1169,7 +1178,6 @@
 
 
         .form-queja {
-
             border:
                 2px solid
                 var(--azul-medio);
@@ -1186,7 +1194,6 @@
 
 
         .form-queja label {
-
             display:
                 block;
 
@@ -1203,7 +1210,6 @@
 
         .form-queja input,
         .form-queja textarea {
-
             width:
                 100%;
 
@@ -1234,14 +1240,12 @@
 
 
         .form-queja input {
-
             margin-bottom:
                 7px;
         }
 
 
         .form-queja textarea {
-
             height:
                 55px;
 
@@ -1254,7 +1258,6 @@
 
 
         .form-queja button {
-
             border:
                 1px solid
                 var(--azul-oscuro);
@@ -1279,14 +1282,12 @@
 
 
         .form-queja button:hover {
-
             background:
                 var(--rosa-suave);
         }
 
 
         .estado {
-
             font-size:
                 11px;
 
@@ -1307,7 +1308,6 @@
         /* ===================================== */
 
         .lista-mensajes {
-
             border:
                 2px solid
                 var(--azul-medio);
@@ -1331,7 +1331,6 @@
 
 
         .mensaje {
-
             padding:
                 5px 2px 7px;
 
@@ -1345,14 +1344,12 @@
 
 
         .mensaje:last-child {
-
             border-bottom:
                 none;
         }
 
 
         .mensaje-cabecera {
-
             display:
                 flex;
 
@@ -1368,7 +1365,6 @@
 
 
         .mensaje-nombre {
-
             font-weight:
                 bold;
 
@@ -1378,7 +1374,6 @@
 
 
         .mensaje-fecha {
-
             color:
                 #777;
 
@@ -1391,7 +1386,6 @@
 
 
         .mensaje-texto {
-
             line-height:
                 1.3;
 
@@ -1401,7 +1395,6 @@
 
 
         .sin-mensajes {
-
             font-size:
                 12px;
 
@@ -1419,7 +1412,6 @@
         /* ===================================== */
 
         .popup-overlay {
-
             display:
                 none;
 
@@ -1447,7 +1439,6 @@
 
 
         .popup-ventana {
-
             width:
                 min(430px,95vw);
 
@@ -1472,7 +1463,6 @@
 
 
         .popup-barra {
-
             display:
                 flex;
 
@@ -1500,7 +1490,6 @@
 
 
         .popup-cerrar-x {
-
             border:
                 1px solid
                 var(--crema);
@@ -1529,7 +1518,6 @@
 
 
         .popup-contenido {
-
             padding:
                 25px;
 
@@ -1546,7 +1534,6 @@
 
 
         .popup-ascii {
-
             color:
                 var(--rosa);
 
@@ -1559,7 +1546,6 @@
 
 
         .popup-titulo {
-
             color:
                 var(--azul-oscuro);
 
@@ -1578,7 +1564,6 @@
 
 
         .popup-texto {
-
             color:
                 #596573;
 
@@ -1594,7 +1579,6 @@
 
 
         .popup-novedades {
-
             border:
                 1px dashed
                 var(--azul-medio);
@@ -1620,14 +1604,12 @@
 
 
         .popup-novedades span {
-
             color:
                 var(--rosa);
         }
 
 
         .popup-botones {
-
             display:
                 flex;
 
@@ -1644,7 +1626,6 @@
 
         .popup-botones a,
         .popup-botones button {
-
             border:
                 1px solid
                 var(--azul-oscuro);
@@ -1672,7 +1653,6 @@
 
         .popup-botones a:hover,
         .popup-botones button:hover {
-
             background:
                 var(--rosa-suave);
         }
@@ -1684,7 +1664,6 @@
         /* ===================================== */
 
         .cursor-corazon {
-
             display:
                 none;
         }
@@ -1698,14 +1677,12 @@
             input,
             textarea,
             .foto {
-
                 cursor:
                     none !important;
             }
 
 
             .cursor-corazon {
-
                 display:
                     block;
 
@@ -1739,7 +1716,6 @@
 
 
             .cursor-corazon svg {
-
                 display:
                     block;
 
@@ -1752,7 +1728,6 @@
 
 
             .estela-cursor {
-
                 position:
                     fixed;
 
@@ -1781,7 +1756,6 @@
                 }
 
                 100% {
-
                     opacity: 0;
 
                     transform:
@@ -1802,21 +1776,18 @@
         @media (max-width:900px) {
 
             .estructura {
-
                 grid-template-columns:
                     190px minmax(0,1fr);
             }
 
 
             .sidebar {
-
                 padding:
                     20px 13px;
             }
 
 
             .fotos {
-
                 gap:
                     5px;
 
@@ -1827,7 +1798,6 @@
 
             .musica,
             .guestbook {
-
                 padding:
                     18px 14px 12px;
             }
@@ -1844,7 +1814,6 @@
 
             html,
             body {
-
                 height:
                     auto;
 
@@ -1854,7 +1823,6 @@
 
 
             body {
-
                 display:
                     block;
 
@@ -1864,7 +1832,6 @@
 
 
             .pagina {
-
                 width:
                     96%;
 
@@ -1880,7 +1847,6 @@
 
 
             .estructura {
-
                 display:
                     block;
 
@@ -1890,7 +1856,6 @@
 
 
             .sidebar {
-
                 border-right:
                     none;
 
@@ -1904,14 +1869,12 @@
 
 
             .sidebar::after {
-
                 display:
                     none;
             }
 
 
             .fotos {
-
                 min-height:
                     auto;
 
@@ -1930,28 +1893,24 @@
 
 
             .foto {
-
                 aspect-ratio:
                     1 / 1;
             }
 
 
             .foto:hover {
-
                 transform:
                     scale(1.05);
             }
 
 
             .abajo {
-
                 display:
                     block;
             }
 
 
             .musica {
-
                 border-right:
                     none;
 
@@ -1965,14 +1924,12 @@
 
 
             .spotify-marco {
-
                 height:
                     250px;
             }
 
 
             .guestbook {
-
                 height:
                     auto;
 
@@ -1982,7 +1939,6 @@
 
 
             .guestbook-contenido {
-
                 display:
                     block;
 
@@ -1992,21 +1948,18 @@
 
 
             .form-queja {
-
                 margin-bottom:
                     10px;
             }
 
 
             .lista-mensajes {
-
                 height:
                     220px;
             }
 
 
             .popup-contenido {
-
                 padding:
                     18px;
             }
@@ -2067,7 +2020,7 @@
 
             <div class="popup-texto">
 
-                fechas, letras y música ♡
+                fechas, letras, música y conexiones ♡
 
                 <br>
 
@@ -2094,7 +2047,7 @@
                 <br>
 
                 <span>&gt;</span>
-                fotos, flyers, demos y otras cosas
+                ahora somos parte del Musicians Webring
 
                 <br>
 
@@ -2319,6 +2272,35 @@
 
 
 
+        <!-- ================================= -->
+        <!-- MUSICIANS WEBRING                 -->
+        <!-- ================================= -->
+
+        <div class="webring-caja">
+
+
+            <div class="webring-titulo">
+                MUSICIANS WEBRING
+            </div>
+
+
+            <div id='musicians-ring' style="width: fit-content">
+                <script
+                    type="text/javascript"
+                    src="https://lydels.neocities.org/musicianswebring/onionring-variables.js"
+                ></script>
+
+                <script
+                    type="text/javascript"
+                    src="https://lydels.neocities.org/musicianswebring/onionring-widget2.js"
+                ></script>
+            </div>
+
+
+        </div>
+
+
+
         <!-- CONTADOR -->
 
         <div class="contador-visitas">
@@ -2365,6 +2347,8 @@
 
 
 
+        <!-- EASTER EGG -->
+
         <div class="firma">
 
             <a
@@ -2396,26 +2380,77 @@
         </div>
 
 
-        <div class="foto"><img src="fotos/fotocamarita1.JPG" alt="Corazón 1"></div>
-        <div class="foto"><img src="fotos/fotocamarita2.JPG" alt="Corazón 2"></div>
-        <div class="foto"><img src="fotos/fotocamarita3.JPG" alt="Corazón 3"></div>
-        <div class="foto"><img src="fotos/fotocamarita4.JPG" alt="Corazón 4"></div>
-        <div class="foto"><img src="fotos/fotocamarita5.JPG" alt="Corazón 5"></div>
-        <div class="foto"><img src="fotos/fotocamarita6.JPG" alt="Corazón 6"></div>
+        <div class="foto">
+            <img src="fotos/fotocamarita1.JPG" alt="Corazón 1">
+        </div>
 
-        <div class="foto"><img src="fotos/fotocamarita7.JPG" alt="Corazón 7"></div>
-        <div class="foto"><img src="fotos/fotocamarita8.JPG" alt="Corazón 8"></div>
-        <div class="foto"><img src="fotos/fotocamarita9.JPG" alt="Corazón 9"></div>
-        <div class="foto"><img src="fotos/fotocamarita10.JPG" alt="Corazón 10"></div>
-        <div class="foto"><img src="fotos/fotocamarita11.JPG" alt="Corazón 11"></div>
-        <div class="foto"><img src="fotos/fotocamarita12.JPG" alt="Corazón 12"></div>
+        <div class="foto">
+            <img src="fotos/fotocamarita2.JPG" alt="Corazón 2">
+        </div>
 
-        <div class="foto"><img src="fotos/fotocamarita13.JPG" alt="Corazón 13"></div>
-        <div class="foto"><img src="fotos/fotocamarita14.JPG" alt="Corazón 14"></div>
-        <div class="foto"><img src="fotos/fotocamarita15.JPG" alt="Corazón 15"></div>
-        <div class="foto"><img src="fotos/fotocamarita16.JPG" alt="Corazón 16"></div>
-        <div class="foto"><img src="fotos/fotocamarita17.JPG" alt="Corazón 17"></div>
-        <div class="foto"><img src="fotos/fotocamarita18.JPG" alt="Corazón 18"></div>
+        <div class="foto">
+            <img src="fotos/fotocamarita3.JPG" alt="Corazón 3">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita4.JPG" alt="Corazón 4">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita5.JPG" alt="Corazón 5">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita6.JPG" alt="Corazón 6">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita7.JPG" alt="Corazón 7">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita8.JPG" alt="Corazón 8">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita9.JPG" alt="Corazón 9">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita10.JPG" alt="Corazón 10">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita11.JPG" alt="Corazón 11">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita12.JPG" alt="Corazón 12">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita13.JPG" alt="Corazón 13">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita14.JPG" alt="Corazón 14">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita15.JPG" alt="Corazón 15">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita16.JPG" alt="Corazón 16">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita17.JPG" alt="Corazón 17">
+        </div>
+
+        <div class="foto">
+            <img src="fotos/fotocamarita18.JPG" alt="Corazón 18">
+        </div>
 
 
     </section>
@@ -2613,6 +2648,10 @@
 
 
 
+<!-- ===================================== -->
+<!-- SUPABASE                              -->
+<!-- ===================================== -->
+
 <script
     src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
 ></script>
@@ -2669,8 +2708,14 @@
             );
 
 
+        /*
+            v2 hace que vuelva a aparecer
+            aunque ya hayan visto la actualización
+            anterior del mismo día.
+        */
+
         const clavePopup =
-            "corazon_popup_actualizacion_2026_11_17";
+            "corazon_popup_actualizacion_2026_11_17_v2";
 
 
 
@@ -2715,7 +2760,9 @@
 
 
         archivos.addEventListener(
+
             "click",
+
             () => {
 
                 localStorage.setItem(
@@ -2724,6 +2771,7 @@
                 );
 
             }
+
         );
 
 
@@ -2735,6 +2783,25 @@
 
                 if (
                     evento.target === popup
+                ) {
+
+                    cerrarActualizacion();
+
+                }
+
+            }
+
+        );
+
+
+        document.addEventListener(
+
+            "keydown",
+
+            evento => {
+
+                if (
+                    evento.key === "Escape"
                 ) {
 
                     cerrarActualizacion();
@@ -2958,6 +3025,7 @@
 
 
         data.forEach(
+
             item => {
 
 
@@ -3067,11 +3135,16 @@
                 );
 
             }
+
         );
 
     }
 
 
+
+    /* ===================================== */
+    /* PUBLICAR MENSAJE                      */
+    /* ===================================== */
 
     formQueja.addEventListener(
 
@@ -3313,6 +3386,10 @@
     );
 
 
+
+    /* ===================================== */
+    /* ARRANQUE                              */
+    /* ===================================== */
 
     iniciarPopupActualizacion();
 
