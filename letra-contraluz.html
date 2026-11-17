@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>contraluz.txt — corazón</title>
+
+    <link
+        rel="icon"
+        type="image/svg+xml"
+        href="favicon.svg"
+    >
+
+    <style>
+
+        :root {
+
+            --azul-suave: #a6b7c7;
+            --azul-medio: #879eb3;
+            --azul-oscuro: #4b607d;
+
+            --crema: #f5edde;
+            --beige: #eadfce;
+
+            --rosa: #d8a1a9;
+            --rosa-suave: #edd4d7;
+
+            --verde: #8d9a78;
+
+            --texto: #2e3440;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            margin: 0;
+
+            min-height: 100vh;
+
+            padding:
+                25px 15px 50px;
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            color:
+                var(--texto);
+
+            background-color:
+                var(--beige);
+
+            background-image:
+                url("fondo-floral.jpg");
+
+            background-size:
+                cover;
+
+            background-position:
+                center;
+
+            background-repeat:
+                no-repeat;
+
+            background-attachment:
+                fixed;
+        }
+
+
+
+        /* ===================================== */
+        /* PAGINA                                */
+        /* ===================================== */
+
+        .pagina {
+
+            width:
+                min(850px, 100%);
+
+            margin:
+                0 auto;
+
+            background:
+                rgba(234,223,206,0.97);
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            box-shadow:
+                0 5px 20px
+                rgba(75,96,125,0.22);
+
+            position:
+                relative;
+
+            padding:
+                38px 42px 45px;
+        }
+
+
+        .pagina::before {
+
+            content: "";
+
+            position:
+                absolute;
+
+            inset:
+                8px;
+
+            border:
+                2px solid
+                rgba(75,96,125,0.17);
+
+            pointer-events:
+                none;
+        }
+
+
+        .pagina::after {
+
+            content: "";
+
+            position:
+                absolute;
+
+            inset:
+                15px;
+
+            border:
+                1px dotted
+                rgba(216,161,169,0.35);
+
+            pointer-events:
+                none;
+        }
+
+
+        .contenido {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+        }
+
+
+
+        /* ===================================== */
+        /* CABECERA                              */
+        /* ===================================== */
+
+        .ruta {
+
+            color:
+                var(--verde);
+
+            font-size:
+                10px;
+
+            margin-bottom:
+                23px;
+
+            overflow-wrap:
+                anywhere;
+        }
+
+
+        .cabecera {
+
+            display:
+                flex;
+
+            justify-content:
+                space-between;
+
+            gap:
+                20px;
+
+            align-items:
+                flex-start;
+
+            padding-bottom:
+                20px;
+
+            border-bottom:
+                3px solid
+                var(--azul-oscuro);
+        }
+
+
+        .archivo-titulo {
+
+            margin:
+                0;
+
+            color:
+                var(--azul-oscuro);
+
+            font-size:
+                clamp(27px,5vw,45px);
+
+            line-height:
+                1;
+
+            letter-spacing:
+                1px;
+        }
+
+
+        .tipo-archivo {
+
+            margin-top:
+                8px;
+
+            color:
+                var(--rosa);
+
+            font-size:
+                10px;
+
+            letter-spacing:
+                1px;
+        }
+
+
+        .volver {
+
+            color:
+                var(--azul-oscuro);
+
+            text-decoration:
+                none;
+
+            font-size:
+                10px;
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            background:
+                rgba(245,237,222,0.68);
+
+            padding:
+                7px 9px;
+
+            white-space:
+                nowrap;
+        }
+
+
+        .volver:hover {
+
+            background:
+                var(--rosa-suave);
+        }
+
+
+
+        /* ===================================== */
+        /* DATOS                                 */
+        /* ===================================== */
+
+        .metadata {
+
+            margin:
+                18px 0 28px;
+
+            padding:
+                10px 12px;
+
+            border:
+                1px dashed
+                var(--azul-medio);
+
+            background:
+                rgba(245,237,222,0.45);
+
+            font-size:
+                9px;
+
+            line-height:
+                1.7;
+
+            color:
+                #66717d;
+        }
+
+
+        .metadata span {
+
+            color:
+                var(--rosa);
+        }
+
+
+
+        /* ===================================== */
+        /* LETRA                                 */
+        /* ===================================== */
+
+        .bloque-letra {
+
+            margin-top:
+                20px;
+        }
+
+
+        .seccion-titulo {
+
+            color:
+                var(--azul-oscuro);
+
+            font-size:
+                12px;
+
+            letter-spacing:
+                1px;
+
+            margin-bottom:
+                16px;
+        }
+
+
+        .seccion-titulo::before {
+
+            content:
+                "> ";
+
+            color:
+                var(--rosa);
+        }
+
+
+        .letra {
+
+            border-left:
+                3px solid
+                var(--rosa);
+
+            padding:
+                6px 0 6px 20px;
+
+            font-family:
+                "Times New Roman",
+                Times,
+                serif;
+
+            font-size:
+                18px;
+
+            line-height:
+                1.65;
+
+            color:
+                #3f4650;
+        }
+
+
+        .estrofa {
+
+            margin-bottom:
+                22px;
+        }
+
+
+
+        /* ===================================== */
+        /* PARTICIPANTES                         */
+        /* ===================================== */
+
+        .participantes {
+
+            margin-top:
+                38px;
+
+            padding-top:
+                20px;
+
+            border-top:
+                1px dotted
+                rgba(75,96,125,0.45);
+        }
+
+
+        .participante {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                minmax(150px,220px)
+                1fr;
+
+            gap:
+                10px;
+
+            padding:
+                7px 0;
+
+            font-size:
+                11px;
+
+            border-bottom:
+                1px dotted
+                rgba(75,96,125,0.20);
+        }
+
+
+        .participante:last-child {
+
+            border-bottom:
+                none;
+        }
+
+
+        .nombre {
+
+            color:
+                var(--azul-oscuro);
+        }
+
+
+        .instrumento {
+
+            color:
+                #68717c;
+        }
+
+
+
+        /* ===================================== */
+        /* NAVEGACION FINAL                      */
+        /* ===================================== */
+
+        .navegacion-final {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                1fr auto 1fr;
+
+            gap:
+                10px;
+
+            align-items:
+                center;
+
+            margin-top:
+                35px;
+
+            padding-top:
+                17px;
+
+            border-top:
+                3px solid
+                var(--azul-oscuro);
+        }
+
+
+        .navegacion-final a {
+
+            color:
+                var(--azul-oscuro);
+
+            text-decoration:
+                none;
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            padding:
+                7px 9px;
+
+            font-size:
+                10px;
+
+            background:
+                var(--crema);
+        }
+
+
+        .navegacion-final a:hover {
+
+            background:
+                var(--rosa-suave);
+        }
+
+
+        .anterior {
+            justify-self: start;
+        }
+
+
+        .indice {
+            justify-self: center;
+        }
+
+
+        .siguiente {
+            justify-self: end;
+        }
+
+
+        .firma {
+
+            text-align:
+                center;
+
+            margin-top:
+                25px;
+
+            color:
+                var(--verde);
+
+            font-size:
+                9px;
+
+            letter-spacing:
+                1px;
+        }
+
+
+
+        /* ===================================== */
+        /* CURSOR                                */
+        /* ===================================== */
+
+        .cursor-corazon {
+
+            display:
+                none;
+        }
+
+
+        @media (pointer:fine) {
+
+            body,
+            a {
+
+                cursor:
+                    none !important;
+            }
+
+
+            .cursor-corazon {
+
+                display:
+                    block;
+
+                position:
+                    fixed;
+
+                width:
+                    28px;
+
+                height:
+                    28px;
+
+                left:
+                    0;
+
+                top:
+                    0;
+
+                pointer-events:
+                    none;
+
+                z-index:
+                    999999;
+
+                transform:
+                    translate(-4px,-4px);
+
+                image-rendering:
+                    pixelated;
+            }
+
+
+            .cursor-corazon svg {
+
+                width:
+                    100%;
+
+                height:
+                    100%;
+
+                display:
+                    block;
+            }
+
+
+            .estela-cursor {
+
+                position:
+                    fixed;
+
+                width:
+                    6px;
+
+                height:
+                    6px;
+
+                pointer-events:
+                    none;
+
+                z-index:
+                    999998;
+
+                animation:
+                    desaparecer
+                    .7s linear forwards;
+            }
+
+
+            @keyframes desaparecer {
+
+                0% {
+                    opacity: .95;
+                }
+
+                100% {
+
+                    opacity: 0;
+
+                    transform:
+                        translateY(12px)
+                        scale(.3);
+                }
+
+            }
+
+        }
+
+
+
+        /* ===================================== */
+        /* CELULAR                               */
+        /* ===================================== */
+
+        @media (max-width:650px) {
+
+            body {
+
+                padding:
+                    10px 7px 30px;
+            }
+
+
+            .pagina {
+
+                padding:
+                    30px 22px 35px;
+            }
+
+
+            .cabecera {
+
+                display:
+                    block;
+            }
+
+
+            .volver {
+
+                display:
+                    inline-block;
+
+                margin-top:
+                    18px;
+            }
+
+
+            .letra {
+
+                font-size:
+                    17px;
+
+                padding-left:
+                    15px;
+            }
+
+
+            .participante {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .navegacion-final {
+
+                grid-template-columns:
+                    1fr;
+
+                align-items:
+                    stretch;
+            }
+
+
+            .anterior,
+            .indice,
+            .siguiente {
+
+                justify-self:
+                    stretch;
+
+                text-align:
+                    center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="pagina">
+
+<div class="contenido">
+
+
+    <!-- ===================================== -->
+    <!-- RUTA                                  -->
+    <!-- ===================================== -->
+
+    <div class="ruta">
+        C:\corazon\archivos_locales\letras\contraluz.txt
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- CABECERA                              -->
+    <!-- ===================================== -->
+
+    <div class="cabecera">
+
+
+        <div>
+
+            <h1 class="archivo-titulo">
+                contraluz.txt
+            </h1>
+
+
+            <div class="tipo-archivo">
+                [ archivo de texto encontrado ]
+            </div>
+
+        </div>
+
+
+        <a
+            class="volver"
+            href="archivos-locales.html#letras"
+        >
+            [&lt; volver a letras]
+        </a>
+
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- METADATA                              -->
+    <!-- ===================================== -->
+
+    <div class="metadata">
+
+        <span>archivo:</span> contraluz.txt
+
+        <br>
+
+        <span>tipo:</span> letra
+
+        <br>
+
+        <span>estado:</span> legible
+
+        <br>
+
+        <span>carpeta:</span> /archivos_locales/letras/
+
+    </div>
+
+
+
+    <!-- ===================================== -->
+    <!-- LETRA                                 -->
+    <!-- ===================================== -->
+
+    <section class="bloque-letra">
+
+
+        <div class="seccion-titulo">
+            LETRA
+        </div>
+
+
+        <div class="letra">
+
+
+            <div class="estrofa">
+
+                sigo viendo a contraluz
+
+                <br>
+
+                desapareciendo
+
+                <br>
+
+                me estoy consumiendo
+
+                <br>
+
+                por un poco de amor
+
+            </div>
+
+
+            <div class="estrofa">
+
+                tus ojos me harán llorar
+
+                <br>
+
+                por las noches
+
+                <br>
+
+                dejas que las flores
+
+                <br>
+
+                se marchiten
+
+            </div>
+
+
+            <div class="estrofa">
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+                <br>
+
+                te encuentro vacío
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- PARTICIPANTES                         -->
+    <!-- ===================================== -->
+
+    <section class="participantes">
+
+
+        <div class="seccion-titulo">
+            PARTICIPANTES
+        </div>
+
+
+        <div class="participante">
+
+            <div class="nombre">
+                Trinidad Bergoglio
+            </div>
+
+            <div class="instrumento">
+                Voz y bajo
+            </div>
+
+        </div>
+
+
+        <div class="participante">
+
+            <div class="nombre">
+                Leandro Buenvecino
+            </div>
+
+            <div class="instrumento">
+                Guitarra, sinte y voces.
+            </div>
+
+        </div>
+
+
+        <div class="participante">
+
+            <div class="nombre">
+                Felipe Bergoglio
+            </div>
+
+            <div class="instrumento">
+                Batería y voces.
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- NAVEGACION                            -->
+    <!-- ===================================== -->
+
+    <div class="navegacion-final">
+
+
+        <a
+            class="anterior"
+            href="letra-quedate.html"
+        >
+            &lt; archivo anterior
+        </a>
+
+
+        <a
+            class="indice"
+            href="archivos-locales.html#letras"
+        >
+            [ índice ]
+        </a>
+
+
+        <a
+            class="siguiente"
+            href="letra-corazon.html"
+        >
+            volver al primero &gt;
+        </a>
+
+
+    </div>
+
+
+
+    <div class="firma">
+        corazón / archivos locales / letra 08 ♡
+    </div>
+
+
+</div>
+
+</div>
+
+
+
+<!-- ===================================== -->
+<!-- CURSOR                                -->
+<!-- ===================================== -->
+
+<div
+    class="cursor-corazon"
+    id="cursorCorazon"
+>
+
+    <svg
+        viewBox="0 0 8 8"
+        xmlns="http://www.w3.org/2000/svg"
+        shape-rendering="crispEdges"
+    >
+
+        <rect x="1" y="1" width="2" height="1" fill="#d8a1a9"/>
+        <rect x="5" y="1" width="2" height="1" fill="#d8a1a9"/>
+
+        <rect x="0" y="2" width="8" height="2" fill="#d8a1a9"/>
+
+        <rect x="1" y="4" width="6" height="1" fill="#d8a1a9"/>
+        <rect x="2" y="5" width="4" height="1" fill="#d8a1a9"/>
+        <rect x="3" y="6" width="2" height="1" fill="#d8a1a9"/>
+
+        <rect x="1" y="2" width="1" height="1" fill="#f5edde"/>
+
+        <rect x="1" y="0" width="2" height="1" fill="#4b607d"/>
+        <rect x="5" y="0" width="2" height="1" fill="#4b607d"/>
+
+        <rect x="0" y="1" width="1" height="1" fill="#4b607d"/>
+        <rect x="3" y="1" width="2" height="1" fill="#4b607d"/>
+        <rect x="7" y="1" width="1" height="1" fill="#4b607d"/>
+
+        <rect x="0" y="4" width="1" height="1" fill="#4b607d"/>
+        <rect x="7" y="4" width="1" height="1" fill="#4b607d"/>
+
+        <rect x="1" y="5" width="1" height="1" fill="#4b607d"/>
+        <rect x="6" y="5" width="1" height="1" fill="#4b607d"/>
+
+        <rect x="2" y="6" width="1" height="1" fill="#4b607d"/>
+        <rect x="5" y="6" width="1" height="1" fill="#4b607d"/>
+
+        <rect x="3" y="7" width="2" height="1" fill="#4b607d"/>
+
+    </svg>
+
+</div>
+
+
+
+<script>
+
+    const cursorCorazon =
+        document.getElementById(
+            "cursorCorazon"
+        );
+
+
+    const coloresEstela = [
+
+        "#d8a1a9",
+        "#879eb3",
+        "#8d9a78",
+        "#f5edde",
+        "#a6b7c7"
+
+    ];
+
+
+    let ultimoRastro =
+        0;
+
+
+
+    document.addEventListener(
+
+        "mousemove",
+
+        evento => {
+
+
+            cursorCorazon.style.left =
+                evento.clientX +
+                "px";
+
+
+            cursorCorazon.style.top =
+                evento.clientY +
+                "px";
+
+
+            const ahora =
+                Date.now();
+
+
+            if (
+                ahora -
+                ultimoRastro <
+                35
+            ) {
+
+                return;
+            }
+
+
+            ultimoRastro =
+                ahora;
+
+
+            const pixel =
+                document.createElement(
+                    "div"
+                );
+
+
+            pixel.className =
+                "estela-cursor";
+
+
+            pixel.style.left =
+                evento.clientX +
+                "px";
+
+
+            pixel.style.top =
+                evento.clientY +
+                "px";
+
+
+            pixel.style.background =
+                coloresEstela[
+                    Math.floor(
+                        Math.random() *
+                        coloresEstela.length
+                    )
+                ];
+
+
+            document.body.appendChild(
+                pixel
+            );
+
+
+            setTimeout(
+
+                () => {
+
+                    pixel.remove();
+
+                },
+
+                700
+
+            );
+
+        }
+
+    );
+
+
+</script>
+
+
+</body>
+
+</html>
