@@ -18,7 +18,6 @@
         href="favicon.svg"
     >
 
-
     <style>
 
         :root {
@@ -30,6 +29,7 @@
 
             --crema: #f5edde;
             --beige: #eadfce;
+            --blanco: #fcfaf6;
 
             --rosa: #d8a1a9;
             --rosa-suave: #edd4d7;
@@ -45,12 +45,16 @@
         }
 
 
-        html,
+        html {
+            scroll-behavior: smooth;
+        }
+
+
         body {
 
             margin: 0;
 
-            min-height: 100%;
+            min-height: 100vh;
 
             color:
                 var(--texto);
@@ -59,15 +63,6 @@
                 "Times New Roman",
                 Times,
                 serif;
-        }
-
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-
-        body {
 
             background-color:
                 var(--beige);
@@ -88,22 +83,19 @@
                 fixed;
 
             padding:
-                12px;
+                25px 15px 50px;
         }
 
 
 
         /* ===================================== */
-        /* CONTENEDOR GENERAL                    */
+        /* PAGINA                                */
         /* ===================================== */
 
         .pagina {
 
             width:
-                min(1450px, calc(100vw - 24px));
-
-            min-height:
-                calc(100vh - 24px);
+                min(1250px, 100%);
 
             margin:
                 0 auto;
@@ -116,14 +108,14 @@
                 var(--azul-medio);
 
             box-shadow:
-                0 3px 14px
+                0 4px 18px
                 rgba(75,96,125,0.20);
 
             position:
                 relative;
 
             padding:
-                30px;
+                35px 38px 45px;
         }
 
 
@@ -139,7 +131,7 @@
 
             border:
                 2px solid
-                rgba(75,96,125,0.20);
+                rgba(75,96,125,0.18);
 
             pointer-events:
                 none;
@@ -157,8 +149,8 @@
                 15px;
 
             border:
-                1px solid
-                rgba(216,161,169,0.22);
+                1px dotted
+                rgba(216,161,169,0.32);
 
             pointer-events:
                 none;
@@ -166,17 +158,22 @@
 
 
 
-        /* ===================================== */
-        /* CABECERA                              */
-        /* ===================================== */
-
-        .cabecera {
+        .contenido {
 
             position:
                 relative;
 
             z-index:
                 2;
+        }
+
+
+
+        /* ===================================== */
+        /* HEADER                                */
+        /* ===================================== */
+
+        .header {
 
             display:
                 flex;
@@ -184,31 +181,31 @@
             justify-content:
                 space-between;
 
+            gap:
+                25px;
+
             align-items:
                 flex-start;
 
-            gap:
-                20px;
-
-            padding:
-                15px 15px 22px;
+            padding-bottom:
+                22px;
 
             border-bottom:
-                4px solid
+                3px solid
                 var(--azul-oscuro);
-
-            margin-bottom:
-                22px;
         }
 
 
         .titulo {
 
-            font-size:
-                clamp(28px,4vw,50px);
+            margin:
+                0;
 
             color:
                 var(--azul-oscuro);
+
+            font-size:
+                clamp(28px, 5vw, 48px);
 
             letter-spacing:
                 2px;
@@ -221,13 +218,17 @@
         .subtitulo {
 
             margin-top:
-                8px;
-
-            font-size:
-                13px;
+                9px;
 
             color:
                 var(--verde);
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                11px;
 
             letter-spacing:
                 1px;
@@ -236,118 +237,96 @@
 
         .volver {
 
+            color:
+                var(--azul-oscuro);
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                11px;
+
+            text-decoration:
+                none;
+
             border:
                 1px solid
                 var(--azul-medio);
 
             background:
-                var(--crema);
+                rgba(245,237,222,0.70);
 
             padding:
-                8px 12px;
-
-            font-size:
-                13px;
-
-            color:
-                var(--azul-oscuro);
-
-            text-decoration:
-                underline;
+                7px 10px;
 
             white-space:
                 nowrap;
         }
 
 
-        .volver::before {
-
-            content:
-                "< ";
-        }
-
-
         .volver:hover {
 
-            background:
-                var(--rosa-suave);
+            color:
+                var(--rosa);
         }
 
 
 
         /* ===================================== */
-        /* INDICE                                */
+        /* NAVEGACION                            */
         /* ===================================== */
 
-        .indice {
-
-            position:
-                relative;
-
-            z-index:
-                2;
+        .nav {
 
             display:
                 flex;
 
-            gap:
-                9px;
-
             flex-wrap:
                 wrap;
 
-            padding:
-                0 15px 20px;
+            gap:
+                8px;
+
+            margin:
+                20px 0 35px;
         }
 
 
-        .indice a {
+        .nav a {
 
             color:
                 var(--azul-oscuro);
 
-            border:
-                1px dotted
-                var(--azul-medio);
-
-            background:
-                rgba(245,237,222,0.55);
-
-            padding:
-                6px 10px;
+            font-family:
+                "Courier New",
+                monospace;
 
             font-size:
-                12px;
+                11px;
 
             text-decoration:
                 none;
+
+            padding:
+                6px 9px;
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            background:
+                rgba(245,237,222,0.65);
         }
 
 
-        .indice a::before {
-
-            content:
-                "[ ";
-
-            color:
-                var(--rosa);
-        }
-
-
-        .indice a::after {
-
-            content:
-                " ]";
-
-            color:
-                var(--rosa);
-        }
-
-
-        .indice a:hover {
+        .nav a:hover {
 
             background:
                 var(--rosa-suave);
+
+            color:
+                var(--azul-oscuro);
         }
 
 
@@ -358,88 +337,90 @@
 
         .seccion {
 
-            position:
-                relative;
+            margin-top:
+                40px;
 
-            z-index:
-                2;
+            scroll-margin-top:
+                20px;
+        }
 
-            margin:
-                0 15px 28px;
 
-            padding:
-                18px;
+        .seccion-cabecera {
 
-            border:
-                1px solid
-                var(--azul-medio);
-
-            background:
-                rgba(245,237,222,0.38);
+            margin-bottom:
+                17px;
         }
 
 
         .seccion-titulo {
 
-            display:
-                flex;
-
-            align-items:
-                center;
-
-            gap:
-                10px;
-
-            font-size:
-                19px;
+            margin:
+                0;
 
             color:
                 var(--azul-oscuro);
 
+            font-size:
+                22px;
+
             letter-spacing:
                 1px;
-
-            margin-bottom:
-                7px;
         }
 
 
-        .seccion-titulo::before {
+        .seccion-titulo::after {
 
             content:
-                "♡";
+                "  ♡";
 
             color:
                 var(--rosa);
+
+            font-size:
+                17px;
         }
 
 
         .seccion-subtitulo {
 
-            font-size:
-                11px;
+            margin-top:
+                5px;
 
             color:
-                #68727c;
+                #68717c;
 
-            margin-bottom:
-                15px;
+            font-family:
+                "Courier New",
+                monospace;
 
-            padding-bottom:
-                9px;
+            font-size:
+                10px;
 
-            border-bottom:
+            line-height:
+                1.5;
+        }
+
+
+        .separador {
+
+            margin-top:
+                38px;
+
+            border:
+                0;
+
+            border-top:
                 1px dotted
-                rgba(75,96,125,0.40);
+                rgba(75,96,125,0.42);
         }
 
 
 
         /* ===================================== */
-        /* GALERIA DE FOTOS                     */
+        /* FOTOS                                 */
         /* ===================================== */
 
-        .galeria {
+        .grilla-fotos {
 
             display:
                 grid;
@@ -454,9 +435,6 @@
 
         .foto {
 
-            aspect-ratio:
-                1 / 1;
-
             padding:
                 4px;
 
@@ -467,15 +445,16 @@
                 2px solid
                 var(--azul-oscuro);
 
-            overflow:
-                hidden;
-
-            position:
-                relative;
+            box-shadow:
+                0 3px 7px
+                rgba(75,96,125,0.14);
 
             transition:
                 transform .18s ease,
                 box-shadow .18s ease;
+
+            position:
+                relative;
 
             z-index:
                 1;
@@ -484,17 +463,17 @@
 
         .foto img {
 
+            display:
+                block;
+
             width:
                 100%;
 
-            height:
-                100%;
+            aspect-ratio:
+                1 / 1;
 
             object-fit:
                 cover;
-
-            display:
-                block;
         }
 
 
@@ -504,11 +483,11 @@
                 scale(1.45);
 
             z-index:
-                100;
+                20;
 
             box-shadow:
-                0 10px 30px
-                rgba(75,96,125,0.40);
+                0 10px 26px
+                rgba(75,96,125,0.35);
         }
 
 
@@ -517,69 +496,62 @@
         /* FLYERS                                */
         /* ===================================== */
 
-        .galeria-flyers {
+        .grilla-flyers {
 
             display:
                 grid;
 
             grid-template-columns:
-                repeat(3, minmax(0, 1fr));
+                repeat(3, minmax(0,1fr));
 
             gap:
-                30px;
+                25px;
 
-            align-items:
-                start;
+            max-width:
+                900px;
 
-            padding:
-                15px 20px 20px;
+            margin:
+                0 auto;
         }
 
 
         .flyer {
 
-            position:
-                relative;
+            display:
+                block;
 
             padding:
-                8px 8px 28px;
+                10px;
 
             background:
                 var(--crema);
 
             border:
                 1px solid
-                rgba(75,96,125,0.60);
+                var(--azul-medio);
 
             box-shadow:
-                4px 6px 12px
-                rgba(75,96,125,0.20);
+                4px 5px 0
+                rgba(75,96,125,0.15);
 
             transition:
-                transform .18s ease,
-                box-shadow .18s ease;
-
-            z-index:
-                1;
+                transform .18s ease;
         }
 
 
         .flyer:nth-child(1) {
-
             transform:
-                rotate(-1.5deg);
+                rotate(-1deg);
         }
 
 
         .flyer:nth-child(2) {
-
             transform:
-                rotate(1deg);
+                rotate(1.2deg);
         }
 
 
         .flyer:nth-child(3) {
-
             transform:
                 rotate(-0.6deg);
         }
@@ -589,27 +561,7 @@
 
             transform:
                 rotate(0deg)
-                scale(1.05);
-
-            z-index:
-                50;
-
-            box-shadow:
-                8px 12px 25px
-                rgba(75,96,125,0.30);
-        }
-
-
-        .flyer a {
-
-            display:
-                block;
-
-            text-decoration:
-                none;
-
-            color:
-                inherit;
+                scale(1.04);
         }
 
 
@@ -623,68 +575,6 @@
 
             height:
                 auto;
-
-            border:
-                1px solid
-                rgba(75,96,125,0.28);
-        }
-
-
-        .flyer-info {
-
-            position:
-                absolute;
-
-            left:
-                8px;
-
-            right:
-                8px;
-
-            bottom:
-                7px;
-
-            display:
-                flex;
-
-            justify-content:
-                space-between;
-
-            gap:
-                5px;
-
-            font-family:
-                "Courier New",
-                monospace;
-
-            font-size:
-                9px;
-
-            color:
-                var(--azul-oscuro);
-        }
-
-
-        .flyer-archivo {
-
-            overflow:
-                hidden;
-
-            text-overflow:
-                ellipsis;
-
-            white-space:
-                nowrap;
-        }
-
-
-        .flyer-abrir {
-
-            color:
-                var(--rosa);
-
-            white-space:
-                nowrap;
         }
 
 
@@ -693,87 +583,41 @@
         /* DEMOS                                 */
         /* ===================================== */
 
-        .lista-demos {
+        .demos {
+
+            display:
+                grid;
+
+            gap:
+                15px;
+        }
+
+
+        .demo {
 
             border:
                 1px solid
                 var(--azul-medio);
 
             background:
-                rgba(234,223,206,0.40);
+                rgba(245,237,222,0.56);
 
             padding:
-                12px;
-        }
-
-
-        .demo {
+                14px 16px;
 
             display:
                 grid;
 
             grid-template-columns:
-                28px minmax(0,1fr);
+                minmax(180px, 1fr)
+                minmax(250px, 2fr)
+                auto;
 
             gap:
-                10px;
-
-            padding:
-                13px 10px;
-
-            border-bottom:
-                1px dotted
-                rgba(75,96,125,0.35);
-        }
-
-
-        .demo:last-child {
-
-            border-bottom:
-                none;
-        }
-
-
-        .demo-icono {
-
-            color:
-                var(--rosa);
-
-            font-family:
-                "Courier New",
-                monospace;
-
-            font-size:
-                16px;
-
-            padding-top:
-                2px;
-        }
-
-
-        .demo-contenido {
-
-            min-width:
-                0;
-        }
-
-
-        .demo-cabecera {
-
-            display:
-                flex;
-
-            justify-content:
-                space-between;
+                15px;
 
             align-items:
                 center;
-
-            gap:
-                12px;
-
-            margin-bottom:
-                8px;
         }
 
 
@@ -796,94 +640,206 @@
 
         .demo-estado {
 
+            display:
+                block;
+
+            margin-top:
+                5px;
+
             color:
                 var(--verde);
 
             font-size:
                 9px;
-
-            letter-spacing:
-                1px;
-
-            white-space:
-                nowrap;
         }
 
 
-        .demo-audio {
+        .demo audio {
 
             width:
                 100%;
-
-            max-width:
-                650px;
-
-            height:
-                32px;
-
-            display:
-                block;
         }
 
 
-        .demo-links {
+        .abrir {
 
-            margin-top:
-                7px;
+            color:
+                var(--azul-oscuro);
 
             font-family:
                 "Courier New",
                 monospace;
 
             font-size:
-                9px;
-        }
-
-
-        .demo-links a {
-
-            color:
-                var(--rosa);
+                10px;
 
             text-decoration:
-                underline;
+                none;
 
-            margin-right:
-                10px;
-        }
-
-
-        .demo-links a:hover {
-
-            color:
-                var(--azul-oscuro);
-        }
-
-
-
-        /* ===================================== */
-        /* PIE                                   */
-        /* ===================================== */
-
-        .pie {
-
-            position:
-                relative;
-
-            z-index:
-                2;
-
-            text-align:
-                center;
+            border:
+                1px solid
+                var(--azul-medio);
 
             padding:
-                5px 15px 15px;
+                6px 8px;
+
+            white-space:
+                nowrap;
+
+            background:
+                var(--crema);
+        }
+
+
+        .abrir:hover {
+
+            background:
+                var(--rosa-suave);
+        }
+
+
+
+        /* ===================================== */
+        /* LETRAS                                */
+        /* ===================================== */
+
+        .letras-lista {
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            background:
+                rgba(245,237,222,0.50);
+
+            font-family:
+                "Courier New",
+                monospace;
+        }
+
+
+        .letra-item {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                80px 1fr auto;
+
+            gap:
+                15px;
+
+            align-items:
+                center;
+
+            min-height:
+                48px;
+
+            padding:
+                9px 14px;
+
+            border-bottom:
+                1px dotted
+                rgba(75,96,125,0.35);
+        }
+
+
+        .letra-item:last-child {
+
+            border-bottom:
+                none;
+        }
+
+
+        .letra-numero {
 
             color:
                 var(--verde);
 
             font-size:
-                11px;
+                10px;
+        }
+
+
+        .letra-nombre {
+
+            color:
+                var(--azul-oscuro);
+
+            font-size:
+                12px;
+        }
+
+
+        .letra-nombre::before {
+
+            content:
+                "> ";
+
+            color:
+                var(--rosa);
+        }
+
+
+        .letra-link {
+
+            color:
+                var(--azul-oscuro);
+
+            font-size:
+                10px;
+
+            text-decoration:
+                none;
+
+            border:
+                1px solid
+                var(--azul-medio);
+
+            padding:
+                5px 8px;
+
+            background:
+                var(--crema);
+        }
+
+
+        .letra-link:hover {
+
+            background:
+                var(--rosa-suave);
+        }
+
+
+
+        /* ===================================== */
+        /* FOOTER                                */
+        /* ===================================== */
+
+        .footer {
+
+            margin-top:
+                45px;
+
+            padding-top:
+                15px;
+
+            border-top:
+                3px solid
+                var(--azul-oscuro);
+
+            text-align:
+                center;
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size:
+                10px;
+
+            color:
+                var(--verde);
 
             letter-spacing:
                 1px;
@@ -892,7 +848,7 @@
 
 
         /* ===================================== */
-        /* CURSOR CORAZON                        */
+        /* CURSOR                                */
         /* ===================================== */
 
         .cursor-corazon {
@@ -906,8 +862,6 @@
 
             body,
             a,
-            .foto,
-            .flyer,
             audio {
 
                 cursor:
@@ -951,14 +905,14 @@
 
             .cursor-corazon svg {
 
-                display:
-                    block;
-
                 width:
                     100%;
 
                 height:
                     100%;
+
+                display:
+                    block;
             }
 
 
@@ -980,23 +934,18 @@
                     999998;
 
                 animation:
-                    desaparecer-estela
+                    desaparecer
                     .7s linear forwards;
             }
 
 
-            @keyframes desaparecer-estela {
+            @keyframes desaparecer {
 
                 0% {
 
                     opacity:
                         .95;
-
-                    transform:
-                        translate(-50%,-50%)
-                        scale(1);
                 }
-
 
                 100% {
 
@@ -1004,7 +953,7 @@
                         0;
 
                     transform:
-                        translate(-50%,12px)
+                        translateY(12px)
                         scale(.3);
                 }
 
@@ -1015,54 +964,44 @@
 
 
         /* ===================================== */
-        /* TABLET                                */
+        /* RESPONSIVE                            */
         /* ===================================== */
 
-        @media
-        (max-width:950px) {
+        @media (max-width:900px) {
 
-            .galeria {
+            .grilla-fotos {
 
                 grid-template-columns:
                     repeat(4,1fr);
             }
 
 
-            .galeria-flyers {
+            .demo {
 
                 grid-template-columns:
-                    repeat(2,1fr);
+                    1fr;
             }
 
         }
 
 
-
-        /* ===================================== */
-        /* CELULAR                               */
-        /* ===================================== */
-
-        @media
-        (max-width:650px) {
+        @media (max-width:650px) {
 
             body {
 
                 padding:
-                    7px;
+                    10px 7px 30px;
             }
 
 
             .pagina {
 
-                width:
-                    100%;
-
                 padding:
-                    22px 10px;
+                    28px 20px 35px;
             }
 
 
-            .cabecera {
+            .header {
 
                 display:
                     block;
@@ -1075,11 +1014,11 @@
                     inline-block;
 
                 margin-top:
-                    15px;
+                    18px;
             }
 
 
-            .galeria {
+            .grilla-fotos {
 
                 grid-template-columns:
                     repeat(2,1fr);
@@ -1089,96 +1028,34 @@
             .foto:hover {
 
                 transform:
-                    scale(1.04);
+                    scale(1.03);
             }
 
 
-            .seccion {
-
-                margin-left:
-                    7px;
-
-                margin-right:
-                    7px;
-
-                padding:
-                    12px;
-            }
-
-
-            .galeria-flyers {
+            .grilla-flyers {
 
                 grid-template-columns:
                     1fr;
-
-                gap:
-                    22px;
-
-                padding:
-                    10px;
             }
 
 
-            .flyer {
-
-                max-width:
-                    420px;
-
-                margin:
-                    0 auto;
-            }
-
-
-            .flyer:nth-child(1),
-            .flyer:nth-child(2),
-            .flyer:nth-child(3) {
-
-                transform:
-                    rotate(0deg);
-            }
-
-
-            .flyer:hover {
-
-                transform:
-                    scale(1.02);
-            }
-
-
-            .demo {
+            .letra-item {
 
                 grid-template-columns:
-                    22px minmax(0,1fr);
+                    45px 1fr;
 
-                padding-left:
-                    4px;
-
-                padding-right:
-                    4px;
+                gap:
+                    8px;
             }
 
 
-            .demo-cabecera {
+            .letra-link {
 
-                display:
-                    block;
-            }
+                grid-column:
+                    2;
 
-
-            .demo-estado {
-
-                display:
-                    block;
-
-                margin-top:
-                    4px;
-            }
-
-
-            .demo-audio {
-
-                max-width:
-                    100%;
+                width:
+                    fit-content;
             }
 
         }
@@ -1191,20 +1068,25 @@
 <body>
 
 
-
 <div class="pagina">
 
+<div class="contenido">
 
-    <!-- CABECERA -->
 
-    <header class="cabecera">
+
+    <!-- ===================================== -->
+    <!-- HEADER                                -->
+    <!-- ===================================== -->
+
+    <header class="header">
 
 
         <div>
 
-            <div class="titulo">
+            <h1 class="titulo">
                 archivos locales
-            </div>
+            </h1>
+
 
             <div class="subtitulo">
                 carpeta compartida / corazón / villa maría
@@ -1217,7 +1099,7 @@
             class="volver"
             href="index.html"
         >
-            volver al home
+            [&lt; volver al home]
         </a>
 
 
@@ -1225,20 +1107,26 @@
 
 
 
-    <!-- INDICE -->
+    <!-- ===================================== -->
+    <!-- NAVEGACION                            -->
+    <!-- ===================================== -->
 
-    <nav class="indice">
+    <nav class="nav">
 
         <a href="#fotos">
-            fotos
+            [ fotos ]
         </a>
 
         <a href="#flyers">
-            flyers
+            [ flyers ]
         </a>
 
         <a href="#demos">
-            demos
+            [ demos ]
+        </a>
+
+        <a href="#letras">
+            [ letras ]
         </a>
 
     </nav>
@@ -1255,90 +1143,93 @@
     >
 
 
-        <div class="seccion-titulo">
-            fotos
+        <div class="seccion-cabecera">
+
+            <h2 class="seccion-titulo">
+                fotos
+            </h2>
+
+
+            <div class="seccion-subtitulo">
+                archivos encontrados en alguna carpeta sin nombre.
+            </div>
+
         </div>
 
 
-        <div class="seccion-subtitulo">
-            archivos encontrados en alguna carpeta sin nombre.
-        </div>
-
-
-
-        <div class="galeria">
+        <div class="grilla-fotos">
 
 
             <div class="foto">
-                <img src="fotos/fotocamarita1.JPG" alt="corazón">
+                <img src="fotos/fotocamarita1.JPG" alt="corazón 1">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita2.JPG" alt="corazón">
+                <img src="fotos/fotocamarita2.JPG" alt="corazón 2">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita3.JPG" alt="corazón">
+                <img src="fotos/fotocamarita3.JPG" alt="corazón 3">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita4.JPG" alt="corazón">
+                <img src="fotos/fotocamarita4.JPG" alt="corazón 4">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita5.JPG" alt="corazón">
+                <img src="fotos/fotocamarita5.JPG" alt="corazón 5">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita6.JPG" alt="corazón">
+                <img src="fotos/fotocamarita6.JPG" alt="corazón 6">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita7.JPG" alt="corazón">
+                <img src="fotos/fotocamarita7.JPG" alt="corazón 7">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita8.JPG" alt="corazón">
+                <img src="fotos/fotocamarita8.JPG" alt="corazón 8">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita9.JPG" alt="corazón">
+                <img src="fotos/fotocamarita9.JPG" alt="corazón 9">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita10.JPG" alt="corazón">
+                <img src="fotos/fotocamarita10.JPG" alt="corazón 10">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita11.JPG" alt="corazón">
+                <img src="fotos/fotocamarita11.JPG" alt="corazón 11">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita12.JPG" alt="corazón">
+                <img src="fotos/fotocamarita12.JPG" alt="corazón 12">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita13.JPG" alt="corazón">
+                <img src="fotos/fotocamarita13.JPG" alt="corazón 13">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita14.JPG" alt="corazón">
+                <img src="fotos/fotocamarita14.JPG" alt="corazón 14">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita15.JPG" alt="corazón">
+                <img src="fotos/fotocamarita15.JPG" alt="corazón 15">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita16.JPG" alt="corazón">
+                <img src="fotos/fotocamarita16.JPG" alt="corazón 16">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita17.JPG" alt="corazón">
+                <img src="fotos/fotocamarita17.JPG" alt="corazón 17">
             </div>
 
             <div class="foto">
-                <img src="fotos/fotocamarita18.JPG" alt="corazón">
+                <img src="fotos/fotocamarita18.JPG" alt="corazón 18">
             </div>
 
 
@@ -1346,6 +1237,10 @@
 
 
     </section>
+
+
+
+    <hr class="separador">
 
 
 
@@ -1359,120 +1254,75 @@
     >
 
 
-        <div class="seccion-titulo">
-            flyers / afiches
+        <div class="seccion-cabecera">
+
+            <h2 class="seccion-titulo">
+                flyers
+            </h2>
+
+
+            <div class="seccion-subtitulo">
+                recitales, anuncios, imágenes perdidas y papelitos varios.
+                hacé click sobre un flyer para verlo completo.
+            </div>
+
         </div>
 
 
-        <div class="seccion-subtitulo">
-            recitales, anuncios, imágenes perdidas y papelitos varios.
-            hacé click sobre un flyer para verlo completo.
-        </div>
+
+        <div class="grilla-flyers">
 
 
+            <a
+                class="flyer"
+                href="flyers/3.png"
+                target="_blank"
+            >
 
-        <div class="galeria-flyers">
-
-
-            <!-- FLYER 3 -->
-
-            <div class="flyer">
-
-                <a
-                    href="flyers/3.png"
-                    target="_blank"
+                <img
+                    src="flyers/3.png"
+                    alt="flyer 3"
                 >
 
-                    <img
-                        src="flyers/3.png"
-                        alt="Flyer corazón 3"
-                    >
-
-                    <div class="flyer-info">
-
-                        <span class="flyer-archivo">
-                            3.png
-                        </span>
-
-                        <span class="flyer-abrir">
-                            [ abrir ]
-                        </span>
-
-                    </div>
-
-                </a>
-
-            </div>
+            </a>
 
 
+            <a
+                class="flyer"
+                href="flyers/4.png"
+                target="_blank"
+            >
 
-            <!-- FLYER 4 -->
-
-            <div class="flyer">
-
-                <a
-                    href="flyers/4.png"
-                    target="_blank"
+                <img
+                    src="flyers/4.png"
+                    alt="flyer 4"
                 >
 
-                    <img
-                        src="flyers/4.png"
-                        alt="Flyer corazón 4"
-                    >
-
-                    <div class="flyer-info">
-
-                        <span class="flyer-archivo">
-                            4.png
-                        </span>
-
-                        <span class="flyer-abrir">
-                            [ abrir ]
-                        </span>
-
-                    </div>
-
-                </a>
-
-            </div>
+            </a>
 
 
+            <a
+                class="flyer"
+                href="flyers/8.png"
+                target="_blank"
+            >
 
-            <!-- FLYER 8 -->
-
-            <div class="flyer">
-
-                <a
-                    href="flyers/8.png"
-                    target="_blank"
+                <img
+                    src="flyers/8.png"
+                    alt="flyer 8"
                 >
 
-                    <img
-                        src="flyers/8.png"
-                        alt="Flyer corazón 8"
-                    >
-
-                    <div class="flyer-info">
-
-                        <span class="flyer-archivo">
-                            8.png
-                        </span>
-
-                        <span class="flyer-abrir">
-                            [ abrir ]
-                        </span>
-
-                    </div>
-
-                </a>
-
-            </div>
+            </a>
 
 
         </div>
 
 
     </section>
+
+
+
+    <hr class="separador">
 
 
 
@@ -1486,136 +1336,99 @@
     >
 
 
-        <div class="seccion-titulo">
-            demos / grabaciones
+        <div class="seccion-cabecera">
+
+            <h2 class="seccion-titulo">
+                demos
+            </h2>
+
+
+            <div class="seccion-subtitulo">
+                versiones, ensayos, archivos de audio y otras cosas
+                que quizás no deberían existir.
+            </div>
+
         </div>
 
 
-        <div class="seccion-subtitulo">
-            versiones, ensayos, archivos de audio y otras cosas que quizás no deberían existir.
-        </div>
 
+        <div class="demos">
 
-
-        <div class="lista-demos">
-
-
-            <!-- DESCOMPOSICIÓN -->
 
             <div class="demo">
 
 
-                <div class="demo-icono">
-                    &gt;
+                <div class="demo-nombre">
+
+                    6. descomposición.mp3
+
+                    <span class="demo-estado">
+                        [ archivo encontrado ]
+                    </span>
+
                 </div>
 
 
-                <div class="demo-contenido">
+                <audio
+                    controls
+                    preload="metadata"
+                >
 
-
-                    <div class="demo-cabecera">
-
-                        <div class="demo-nombre">
-                            6. descomposición.mp3
-                        </div>
-
-                        <div class="demo-estado">
-                            [ archivo encontrado ]
-                        </div>
-
-                    </div>
-
-
-                    <audio
-                        class="demo-audio"
-                        controls
-                        preload="metadata"
+                    <source
+                        src="demos/6.%20descomposici%C3%B3n.mp3"
+                        type="audio/mpeg"
                     >
 
-                        <source
-                            src="demos/6.%20descomposici%C3%B3n.mp3"
-                            type="audio/mpeg"
-                        >
-
-                        tu navegador no puede reproducir este archivo.
-
-                    </audio>
+                </audio>
 
 
-                    <div class="demo-links">
-
-                        <a
-                            href="demos/6.%20descomposici%C3%B3n.mp3"
-                            target="_blank"
-                        >
-                            [ abrir archivo ]
-                        </a>
-
-                    </div>
-
-
-                </div>
+                <a
+                    class="abrir"
+                    href="demos/6.%20descomposici%C3%B3n.mp3"
+                    target="_blank"
+                >
+                    [ abrir archivo ]
+                </a>
 
 
             </div>
 
 
 
-            <!-- TODO MAL -->
-
             <div class="demo">
 
 
-                <div class="demo-icono">
-                    &gt;
+                <div class="demo-nombre">
+
+                    todo mal single.mp3
+
+                    <span class="demo-estado">
+                        [ archivo encontrado ]
+                    </span>
+
                 </div>
 
 
-                <div class="demo-contenido">
+                <audio
+                    controls
+                    preload="metadata"
+                >
 
-
-                    <div class="demo-cabecera">
-
-                        <div class="demo-nombre">
-                            todo mal single.mp3
-                        </div>
-
-                        <div class="demo-estado">
-                            [ archivo encontrado ]
-                        </div>
-
-                    </div>
-
-
-                    <audio
-                        class="demo-audio"
-                        controls
-                        preload="metadata"
+                    <source
+                        src="demos/todo%20mal%20single.mp3"
+                        type="audio/mpeg"
                     >
 
-                        <source
-                            src="demos/todo%20mal%20single.mp3"
-                            type="audio/mpeg"
-                        >
-
-                        tu navegador no puede reproducir este archivo.
-
-                    </audio>
+                </audio>
 
 
-                    <div class="demo-links">
-
-                        <a
-                            href="demos/todo%20mal%20single.mp3"
-                            target="_blank"
-                        >
-                            [ abrir archivo ]
-                        </a>
-
-                    </div>
-
-
-                </div>
+                <a
+                    class="abrir"
+                    href="demos/todo%20mal%20single.mp3"
+                    target="_blank"
+                >
+                    [ abrir archivo ]
+                </a>
 
 
             </div>
@@ -1628,14 +1441,225 @@
 
 
 
-    <!-- PIE -->
+    <hr class="separador">
 
-    <div class="pie">
 
-        corazón / archivos locales / gracias por revolver nuestras carpetas ♡
 
-    </div>
+    <!-- ===================================== -->
+    <!-- LETRAS                                -->
+    <!-- ===================================== -->
 
+    <section
+        class="seccion"
+        id="letras"
+    >
+
+
+        <div class="seccion-cabecera">
+
+            <h2 class="seccion-titulo">
+                letras
+            </h2>
+
+
+            <div class="seccion-subtitulo">
+                archivos de texto, canciones y cosas que alguna vez escribimos.
+            </div>
+
+        </div>
+
+
+
+        <div class="letras-lista">
+
+
+            <div class="letra-item">
+
+                <div class="letra-numero">
+                    01
+                </div>
+
+                <div class="letra-nombre">
+                    corazón.txt
+                </div>
+
+                <a
+                    class="letra-link"
+                    href="letra-corazon.html"
+                >
+                    [ abrir ]
+                </a>
+
+            </div>
+
+
+
+            <div class="letra-item">
+
+                <div class="letra-numero">
+                    02
+                </div>
+
+                <div class="letra-nombre">
+                    stardew valley.txt
+                </div>
+
+                <a
+                    class="letra-link"
+                    href="letra-stardew-valley.html"
+                >
+                    [ abrir ]
+                </a>
+
+            </div>
+
+
+
+            <div class="letra-item">
+
+                <div class="letra-numero">
+                    03
+                </div>
+
+                <div class="letra-nombre">
+                    santo lago.txt
+                </div>
+
+                <a
+                    class="letra-link"
+                    href="letra-santo-lago.html"
+                >
+                    [ abrir ]
+                </a>
+
+            </div>
+
+
+
+            <div class="letra-item">
+
+                <div class="letra-numero">
+                    04
+                </div>
+
+                <div class="letra-nombre">
+                    cero.txt
+                </div>
+
+                <a
+                    class="letra-link"
+                    href="letra-cero.html"
+                >
+                    [ abrir ]
+                </a>
+
+            </div>
+
+
+
+            <div class="letra-item">
+
+                <div class="letra-numero">
+                    05
+                </div>
+
+                <div class="letra-nombre">
+                    vehículo automotor.txt
+                </div>
+
+                <a
+                    class="letra-link"
+                    href="letra-vehiculo-automotor.html"
+                >
+                    [ abrir ]
+                </a>
+
+            </div>
+
+
+
+            <div class="letra-item">
+
+                <div class="letra-numero">
+                    06
+                </div>
+
+                <div class="letra-nombre">
+                    descomposición.txt
+                </div>
+
+                <a
+                    class="letra-link"
+                    href="letra-descomposicion.html"
+                >
+                    [ abrir ]
+                </a>
+
+            </div>
+
+
+
+            <div class="letra-item">
+
+                <div class="letra-numero">
+                    07
+                </div>
+
+                <div class="letra-nombre">
+                    quedate.txt
+                </div>
+
+                <a
+                    class="letra-link"
+                    href="letra-quedate.html"
+                >
+                    [ abrir ]
+                </a>
+
+            </div>
+
+
+
+            <div class="letra-item">
+
+                <div class="letra-numero">
+                    08
+                </div>
+
+                <div class="letra-nombre">
+                    contraluz.txt
+                </div>
+
+                <a
+                    class="letra-link"
+                    href="letra-contraluz.html"
+                >
+                    [ abrir ]
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ===================================== -->
+    <!-- FOOTER                                -->
+    <!-- ===================================== -->
+
+    <footer class="footer">
+
+        corazón / archivos locales /
+        gracias por revolver nuestras carpetas ♡
+
+    </footer>
+
+
+</div>
 
 </div>
 
@@ -1693,11 +1717,6 @@
 
 <script>
 
-
-    /* ===================================== */
-    /* CURSOR                                */
-    /* ===================================== */
-
     const cursorCorazon =
         document.getElementById(
             "cursorCorazon"
@@ -1748,7 +1767,6 @@
             ) {
 
                 return;
-
             }
 
 
@@ -1785,24 +1803,6 @@
                 ];
 
 
-            pixel.style.marginLeft =
-                (
-                    Math.random() *
-                    10 -
-                    5
-                ) +
-                "px";
-
-
-            pixel.style.marginTop =
-                (
-                    Math.random() *
-                    10 -
-                    5
-                ) +
-                "px";
-
-
             document.body.appendChild(
                 pixel
             );
@@ -1819,35 +1819,6 @@
                 700
 
             );
-
-        }
-
-    );
-
-
-
-    document.addEventListener(
-
-        "mouseleave",
-
-        () => {
-
-            cursorCorazon.style.display =
-                "none";
-
-        }
-
-    );
-
-
-    document.addEventListener(
-
-        "mouseenter",
-
-        () => {
-
-            cursorCorazon.style.display =
-                "block";
 
         }
 
